@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制序列帧动画</title>
+    <style>
+        button{
+            width:50px;
+            height: 50px;
+            font-size:20px;
+        }
+        .active{
+            background: yellowgreen;
+        }
+        button:hover{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin:50px auto 0; width: 600px">
+        <canvas id="canvas">
+            你的浏览器版本较低，请升级浏览器版本
+        </canvas>
+    </div>
+    <div style="width:600px;margin: 10px auto; text-align: center" >
+        <button class="control active" id="zuo">←</button>
+        <button class="control" id="zuoshang">↖</button>
+        <button class="control" id="shang">↑</button>
+        <button class="control" id="youshang">↗</button>
+        <button class="control" id="you">→</button>
+        <button class="control" id="youxia">↘</button>
+        <button class="control" id="xia">↓</button>
+        <button class="control" id="zuoxia">↙</button>
+    </div>
+    <script>
+        (function(){
+            var canvas=document.getElementById('canvas');
+            var ctx=canvas.getContext('2d');
+            canvas.width=600;
+            canvas.height=600;
+            canvas.style.border='1px solid #000'
+
+            var img =new Image();
+            img.src='images/1.png';
+            img.onload= function () {
+                var frameIndex=0;
+                var dirIndex=0;
+                setInterval(function () {
+                    /*ctx.clearRect(200,200,300,300)*/
+                    ctx.clearRect(0,0,canvas.width,canvas.height);   /*清除canvas所有的内容*/
+                    ctx.drawImage(img,frameIndex*256,256*dirIndex,256,256,180,120,256,256)
+                    frameIndex++;
+                    frameIndex%=8;
+                },1000/10)
+                var btnControls=document.querySelectorAll('.control');
+                for(var i=0;i<btnControls.length;i++){
+                    btnControls[i].index=i;
+                    btnControls[i].onclick=function(){
+                        dirIndex=this.index;
+                        for(var j=0;j<btnControls.length;j++){
+                            /*classList 为H5新API，用于操作DOM元素的class,IE10 安卓2.X以下不支持*/
+                            btnControls[j].classList.remove('active');
+                        }
+                        this.classList.add('active');
+                    }
+                }
+            }
+        }())
+    </script>
+    </body>
+</html>

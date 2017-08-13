@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body{
+            margin:100px;
+        }
+    </style>
+</head>
+<body>
+<button class="btn btn-default" data-toggle="button">按钮</button>
+
+<p></p>
+<p>--------单选框-----------------------------华丽的分割线-------------------------------------------</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <label for="" class="btn btn-default active">
+        <input type="radio" name="sex" value="男" checked>男
+    </label>
+    <label for="" class="btn btn-default">
+        <input type="radio" name="sex" value="女">女
+    </label>
+</div>
+
+<p></p>
+<p>--------复选框---------------------华丽的分割线----------------------------------------------------</p>
+
+<div class="btn-group" data-toggle="buttons">
+    <label for="" class="btn btn-default active">
+        <input type="checkbox" value="HTML5" checked>HTML5
+    </label>
+    <label for="" class="btn btn-default">
+        <input type="checkbox" value="bootstrap">bootstrap
+    </label>
+    <label for="" class="btn btn-default">
+        <input type="checkbox" value="vue.js">vue.js
+    </label>
+    <label for="" class="btn btn-default">
+        <input type="checkbox" value="node.js">node.js
+    </label>
+</div>
+
+<p></p>
+<p>--------折叠--------------------华丽的分割线--------------------------------------------------------</p>
+
+<button class="btn btn-success" data-toggle="collapse" data-target="#content">bootstrap</button>
+<div class="collapse" id="content">
+    <div class="well">
+        Bootstrap是Twitter推出的一个用于前端开发的开源工具包。
+    </div>
+</div>
+
+<p></p>
+<p>--------手风琴折叠--------------------华丽的分割线--------------------------------------------------------</p>
+
+<div class="panel-group" id="acc">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a href="#collapseOne" data-toggle="collapse" data-parent="#acc" data-target="#collapseOne">第一部分</a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+                第1部分内容
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a href="#collapse1" data-toggle="collapse" data-parent="#acc" data-target="#collapse1">第2部分</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                第2部分内容
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a href="#collapse2" data-toggle="collapse" data-parent="#acc" data-target="#collapse2">第3部分</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                第3部分内容
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a href="#collapse4" data-toggle="collapse" data-parent="#acc" data-target="#collapse4">第4部分</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                第4部分内容
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="js/Jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

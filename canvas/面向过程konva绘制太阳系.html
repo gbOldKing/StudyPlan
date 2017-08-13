@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>太阳系</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="container">
+
+</div>
+<script src="lib/konva/konva.js"></script>
+<script>
+    //创建舞台
+    var stage = new Konva.Stage({
+        container: 'container',
+        width: window.innerWidth,//全屏
+        height: window.innerHeight
+    });
+    //中心点坐标
+    var cenX = stage.width()/2;
+    var cenY = stage.height()/2;
+    //创建背景层
+    var bgLayer=new Konva.Layer();
+    stage.add(bgLayer);
+
+    //绘制背景的圆形
+    var innerRadius=125;
+    var outerRadius=220;
+    //内圆
+    var innerCircle=new Konva.Circle({
+        x:cenX,
+        Y:cenY,
+        radius:innerRadius,
+        stroke:'#ccc',
+        strokeWidth:4,
+        dash:[10,4]
+    });
+    bgLayer.add(innerCircle);
+
+    //外圆
+    var outerCircle=new Konva.Circle({
+        x:cenX,
+        Y:cenY,
+        radius:outerRadius,
+        stroke:'#ccc',
+        strokeWidth:4,
+        dash:[10,4]
+    });
+    bgLayer.add(outerCircle);
+
+    //中心圆
+    var cenCircle=new Konva.Circle({
+        x:cenX,
+        Y:cenY,
+        radius:64,
+        fill:'#525A82'
+    });
+    bgLayer.add(cenCircle);
+
+    //中心圆环
+    var cenRind=new Konva.Ring({
+        x:cenX,
+        y:cenY,
+        innerRadius:64,
+        outerRadius:90,
+        fill:'#E1E1E1',
+        opacity:.5
+    });
+    bgLayer.add(cenRind);
+    //创建中心圆文字
+    var cenText=new Konva.Text({
+        x:cenX-90,
+        y:cenY-8,
+        width:180,
+        align:'center',
+        text:'web全栈',
+        fontSize:16,
+        fontFamily:'微软雅黑',
+        fontStyle:'bold',
+        fill:'#fff'
+    });
+    bgLayer.add(cenText);
+    bgLayer.draw();
+
+    //绘制动画层
+    var animateLayer=new Konva.Layer();
+    stage.add(animateLayer);
+
+    //计算圆心坐标
+    var h5X0=cenX+Math.cos(-60*Math.PI/180)*innerRadius;
+    var h5Y0=cenY+Math.sin(-60*Math.PI/180)*innerRadius;
+
+    var l2_h5_circle=new Konva.Circle({
+        x:h5X0,
+        y:h5Y0,
+        radius:30,
+        fill:'#FABB48',
+        opacity:.7
+    });
+    animateLayer.add(l2_h5_circle);
+    animateLayer.draw();
+</script>
+</body>
+</html>

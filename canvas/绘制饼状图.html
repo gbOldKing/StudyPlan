@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container" style="margin:100px auto; width: 600px">
+    <canvas id="canvas">
+        你的浏览器版本较低，请升级浏览器版本
+    </canvas>
+</div>
+
+<script>
+    var data=[{
+        "value":.2,
+        "color":"red",
+        "title":"VIP会员"
+    },{
+        "value":.3,
+        "color":"blue",
+        "title":"社会招生"
+    },{
+        "value":.3,
+        "color":"green",
+        "title":"老学员推荐"
+    },{
+        "value":.2,
+        "color":"#ccc",
+        "title":"公开课"
+    }];
+    (function(){
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+        var radius=200;
+        var x0=300,y0=300;
+        var tempAngle=-90;
+        canvas.width=600;
+        canvas.height=600;
+        canvas.style.border='1px solid #000';
+        console.log(Math.PI);
+
+        for(var i=0;i<data.length;i++){
+            ctx.beginPath();
+            ctx.moveTo(x0,y0);//从圆心开始绘制
+            var angle=data[i].value*360;
+            ctx.fillStyle=data[i].color;
+            var startAngle=tempAngle*Math.PI/180;
+            var endAngle=(tempAngle+angle)*Math.PI/180;
+            ctx.arc(x0,y0,radius,startAngle,endAngle);
+            //绘制文字
+            var txt=data[i].value*100+'%';
+            var x,y;
+            var txtAngle=tempAngle+angle/2;
+            x=x0+Math.cos(txtAngle*Math.PI/180)*(radius+20);
+            y=y0+Math.sin(txtAngle*Math.PI/180)*(radius+20);
+            if(txtAngle>90&&txtAngle<270){
+                ctx.textAlign='end';
+            }
+            ctx.fillText(txt,x,y);
+            ctx.fill();
+            tempAngle+=angle;//下一次绘制的起始角度
+        }
+    }())
+</script>
+</body>
+</html>

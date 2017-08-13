@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>饼状图面向过程</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <canvas id="canvas">
+            你的浏览器版本较低，请升级浏览器版本
+        </canvas>
+    </div>
+    <script src="lib/konva/konva.js"></script>
+    <script>
+        var stage=new Konva.Stage({
+            container:'container',
+            width:window.innerWidth,
+            height:window.innerHeight
+        });
+        var layer=new Konva.Layer();
+        stage.add(layer);
+        //中心点坐标
+        var cenX=stage.width()/ 2;
+        var cenY=stage.height()/2;
+        var data = [
+            { name: "前端", value: .25, color: '#e0e'  },
+            { name: "php",  value: .2,  color: 'orange'},
+            { name: "UI",	value: .3,	color: 'blue'  },
+            { name: "C++",	value: .05,	color: 'green' },
+            { name: "游戏",	value: .1,	color: 'purple'},
+            { name: "Java",	value: .1,	color: 'red'   }
+        ];
+        var x0=cenX,y0=cenY;
+        var tempAngle=-90;
+
+        data.forEach(function (item, index) {
+            var angle=360*item.value;
+            var wedge=new Konva.Wedge({
+                x:x0,
+                y:y0,
+                angle:angle,
+                radius:100,
+                fill:item.color,
+                rotation:tempAngle
+            });
+            layer.add(wedge);
+            var textAngle=tempAngle+angle/2;
+            var text=new Konva.Text({
+                x:x0+(100+20)*Math.cos(textAngle*Math.PI/180),
+                y:y0+(100+20)*Math.sin(textAngle*Math.PI/180),
+                text:item.value*100+'%',
+                fill:item.color,
+            });
+            if(textAngle>90 && textAngle<270){
+                text.x(text.x()-text.getWidth());
+            }
+            layer.add(text);
+            tempAngle+=item.value*360;
+        });
+        var cir=new Konva.Circle({
+            x:x0,
+            y:y0,
+            radius:110,
+            stroke:'#ccc',
+            strokeWidth:2
+        });
+        layer.add(cir);
+        layer.draw();
+
+        var index=0;
+        var wedges=layer.find('Wedge');
+        wedges.each(function (item, index) {
+            item.angle(0);
+        });
+        function animatePie(){
+            var item=wedges[index];
+            item.to({
+                angle:data[index].value*360,
+                duration:2*data[index].value,
+                onFinish:function(){
+                    index++;
+                    if(index>=data.length){
+                        return;
+                    }
+                    animatePie();
+                }
+            })
+        }
+        animatePie();
+    </script>
+</body>
+</html>

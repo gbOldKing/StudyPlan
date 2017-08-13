@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            width:50px;
+            height: 50px;
+            font-size:20px;
+        }
+        .active{
+            background: yellowgreen;
+        }
+        button:hover{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="margin:20px auto 0; width: 600px">
+    <canvas id="canvas">
+        你的浏览器版本较低，请升级浏览器版本
+    </canvas>
+</div>
+<div style="width:600px;margin: 10px auto; text-align: center" >
+    <button data-dir="zuo" class="control active" id="zuo">←</button>
+    <button data-dir="zuoshang" class="control" id="zuoshang">↖</button>
+    <button data-dir="shang" class="control" id="shang">↑</button>
+    <button data-dir="youshang" class="control" id="youshang">↗</button>
+    <button data-dir="you" class="control" id="you">→</button>
+    <button data-dir="youxia" class="control" id="youxia">↘</button>
+    <button data-dir="xia" class="control" id="xia">↓</button>
+    <button data-dir="zuoxia" class="control" id="zuoxia">↙</button>
+</div>
+<script src="js/Sprite.js"></script>
+<script>
+    (function() {
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var controls=document.querySelectorAll('.control');
+        canvas.width = 600;
+        canvas.height = 600;
+        canvas.style.border = '1px solid #000';
+        var s=new Sprite({
+            x:180,
+            y:120,
+            w:256,
+            h:256,
+            fps:200,
+            originW:256,
+            originH:256,
+            src:'images/1.png'
+        });
+        s.render(ctx);
+        for(var i=0;i<controls.length;i++){
+            controls[i].onclick= function () {
+                s.changeDir(this.getAttribute('data-dir'))
+                for(var j=0;j<controls.length;j++){
+                    controls[j].classList.remove('active')
+                }
+                this.classList.add('active');
+            }
+        }
+    }())
+</script>
+</body>
+</html>

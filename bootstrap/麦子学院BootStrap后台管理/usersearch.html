@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>用户搜索</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .page-header{
+            margin-top:0;
+        }
+        .page-header h1{
+            font-size: 16px;
+            margin:0;
+        }
+        .myform{
+            padding:10px;
+            border:1px solid #ddd;
+            border-top:none;
+        }
+    </style>
+</head>
+<body style="padding-top: 70px;">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand"><strong>oldKing</strong></a>
+            </div>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;后台首页</a></li>
+                    <li class="active"><a href="userlist.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户管理</a></li>
+                    <li><a href="content.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;内容管理</a></li>
+                    <li><a href="tags.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;标签管理</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown">Admin&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li><a href="index.html"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a></li>
+                            <li><a href="index.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人主页</a></li>
+                            <li><a href="index.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                            <li><a href="index.html"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                            <li><a href="index.html"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;我的收藏</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><span class="glyphicon glyphicon-off"></span>&nbsp;退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="userlist.html" class="list-group-item ">用户管理</a>
+                    <a href="usersearch.html" class="list-group-item active">用户搜索</a>
+                    <a href="#mymodal" data-toggle="modal" class="list-group-item">添加用户</a></a>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="page-header">
+                    <h1>用户搜索</h1>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li><a href="userlist.html">用户管理</a></li>
+                    <li class="active"><a href="usersearch.html">用户搜索</a></li>
+                    <li><a href="#mymodal" role="button" data-toggle="modal">添加用户</a></li>
+                </ul>
+                <form action="#" class="myform">
+                    <div class="alert alert-info" role="alert">
+                        <strong>技巧提示:</strong>支持模糊搜索和匹配搜索，匹配搜索使用*代替！
+                    </div>
+                    <div class="form-group">
+                        <label for="name">用户名</label>
+                        <input class="form-control" type="text" id="name" placeholder="用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="uid">用户名</label>
+                        <input class="form-control" type="text" id="uid" placeholder="请输入UID">
+                    </div>
+                    <div class="form-group">
+                        <label for="user-group">选择用户组</label>
+                        <select class="form-control" name="" id="user-group">
+                            <option value="">限制会员</option>
+                            <option value="">新手上路</option>
+                            <option value="">注册会员</option>
+                            <option value="">中级会员</option>
+                            <option value="">高级会员</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-default" value="提交">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade in" id="mymodal" data-remote="addform.html">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/Jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

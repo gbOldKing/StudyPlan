@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            margin:200px;
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+
+</div>
+</body>
+</html>
+<script>
+    var box=document.getElementById('box');
+    box.onmousemove= function (event) {
+        var event=event || window.event;
+        var x=event.clientX-box.offsetLeft;
+        var y=event.clientY-box.offsetTop;
+        box.innerHTML="x:"+x+",Y:"+y+"";
+    }
+</script>

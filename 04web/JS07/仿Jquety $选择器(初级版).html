@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="test"></div>
+<div class="test"></div>
+<div class="test"></div>
+<div class="test"></div>
+<div class="test"></div>
+<div id="one"></div>
+<div id="two"></div>
+</body>
+<script>
+    function getObjectByClassName(className){
+        if(document.getElementsByClassName){
+            return document.getElementsByClassName(className)
+        }else{
+            var arr=[];
+            var dom=document.getElementsByTagName("*");
+            for(var i=0;i<dom.lenght;i++){
+                var classTxt=dom[i].className.split(" ");
+                for(var j=0;j<classTxt.length;j++){
+                    if(className[j]==className){
+                        arr.push(dom[i]);
+                    }
+                }
+            }
+            return arr;
+        }
+    }
+    function $(str){
+        var s=str.charAt(0);
+        var ss=str.substr(1);
+        switch(s){
+            case "#":
+                return document.getElementById(ss)
+            break;
+            case ".":
+                return getObjectByClassName(ss)
+            break;
+            default:
+                return document.getElementsByTagName(ss)
+        }
+    }
+    $("#one").style.backgroundColor="skyblue";
+    var tests=$(".test")
+    for(var i=0;i<tests.length;i++){
+        tests[i].style.backgroundColor="pink"
+    }
+</script>
+</html>

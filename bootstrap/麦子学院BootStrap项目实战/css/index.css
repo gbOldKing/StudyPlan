@@ -1,0 +1,145 @@
+body{
+    font-family:"微软雅黑";
+    padding-top:50px;
+}
+.navbar-default{
+    background: #ffffff;
+    border:none;
+    box-shadow: 0 3px 8px 0 rgba(50,50,50,.25);
+}
+.navbar-default .navbar-brand{
+    font-size: 26px;
+    font-weight:bold;
+    color:#40d2b1
+}
+.navbar-nav  a{
+    font-size: 16px;
+    font-weight: bold;
+    color:#666;
+}
+#home{
+    width: 100%;
+    background: url("../images/home-bg.jpg");
+    background-size:cover;
+    color: #fff;
+    text-align: center;
+    box-shadow:0 3px 8px 0px rgba(50,50,50,.25); ;
+}
+.mask{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+    padding:50px 0 80px;
+}
+#home img{
+    margin-top:20px;
+    display: inline-block;
+}
+
+.bbs{
+    padding:50px 0;
+    text-align: center;
+}
+.bbs a{
+    color:#212121;
+    text-decoration:none;
+}
+.col-md-4{
+    padding:20px 0;
+}
+.bbs .col-md-4:hover{
+    background: #f1f1f1;
+    box-shadow: 1px 1px 4px #ccc;
+}
+.bbs img{
+    margin:0 auto;
+}
+.bbs h3{
+    font-weight:bold;
+}
+
+#HTML5{
+    background: #f8f8f8;
+}
+#HTML5,#bootstrap {
+    padding: 50px 0;
+}
+#HTML5 h2,#bootstrap h2{
+    font-weight: bold;
+}
+#HTML5 p,#bootstrap p{
+    line-height: 40px;
+}
+.mai-icon{
+    background: rgb(64,210,177);
+    color:#fff;
+    border-radius:50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 20px;
+}
+
+#class{
+    padding:30px 0;
+    text-align: center;
+    background: #f8f8f8;
+}
+#class h2{
+    font-weight:bold;
+    margin-bottom: 50px;
+}
+#class .class{
+    padding: 10px;
+    background: #fff;
+}
+#class .col-md-3{
+    margin-bottom:30px;
+}
+#class .class img{
+    width: 100%;
+}
+
+.class button{
+    background: transparent;
+    border: 1px solid #40D2B1;
+    border-radius: 0px;
+    color: #40D2B1;
+    margin: 20px 0 0;
+    padding: 8px 40px;
+    transition: all 0.5s;
+}
+
+#app{
+    padding:50px 0;
+}
+#app h2{
+    margin-bottom: 20px;
+    font-weight:bold;
+}
+#app p {
+    line-height: 30px;
+}
+#app button{
+    margin:10px 10px;
+    padding:10px 40px;
+}
+
+#contact{
+    background:url("../images/contact-bg.png") no-repeat center center/cover;
+    color:#fff;
+    line-height:35px;
+}
+#contact .glyphicon-send{
+    font-size:20px;
+}
+#contact address{
+    margin-top:15px;
+    line-height:40px;
+}
+#contact input{
+    border:None;
+    border-radius: 0;
+    margin-bottom: 25px;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<!--data-ride="carousel" 设置自动轮播-->
+<div id="myCarousel" class="carousel slide" style="width:960px;margin:200px auto 0">
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="images/rimg1.jpg" alt="">
+            <div class="carousel-caption">
+                <h4>标题1</h4>
+                <p>哇风景好美</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rimg2.jpg" alt="">
+            <div class="carousel-caption">
+                <h4>标题2</h4>
+                <p>哇风景好美</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rimg3.jpg" alt="">
+            <div class="carousel-caption">
+                <h4>标题3</h4>
+                <p>哇风景好美</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rimg4.jpg" alt="">
+            <div class="carousel-caption">
+                <h4>标题4</h4>
+                <p>哇风景好美</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/rimg5.jpg" alt="">
+            <div class="carousel-caption">
+                <h4>标题</h4>
+                <p>哇风景好美</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a href="#myCarousel" data-slide="prev" class="carousel-control left">&lsaquo;</a>
+        <a href="#myCarousel" data-slide="next" class="carousel-control right">&rsaquo;</a>
+    </div>
+</div>
+<button id="cycle" class="btn btn-default">开始</button>
+<button id="pause" class="btn btn-default">停止</button>
+<script src="js/Jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    /*$('#myCarousel').carousel({
+        //设置自动播放/2秒
+        interval:2000,
+        //设置暂停事件
+        pause:'hover',
+        //设置只播一次
+        wrap:false,
+    })*/
+    $('#cycle').click(function () {
+        $('#myCarousel').carousel('cycle')
+    })
+    $('#pause').click(function () {
+        $('#myCarousel').carousel('pause')
+    })
+</script>
+</body>
+</html>

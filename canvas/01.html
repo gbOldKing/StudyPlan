@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01canbas</title>
+</head>
+<body style="padding: 100px;">
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script>
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d'); //拿到canvas的上下文
+        canvas.style.border="1px solid #f40";
+        //绘制
+        ctx.moveTo(100,100);
+        ctx.lineTo(200,100);
+        ctx.lineTo(100,200);
+        /*ctx.lineTo(100,100);*/
+        ctx.closePath();//闭合路径
+        ctx.lineWidth=4;//设置线宽
+        ctx.strokeStyle='rgba(255,0,255,1)';//描边样式
+        ctx.stroke(); //stroke 描边
+        ctx.fillStyle='yellowgreen';
+        ctx.fill();//填充，默认颜色的黑色
+    </script>
+</body>
+</html>

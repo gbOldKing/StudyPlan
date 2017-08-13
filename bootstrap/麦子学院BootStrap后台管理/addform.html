@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal"><span>&times;</span></button>
+    <h4 class="modal-title">添加用户</h4>
+</div>
+<div class="modal-body">
+    <form action="#">
+        <div class="form-group">
+            <label for="username">用户名</label>
+            <input id="username" type="text" class="form-control" placeholder="请输入用户名">
+        </div>
+        <div class="form-group">
+            <label for="password">请输入密码</label>
+            <input id="password" type="text" class="form-control" placeholder="请输入密码">
+        </div>
+        <div class="form-group">
+            <label for="psw2">确认密码</label>
+            <input id="psw2" type="text" class="form-control" placeholder="请再次输入密码">
+        </div>
+        <div class="form-group">
+            <label for="email">请输入邮箱</label>
+            <input type="email" id="email" class="form-control" placeholder="请输入邮箱">
+        </div>
+        <div class="form-group">
+            <label for="group">用户组</label>
+            <select class="form-control" name="group" id="group">
+                <option value="">限制会员</option>
+                <option value="" selected>新手上路</option>
+                <option value="">注册会员</option>
+                <option value="">中级会员</option>
+                <option value="">高级会员</option>
+            </select>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default">注册</button>
+    <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+</div>

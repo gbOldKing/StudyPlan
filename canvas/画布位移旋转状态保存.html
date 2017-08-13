@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <canvas id="canvas">
+        你的浏览器版本较低，请升级浏览器版本
+    </canvas>
+</div>
+
+<script>
+    (function() {
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        canvas.width = 600;
+        canvas.height = 600;
+        canvas.style.border = '1px solid #000'
+        ctx.fillStyle='red';
+        ctx.fillRect(10,10,100,100)
+        ctx.save(); //把当前的上下文状态保存起来
+
+        ctx.translate(200,200); //画布移动到200,200位置。
+        ctx.rotate(30*Math.PI/180); //画布旋转30°（弧度）。
+        ctx.scale(2,2);//画布整体缩放两倍。
+        ctx.globalAlpha=.3; //设置全局透明度,之前状态不受影响。
+        ctx.moveTo(0,0);
+        ctx.lineTo(0,400);
+        ctx.moveTo(0,0);
+        ctx.lineTo(400,0);
+        ctx.stroke();
+        ctx.fillRect(10,10,40,40);
+
+        ctx.restore()//还原上一次保存的状态。
+
+        ctx.fillRect(400,400,100,100);
+
+    }())
+</script>
+</body>
+</html>

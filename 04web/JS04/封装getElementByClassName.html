@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background:purple;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        window.onload= function () {
+            function getObjectByClassName(className){
+                if(document.getElementsByClassName){
+                    return document.getElementsByClassName(className)
+                }else{
+                    var arr=[];
+                    var dom=document.getElementsByTagName("*");
+                    for(var i=0;i<dom.lenght;i++){
+                        var classTxt=dom[i].className.split(" ");
+                        for(var j=0;j<classTxt.length;j++){
+                            if(className[j]==className){
+                                arr.push(dom[i]);
+                            }
+                        }
+                    }
+                    return arr;
+                }
+            }
+            var tests = getObjectByClassName("test");
+            for(var i=0;i<tests.length;i++){
+                tests[i].style.backgroundColor='yellowGreen';
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="demo"></div>
+<div class="test"></div>
+<div></div>
+<div></div>
+<div class="demo test"></div>
+<div></div>
+<div class="one two test"></div>
+<div class="demo"></div>
+</body>
+</html>

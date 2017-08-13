@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <canvas id="canvas">
+            你的浏览器版本较低，请升级浏览器版本
+        </canvas>
+    </div>
+    <script src="lib/konva/konva.js"></script>
+    <script src="js/HistogramChart.js"></script>
+    <script>
+        var stage=new Konva.Stage({
+            container:'container',
+            width:window.innerWidth,
+            height:window.innerHeight
+        });
+        var layer=new Konva.Layer();
+        stage.add(layer);
+
+        //柱状图的数据
+        var data = [
+            { name: '前端', value: '.8', color: 'green'},
+            { name: 'PHP', value: '.3', color: 'blue'},
+            { name: 'Java', value: '.7', color: 'red'},
+            { name: 'UI', value: '.9', color: 'orange'},
+            { name: 'IOS', value: '.4', color: 'purple'},
+            { name: 'Android', value: '.9', color: 'yellowgreen'}
+        ];
+        var isSmallScreen=window.innerWidth<768;
+        console.log(window.innerWidth);
+        var h=new HistogramChart({
+            x:isSmallScreen?0:1/8*stage.width(),
+            y:3/4*stage.height(),
+            w:isSmallScreen?stage.width():3/4*stage.width(),
+            h:1/2*stage.height(),
+            data:data
+        })
+        h.addToGroupOrlayer(layer);
+        layer.draw();
+        stage.on('contentClick',function(){
+            h.playAnimate();
+        })
+    </script>
+</body>
+</html>

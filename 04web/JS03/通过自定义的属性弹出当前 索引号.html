@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        li{
+            width:300px;
+            line-height:30px;
+            border:1px solid red;
+        }
+        .bcg{
+            background:skyblue;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            var Ali=document.getElementsByTagName('li');
+
+            for(var i=0;i<Ali.length;i++){
+                Ali[i].index=i;  /*通过自定义属性来保存当前的索引*/
+                Ali[i].onclick = function () {
+                    alert(this.index);
+                    for(var j=0;j<Ali.length;j++){
+                        Ali[j].className='';
+                    }
+                    this.className="bcg";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>你</li>
+        <li>好</li>
+        <li>吗</li>
+        <li>我</li>
+        <li>来</li>
+        <li>测</li>
+        <li>试</li>
+        <li>的</li>
+    </ul>
+</body>
+</html>

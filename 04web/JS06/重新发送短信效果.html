@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<button id="btn">点击发送短信</button>
+<script>
+    var btn=document.getElementById('btn');
+    var count=10;
+    var timer=null;
+    btn.onclick= function () {
+        this.disabled=true;
+        var _this=this; //存储当前的对象,可以多次调用互相不影响
+        setMessage();
+        timer=setInterval(setMessage,1000)
+        function setMessage(){
+            _this.innerHTML=""+count+"秒后重新发送";
+            count--;
+            if(count<0) {
+                _this.innerHTML = "重新发送短信"
+                _this.disabled = false;
+                count = 10;
+                clearInterval(timer);
+            }
+        }
+    }
+</script>
+</body>
+</html>

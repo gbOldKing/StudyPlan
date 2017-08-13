@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿淘宝搜索框</title>
+    <style>
+        .search {
+            width: 300px;
+            height: 30px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .search label {
+            font-size:12px;
+            color: #cccccc;
+            position: absolute;
+            left:10px;
+            top: 22px;
+            cursor:text;
+        }
+        .search input {
+            width: 200px;
+            height: 25px;
+            margin-top:15px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            function $(id){return document.getElementById(id)}
+            $('txt').focus();/*获取焦点*/
+            $('txt').oninput = $('txt').onpropertychange=function() { /*IE 678 用 onpropertychange*/
+                if (this.value == '') {
+
+                    $('mess').style.display = 'block'
+                }
+                else {
+                    $('mess').style.display = 'none'
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="search">
+        <label for="txt" id="mess">必败的国际大牌</label>
+        <input type="text" id="txt">
+        <input type="text" placeholder="更简单的实现方法，IE9以上支持" style="font-size:12px;">  <!--更简单的方法，IE9以上支持-->
+    </div>
+</body>
+</html>

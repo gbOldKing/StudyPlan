@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向过程柱状图</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <canvas id="canvas">
+            你的浏览器版本较低，请升级浏览器版本
+        </canvas>
+    </div>
+    <script src="lib/konva/konva.js"></script>
+    <script>
+        var stage=new Konva.Stage({
+            container:'container',
+            width:window.innerWidth,
+            height:window.innerHeight
+        });
+        var layer=new Konva.Layer();
+        stage.add(layer);
+        //中心点坐标
+        var cenX=stage.width()/ 2;
+        var cenY=stage.height()/2;
+        //柱状图的数据
+        var data = [
+            { name: '前端', value: '.8', color: 'green'},
+            { name: 'PHP', value: '.3', color: 'blue'},
+            { name: 'Java', value: '.7', color: 'red'},
+            { name: 'UI', value: '.9', color: 'orange'},
+            { name: 'IOS', value: '.4', color: 'purple'},
+            { name: 'Android', value: '.9', color: 'yellowgreen'}
+        ];
+        //绘制底线
+        var x0=1/8*stage.width(); //柱状图圆点坐标
+        var y0=3/4*stage.height();
+        var width=3/4*stage.width();//柱状图最大宽度
+        var height=1/2*stage.height();//柱状图高度
+        var bsLine=new Konva.Line({
+            points:[x0,y0,x0+width,y0],
+            strokeWidth:1,
+            stroke:'skyblue'
+        });
+        layer.add(bsLine)
+        var rectWidth=width/data.length;
+        data.forEach(function (item, index) {
+            var rect=new Konva.Rect({
+                x:x0+(1/4+index)*rectWidth,
+                y:y0-item.value*height,
+                width:rectWidth/2,
+                height:item.value*height,
+                fill:item.color,
+                cornerRadius:10
+            })
+            var text=new Konva.Text({
+                x:x0+index*rectWidth,
+                y:y0-item.value*height-16,
+                fontSize:14,
+                text:item.value*100+'%',
+                fill:item.color,
+                width:rectWidth,
+                align:'center',
+                name:'textPercent'
+            })
+            var group=new Konva.Group({
+                x:x0+(index+1/2)*rectWidth,
+                y:y0
+            })
+            var textBottom=new Konva.Text({
+                x:0,
+                y:10,
+                fontSize:14,
+                text:item.name,
+                fill:item.color,
+                rotation:30
+            })
+            layer.add(rect);
+            layer.add(text);
+            group.add(textBottom);
+            layer.add(group)
+        })
+        layer.draw();
+
+        stage.on('contentClick', function () {
+            layer.find('Rect').each(function (item, index) {
+                item.y(y0);//在Konva中，如果传参表示设置值，不传表示取值。
+                item.height(0);
+
+                item.to({
+                    duration:1,
+                    y:y0-data[index].value*height,
+                    height:data[index].value*height
+                })
+            })
+            layer.find('.textPercent').each(function (item,index) {
+                item.y(y0-16);
+                item.to({
+                    duration:1,
+                    y:y0-data[index].value*height-16
+                })
+            })
+        })
+    </script>
+</body>
+</html>

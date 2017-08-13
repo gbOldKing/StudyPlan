@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封装原生ajax</title>
+</head>
+<body>
+
+
+<script>
+    function ajax(data){
+        var xhr=window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject('Microsoft.XMLHTTP');
+        var method=data.method=='get'?'get':'post';
+        var url='';
+        data.url?url=data.url:url='';
+        xhr.open(method,url);
+        xhr.send(null);
+        xhr.onreadystatechange= function () {
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    if(typeof data.success=='function'){
+                        var dataType=data.dataType=='XML'?xhr.responseXML:xhr.responseText;
+                        dataType.success(dataType);
+                    }
+                }else{
+                    if(typeof data.failure=='function'){
+                        dataType.failure;
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

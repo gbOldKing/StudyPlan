@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博雅</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font-family:"Microsoft YaHei","宋体";
+            height: 1000px;
+        }
+        .f_left{
+            float: left;
+        }
+        ul,ol,dl,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .header{
+            height: 58px;
+            line-height:58px;
+            background: #191d3a;
+            text-align: center;
+        }
+        /*版心宽度*/
+        .inner_c{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .header .logo{
+            margin-right:12px;
+        }
+        .header .nav ul li{
+            width: 100px;
+            float: left;
+            border-left:1px solid #252947;
+        }
+        .header .nav ul li.last{
+            border-right:1px solid #252947;
+        }
+        .header .nav ul li a{
+            display: block;
+            color: #818496;
+        }
+        .header .nav ul li a.current{
+            background: #252947;
+            color: #fff;
+        }
+        .header .nav ul li a:hover{
+            background: #252947;
+            color: #fff;
+        }
+        .header .joinUs{
+            padding-top: 12px;
+            padding-left: 48px;
+        }
+        .header .joinUs a{
+            display: block;
+            width: 98px;
+            line-height:32px;
+            background: #38b774;
+            border:1px solid #3ACA7A;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .header .joinUs a:hover{
+            background: #48c784;
+        }
+        .banner{
+            height: 465px;
+            background: url(images/banner.jpg)no-repeat center top;
+        }
+        .content{
+            padding-top:50px;
+            text-align: center;
+            height: 650px;
+            background: url("images/indexmainbg.jpg")no-repeat center bottom;
+        }
+        .content .product{
+            height: 229px;
+            border-bottom:1px solid #DBE1E7;
+        }
+        .content .product ul li{
+            float: left;
+            width: 218px;
+            height: 229px;
+            margin-right:43px;
+        }
+        .content .product ul li p img{
+            width: 100%;
+            height: 130px;
+        }
+        .content .product ul li.last{
+            width: 217px;
+            margin-right: 0;
+        }
+        .content .product ul li h3{
+            line-height: 38px;
+            font-size:14px;
+        }
+        .content .product ul li p.play a{
+            font-size: 12px;
+            color:#38b774;
+            padding-right:10px;
+            background: url("images/sanjiaoxing.png")no-repeat right center;
+        }
+        .content .info{
+            padding-top: 53px;
+        }
+        .content .info .boyaanews{
+            float: left;
+            width: 470px;
+            padding:115px 15px 0;
+            text-align: left;
+            background:url("images/bynewsbg.jpg");
+        }
+        .content .info .boyaanews ul li{
+            line-height:50px;
+            border-bottom:1px solid;
+            padding-left:5px;
+        }
+        .content .info .boyaajobs{
+            float: left;
+            width:500px;
+            height:314px;
+            background:url("images/byhrbg3.jpg")
+        }
+    </style>
+</head>
+<body>
+<!--header start-->
+    <div class="header">
+        <div class="inner_c">
+            <div class="logo f_left">
+                <h3>
+                    <a href="">
+                        <img src="images/logo.png" alt="">
+                    </a>
+                </h3>
+            </div>
+            <div class="nav f_left">
+                <ul>
+                    <li><a class="current" href="javascript:;">首页</a></li>
+                    <li><a href="javascript:;">博雅游戏</a></li>
+                    <li><a href="javascript:;">博雅新闻</a></li>
+                    <li><a href="javascript:;">关于我们</a></li>
+                    <li><a href="javascript:;">客服中心</a></li>
+                    <li class="last"><a href="javascript:;">投资者关系</a></li>
+                </ul>
+            </div>
+            <div class="joinUs f_left">
+                <a href="#">加入我们</a>
+            </div>
+        </div>
+    </div>
+<!--header end-->
+
+<!--banner start-->
+    <div class="banner"></div>
+<!--banner end-->
+
+<!--content start-->
+    <div class="content">
+        <div class="inner_c">
+            <div class="product">
+                <ul>
+                    <li>
+                        <p><img src="images/pro1.jpg" alt=""></p>
+                        <h3>BPT宣传片</h3>
+                        <p class="play"><a href="#">点击播放</a></p>
+                    </li>
+                    <li>
+                        <p>
+                            <img src="images/pro2.jpg" alt="">
+                        </p>
+                        <h3>博雅互动宣传视频</h3>
+                        <p class="play">
+                            <a href="#">点击播放</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <img src="images/pro3.jpg" alt="">
+                        </p>
+                        <h3>斗地主</h3>
+                        <p class="play">
+                            <a href="#">点击播放</a>
+                        </p>
+                    </li>
+                    <li class="last">
+                        <p>
+                            <img src="images/pro4.jpg" alt="">
+                        </p>
+                        <h3>德州扑克</h3>
+                        <p class="play">
+                            <a href="#">点击播放</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="info">
+                <div class="boyaanews">
+                    <ul>
+                        <li>
+                            <span>09/19</span>
+                            <a href="">2015博雅国际扑克大赛（BPT）在澳门落幕</a>
+                        </li>
+                        <li>
+                            <span>09/19</span>
+                            <a href="">2015博雅国际扑克大赛（BPT）在澳门落幕</a>
+                        </li>
+                        <li>
+                            <span>09/19</span>
+                            <a href="">2015博雅国际扑克大赛（BPT）在澳门落幕</a>
+                        </li>
+                        <li>
+                            <span>09/19</span>
+                            <a href="">2015博雅国际扑克大赛（BPT）在澳门落幕</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="boyaajobs"></div>
+            </div>
+        </div>
+    </div>
+
+<!--content end-->
+</body>
+</html>

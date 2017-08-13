@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas优化</title>
+</head>
+<body>
+<div class="container">
+    <canvas id="canvas">
+        你的浏览器版本较低，请升级浏览器版本
+    </canvas>
+</div>
+
+<script src="js/juxing.js"></script>
+<script>
+    (function(){
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+        canvas.width=600;
+        canvas.height=600;
+        canvas.style.border='1px solid #000'
+
+        var canvasHide=document.createElement('canvas');
+        canvasHide.width=canvas.width;
+        canvasHide.height=canvas.height;
+        var ctxHide=canvasHide.getContext('2d');
+
+        var ok = new oldking({
+            x: 10,
+            y: 10,
+            w: 50,
+            h: 50,
+            scaleX: 2,
+            scaleY: 2,
+            fillStyle: 'yellowgreen',
+            opacity: .6,
+            rotation: 10
+        });
+        ok.rander(ctxHide);
+        var ok2 = new oldking({
+            x: 150,
+            y: 100,
+            w: 100,
+            h: 100,
+            fillStyle: 'yellowgreen',
+        });
+        ok2.rander(ctxHide);
+
+        ctx.drawImage(canvasHide,0,0);//把隐藏的canvas绘制到显示给用户的canvas中去。
+    }())
+</script>
+</body>
+</html>

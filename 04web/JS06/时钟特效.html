@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟特效</title>
+    <style>
+        .clock{
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            background-image: url(images/clock.jpg);
+            position: relative;
+        }
+        .clock div{
+            position:absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .h{
+            background:url(images/hour.png) no-repeat center center;
+        }
+        .m{
+            background: url(images/minute.png) no-repeat center center;
+        }
+        .s{
+            background:url(images/second.png) no-repeat center center;
+        }
+    </style>
+    <script>
+        window.onload= function () {
+            var hbox=document.getElementById('h')
+            var mbox=document.getElementById('m')
+            var sbox=document.getElementById('s')
+            var /*ms= 0*/ h= 0,m= 0,s=0;
+            clock();
+            setInterval(clock,1000)
+            function clock(){
+                var date=new Date();
+                //ms=date.getMilliseconds();
+                s=date.getSeconds();
+                m=date.getMinutes()+s/60;
+                h=date.getHours()+m/60;
+
+                sbox.style.webkitTransform="rotate("+s*6+"deg)";
+                mbox.style.webkitTransform="rotate("+m*6+"deg)";
+                hbox.style.webkitTransform="rotate("+h*30+"deg)"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="clock" id="clock">
+        <div class="h" id="h"></div>
+        <div class="m" id="m"></div>
+        <div class="s" id="s"></div>
+    </div>
+</body>
+</html>

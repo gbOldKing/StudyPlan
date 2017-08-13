@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{vertical-align:top;}/*去除IMG 底部 3像素空白*/
+        ul li{
+            list-style:none;
+        }
+        .box{
+            width: 600px;
+            height: 200px;
+            position: relative;
+            margin:100px auto;
+            overflow: hidden;
+        }
+        .box ul{
+            width: 400%;
+            height: 200px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        .box ul li{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <ul>
+            <li><img src="images/01.jpg" alt=""></li>
+            <li><img src="images/02.jpg" alt=""></li>
+            <li><img src="images/03.jpg" alt=""></li>
+            <li><img src="images/04.jpg" alt=""></li>
+            <li><img src="images/01.jpg" alt=""></li>
+            <li><img src="images/02.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var box=document.getElementById('box')
+    var ul=box.children[0];
+    var num=0;
+    var timer=null;
+    timer=setInterval(move,5);
+    function move(){
+        num-=2;
+        num<=-1200?num=0:num;
+        ul.style.left=num+'px';
+    }
+    box.onmouseover= function () {
+        clearInterval(timer);
+    }
+    box.onmouseout= function () {
+        timer=setInterval(move,5)
+    }
+</script>

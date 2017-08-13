@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container" style="margin:100px auto; width: 600px">
+    <canvas id="canvas">
+        你的浏览器版本较低，请升级浏览器版本
+    </canvas>
+</div>
+
+<script>
+    (function(){
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+        canvas.width=600;
+        canvas.height=600;
+        canvas.style.border='1px solid #000'
+        ctx.globalAlpha
+
+        ctx.moveTo(300,300);
+        ctx.arc(300,300,100,0,30*Math.PI/180,true);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+    }())
+</script>
+</body>
+</html>

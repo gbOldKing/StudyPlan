@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封装绘制矩形</title>
+</head>
+<body>
+<div class="container">
+    <canvas id="canvas">
+        你的浏览器版本较低，请升级浏览器版本
+    </canvas>
+</div>
+
+<script src="js/juxing.js"></script>
+<script>
+    (function(){
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+        canvas.width=600;
+        canvas.height=600;
+        canvas.style.border='1px solid #000'
+
+        var ok=new oldking({
+            x:10,
+            y:10,
+            w:50,
+            h:50,
+            scaleX:2,
+            scaleY:2,
+            fillStyle:'yellowgreen',
+            opacity:.6,
+            rotation:0
+        })
+        ok.rander(ctx);
+    }())
+</script>
+</body>
+</html>

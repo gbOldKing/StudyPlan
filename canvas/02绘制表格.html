@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02绘制表格</title>
+</head>
+<body>
+<div class="container">
+    <canvas id="canvas">
+        你的浏览器版本较低，请升级浏览器版本
+    </canvas>
+</div>
+
+<script>
+    (function(){
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+        canvas.width=600;
+        canvas.height=600;
+        canvas.style.border='1px solid #000'
+
+        var rectH=10;
+        var rectW=10;
+        ctx.lineWidth=0.5;
+        for(var i=0;i<canvas.width/rectH;i++){
+            ctx.moveTo(0,i*rectH);//如果不设置moveTo,当前画笔没有位置
+            ctx.lineTo(canvas.width,i*rectH)//绘制横线
+
+            ctx.moveTo(i*rectW,0);
+            ctx.lineTo(i*rectW,canvas.height)
+        }
+        ctx.stroke();
+    }())
+</script>
+</body>
+</html>

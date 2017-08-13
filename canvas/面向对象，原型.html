@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+/*    function Cat(){
+        this.age=19;
+        /!*this.show= function () {   //每个构造出来的对象都会带show方法，浪费内存
+            console.log(this.age);
+        }*!/
+    }
+    Cat.prototype.show=function(){  //为对象原型增加对接函数，可节省内存空间；
+        console.log(this.age);
+    }
+    var cat=new Cat();
+    var cat1=new Cat();
+    cat.age=111;
+    cat1.age=222;
+    cat.show();
+    cat1.show();*/
+
+
+    /*升级一下上面的写法*/
+    function Cat(option){
+        this._init(option);
+    }
+    Cat.prototype={
+        _init:function(option){
+            this.age=option.age || '空的';
+        },
+        show:function(){
+            console.log(this.age);
+        }
+    };
+    var cat=new Cat({
+    });
+    cat.show();
+
+</script>
+</body>
+</html>

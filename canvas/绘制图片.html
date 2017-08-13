@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制图片</title>
+</head>
+<body>
+    <div class="container" style="margin:50px auto; width: 600px">
+        <canvas id="canvas">
+            你的浏览器版本较低，请升级浏览器版本
+        </canvas>
+    </div>
+    <script>
+        (function(){
+            var canvas=document.getElementById('canvas');
+            var ctx=canvas.getContext('2d');
+            canvas.width=600;
+            canvas.height=600;
+            canvas.style.border='1px solid #000';
+
+            /*第一步，创建图片的DOM对象*/
+            var img=new Image();
+            img.src='images/a.jpg'
+            img.onload= function () {
+                /*ctx.drawImage(img,100,100)*/
+               /* for(var i=0;i<10;i++){
+                    ctx.drawImage(img,100+i*20,100+i*20,100+i*20,60+i*20);
+                }*/
+                var ow=img.width;
+                var oh=img.height;
+                console.log(ow);
+                console.log(oh);
+                console.log(293*oh/ow)
+                ctx.drawImage(img,100,100,293,293*oh/ow);
+            }
+
+            var img2=new Image();
+            img2.src='images/gameImgs/NPCrabbitbaby-2.png';
+
+            img2.onload= function () {
+                ctx.drawImage(img2,40,65,40,65,250,200,40,65)
+            }
+        }())
+    </script>
+</body>
+</html>

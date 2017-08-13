@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>导航栏</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .navbar-inverse input[type='text']{
+                background: #313131;
+            border:none;
+            color:#999;
+        }
+        .navbar-inverse .navbar-form{
+            position: relative;
+        }
+        .navbar-inverse button[type='submit']{
+            position: absolute;
+            top:30%;
+            right:20px;
+            background: none;
+            border:none;
+        }
+        .navbar-inverse .glyphicon{
+            color:#999
+        }
+        @media(min-width:768px){
+            .navbar-inverse button[type='submit']{
+                top:20%
+            }
+        }
+    </style>
+</head>
+<body style="padding-top:50px">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="" class="navbar-brand"><strong>OldKing</strong>.BootStrap</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="">课程</a></li>
+                    <li><a href="">博客</a></li>
+                    <li><a href="">手册</a></li>
+                </ul>
+                <form action="" class="navbar-form navbar-left">
+                    <input type="text" placeholder="搜索" class="form-control">
+                    <button type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+                <a href="#" class=" hidden-xs navbar-btn btn btn-primary btn-sm navbar-right">订阅课程</a>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#login-modal">登陆</a><!--加载远程内容第二个方法，给href加链接-->
+                        </li>
+                        <li><a href="#">注册</a></li>
+                    </ul>
+                <!--<p class="navbar-text">您好，<a href="" class="navbar-link">王二小</a></p>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--data-interval="1000"控制播放间隔时间，默认值5000 data-pause="false" data-wrap="false"控制循坏播放-->
+    <div class="carousel slide" id="slide"><!--data-ride="carousel" 设置自动轮播 -->
+        <ol class="carousel-indicators">
+            <li class="active" data-target="#slide" data-slide-to="0"></li>
+            <li data-target="#slide" data-slide-to="1"></li>
+            <li data-target="#slide" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active" style="background:#223240;">
+                <img style="margin: 0 auto;" src="images/slide1.png" alt="">
+                <div class="carousel-caption">
+                    <h4>BootStrap</h4>
+                    <p>oldking.BootStrap oldking.BootStrap oldking.BootStrap </p>
+                </div>
+            </div>
+            <div class="item" style="background:#f5e4dc;">
+                <img style="margin: 0 auto;" src="images/slide2.png" alt="">
+                <div class="carousel-caption">
+                    <h4>Javascript</h4>
+                    <p>oldking.BootStrap oldking.BootStrap oldking.BootStrap </p>
+                </div>
+            </div>
+            <div class="item" style="background:#de2a2d;">
+                <img style="margin: 0 auto;" src="images/slide3.png" alt="">
+                <div class="carousel-caption">
+                    <h4>Javascript</h4>
+                    <p>oldking.BootStrap oldking.BootStrap oldking.BootStrap </p>
+                </div>
+            </div>
+        </div>
+        <a href="#slide" data-slide="prev" class="left carousel-control">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#slide" data-slide="next" class="right carousel-control">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+    <div class="text-center" style="padding: 20px;">
+        <div class="btn-group">
+            <button class="btn btn-default prev-slide">
+                <span class="glyphicon glyphicon-backward"></span>
+            </button>
+            <button class="btn btn-default play-and-stop">
+                <span class="glyphicon glyphicon-play"></span>
+            </button>
+            <button class="btn btn-default next-slide">
+                <span class="glyphicon glyphicon-forward"></span>
+            </button>
+        </div>
+    </div>
+    <!--加载远程内容第三个方法，通过data-form属性添加-->
+    <div class="modal fade" id="login-modal" tabindex="-1" data-remote="login-form.html"><!--data-backdrop="false" 关掉背景遮罩层-->
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <!--  <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4>用户登陆</h4>
+                </div>
+                <div class="modal-body">
+                    <p>用户登陆的表单</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">登陆</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/Jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+/*    $(function () {
+        $('#login-modal').modal({
+            show:false,
+            backdrop:false,
+            remote:'login-form.html' 加载远程内容第一个方法，通过JS添加
+        })
+    })*/
+    /*$(function () {
+        $('#login-modal').on('show.bs.modal', function () {
+            alert('对话框显示前触发')
+        })
+        $('#login-modal').on('shown.bs.modal', function () {
+            alert('对话框显示后触发')
+        })
+        $('#login-modal').on('hide.bs.modal', function () {
+            alert('对话框隐藏前触发')
+        })
+        $('#login-modal').on('hidden.bs.modal', function () {
+            alert('对话框隐藏后触发')
+        })
+        $('#login-modal').on('loaded.bs.modal', function () {
+            alert('内容载入完成后触发')
+        })
+    })*/
+    $(function () {
+        $('.prev-slide').on('click', function () {
+            $('#slide').carousel('prev')
+        })
+        $('.next-slide').on('click', function () {
+            $('#slide').carousel('next')
+        });
+        $(document).on('keydown', function (e) {
+            console.log(e.which);
+            switch (e.which){
+                case 37:
+                    $('#slide').carousel('prev');
+                    break;
+                case 39:
+                    $('#slide').carousel('next');
+                    break;
+                default:
+                    break;
+            }
+        });
+            var play=false;
+            $('.play-and-stop').click(function () {
+                if(play){
+                    $('#slide').carousel('pause')
+                    $(this).children('span').removeClass('glyphicon-pause').addClass('glyphicon-play')
+                }else{
+                    $('#slide').carousel('cycle')
+                    $(this).children('span').removeClass('glyphicon-play').addClass('glyphicon-pause')
+                }
+                play=!play;
+            })
+        $('#slide').on('slide.bs.carousel', function () {
+            console.log('播放幻灯片')
+        })
+        $('#slide').on('slid.bs.carousel', function () {
+            console.log('播放完成')
+        })
+    })
+</script>
+</html>

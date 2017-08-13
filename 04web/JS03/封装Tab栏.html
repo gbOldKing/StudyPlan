@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab{
+            width: 404px;
+            margin:100px auto;
+            border:1px solid #ccc;
+        }
+        .top{
+            height: 50px;
+            border-bottom:1px solid #ccc;;
+            line-height:50px;
+        }
+        .top span{
+            width: 100px;
+            float: left;
+            text-align: center;
+            border-right:1px solid #ccc;
+        }
+        .bcg{
+            background: sandybrown;
+        }
+        .bottom{
+            height:350px;
+        }
+        .bottom li {
+            height: 350px;
+            background: yellowgreen;
+            list-style:none;
+            display: none;
+        }
+        .bottom .current{
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload= function () {
+            function tab(flag){
+                var flag=document.getElementById(flag);
+                var spans=flag.getElementsByTagName('span');
+                var lis=flag.getElementsByTagName('li');
+
+                for(var i=0;i<spans.length;i++){
+                    spans[i].index=i;
+                    spans[i].onclick= function () {
+                        for(var j=0;j<spans.length;j++){
+                            spans[j].className='';
+                            lis[j].className='';
+                        }
+                        this.className='bcg';
+                        lis[this.index].className='current';
+                    }
+                }
+            }
+            tab("one");
+            tab("two");
+        }
+    </script>
+</head>
+<body>
+    <div class="tab" id="one">
+        <div class="top">
+            <span class="bcg">衣服</span>
+            <span>数码</span>
+            <span>家电</span>
+            <span style="border-right:none">美食</span>
+        </div>
+        <div class="bottom">
+            <ul>
+                <li class="current">衣服</li>
+                <li>数码</li>
+                <li>家电</li>
+                <li>美食</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab" id="two">
+        <div class="top">
+            <span class="bcg">衣服</span>
+            <span>数码</span>
+            <span>家电</span>
+            <span style="border-right:none">美食</span>
+        </div>
+        <div class="bottom">
+            <ul>
+                <li class="current">衣服</li>
+                <li>数码</li>
+                <li>家电</li>
+                <li>美食</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

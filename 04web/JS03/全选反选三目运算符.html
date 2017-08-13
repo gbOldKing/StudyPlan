@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选三目运算符</title>
+    <script>
+        window.onload= function () {
+            var Abtn=document.getElementsByTagName('button');
+            var Ainput=document.getElementsByTagName('input');
+            function check(flag){
+                for(var i=0;i<Ainput.length;i++){
+                    Ainput[i].checked=flag;
+                }
+            }
+            Abtn[0].onclick=function(){
+                check(true);
+            };
+            Abtn[1].onclick=function(){
+                check(false)
+            };
+            Abtn[2].onclick=function(){
+                for(var i=0;i<Ainput.length;i++){
+                    Ainput[i].checked==true? Ainput[i].checked=false:Ainput[i].checked=true;
+                }
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+<div class="top">
+    <button>全选</button>
+    <button>全取消</button>
+    <button>反选</button>
+</div>
+<div class="bottom">
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+</div>
+</body>
+</html>

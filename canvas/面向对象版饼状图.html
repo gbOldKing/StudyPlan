@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <canvas id="canvas">
+            你的浏览器版本较低，请升级浏览器版本
+        </canvas>
+    </div>
+<script src="lib/konva/konva.js"></script>
+<script src="js/PieChart.js"></script>
+<script>
+    var stage=new Konva.Stage({
+        container:'container',
+        width:window.innerWidth,
+        height:window.innerHeight
+    });
+    var layer=new Konva.Layer();
+    stage.add(layer);
+    //中心点坐标
+    var cenX=stage.width()/ 2;
+    var cenY=stage.height()/2;
+    var data = [
+        { name: "前端", value: .25, color: '#e0e'  },
+        { name: "php",  value: .2,  color: 'orange'},
+        { name: "UI",	value: .3,	color: 'blue'  },
+        { name: "C++",	value: .05,	color: 'green' },
+        { name: "游戏",	value: .1,	color: 'purple'},
+        { name: "Java",	value: .1,	color: 'red'   }
+    ];
+
+    var p=new PieChart({
+        x:cenX,
+        y:cenY,
+        r:100,
+        data:data
+    });
+    p.addToGroupOrLayer(layer);
+    p.playAnimate();
+    layer.draw();
+</script>
+</body>
+</html>

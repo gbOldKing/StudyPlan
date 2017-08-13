@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var txt="你好嘛nnnn";
+        var len=0;
+        function getStringLength(ss){
+            for(var i=0;i<ss.length;i++){
+                if(ss[i].charCodeAt()>=0&&ss[i].charCodeAt()<=127){
+                    len++
+                }else{
+                    len+=2;
+                }
+            }
+            return len;
+        }
+        alert(getStringLength(txt))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制坐标系</title>
+</head>
+<body>
+<div class="container" style="margin:100px auto; width: 600px">
+    <canvas id="canvas">
+        你的浏览器版本较低，请升级浏览器版本
+    </canvas>
+</div>
+
+<script>
+    (function(){
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+        canvas.width=600;
+        canvas.height=600;
+
+        var x0=100;
+        var y0=400;
+        var maxHeight=300;
+        var arrowWith=8;//箭头宽度
+
+        //绘制X轴
+        ctx.moveTo(x0,y0);
+        ctx.lineTo(500,400);
+        ctx.lineTo(500-arrowWith,400-arrowWith);
+        ctx.moveTo(500,400);
+        ctx.lineTo(500-arrowWith,400+arrowWith);
+        ctx.stroke();
+
+        //绘制Y轴
+        ctx.beginPath();
+        ctx.moveTo(x0,y0);
+        ctx.lineTo(100,0);
+        ctx.lineTo(100-arrowWith,arrowWith);
+        ctx.moveTo(100,0);
+        ctx.lineTo(100+arrowWith,arrowWith);
+        ctx.stroke();
+
+        ctx.beginPath();
+        var data= [.2,.6,.8,.6,.3,.5];
+        var pointWidth=400/(data.length+1);
+        for(var i=0;i<data.length;i++){
+            var x=x0+(i+1)*pointWidth;
+            var y= y0 -data[i]*maxHeight;
+            ctx.lineTo(x,y);
+        }
+        ctx.strokeStyle='green'
+        ctx.stroke();
+    }())
+</script>
+</body>
+</html>

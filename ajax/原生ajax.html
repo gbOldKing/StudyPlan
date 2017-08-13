@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生ajax</title>
+
+</head>
+<body>
+<form>
+
+    <label for="userName">用户名</label>
+    <input type="text" id="userName">
+    <label for="password">密码</label>
+    <input type="text" id="password">
+    <button id="btn">登录</button>
+</form>
+<script>
+    window.onload= function () {
+        var btn=document.getElementById('btn');
+        btn.onclick= function () {
+            var user=document.getElementById('userName').value;
+            var pwd=document.getElementById('password').value;
+            var xhr=null;
+            if(XMLHttpRequest){
+                xhr=new XMLHttpRequest();
+            }else{
+                xhr=new ActiveXObject(Microsoft.XMLhttp);
+            }
+            var url='./check.php?username='+user+' & password='+pwd+'';
+            xhr.open('get',url,true);
+            xhr.onreadystatechange= function () {
+                if(xhr.readyState==4){
+                    if(xhr.status==200){
+                        var data=xhr.responseText;
+                        if(data==1){
+                            alert('成功')
+                        }else if(data==2){}
+                        alert('失败');
+                    }
+                }
+            };
+            xhr.send();
+        }
+    }
+</script>
+</body>
+</html>

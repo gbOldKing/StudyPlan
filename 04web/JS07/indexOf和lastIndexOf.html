@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload= function () {
+            function $(id){return document.getElementById(id)}
+            $("btn1").onclick= function () {
+                alert($('txt1').value.indexOf($('txt2').value));//返回匹配字符的索引位置，如匹配不到返回-1
+            }
+            $('btn2').onclick= function () {
+                alert($('txt1').value.lastIndexOf($('txt2').value))
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="txt1">
+<input type="text" id="txt2">
+<button id="btn1">indexof</button>
+<button id="btn2">lastIndexOf</button>
+</body>
+</html>

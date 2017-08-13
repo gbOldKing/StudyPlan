@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>理解基于状态的绘图</title>
+</head>
+<body>
+<div class="container">
+    <canvas id="canvas">
+        你的浏览器版本较低，请升级浏览器版本
+    </canvas>
+</div>
+
+<script>
+    (function(){
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+        canvas.width=600;
+        canvas.height=600;
+        canvas.style.border='1px solid #000'
+        ctx.lineWidth=10;
+        ctx.strokeStyle='red';
+        ctx.moveTo(100,100);
+        ctx.lineTo(300,100);
+        ctx.stroke();
+
+        ctx.beginPath();//开启新状态
+        ctx.lineWidth=20;
+        ctx.strokeStyle='green'
+        ctx.moveTo(100,200);
+        ctx.lineTo(300,200);
+        ctx.stroke();
+
+        ctx.beginPath();//开启新状态
+        ctx.lineWidth=30;
+        ctx.strokeStyle='purple'
+        ctx.moveTo(100,300);
+        ctx.lineTo(300,300);
+        ctx.stroke();
+    }())
+</script>
+</body>
+</html>

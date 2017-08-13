@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            font-size:30px;
+            color:red;
+            text-align: center;
+        }
+        a{
+            color:red;
+        }
+    </style>
+    <script>
+        window.onload= function () {
+            var box=document.getElementById('box');
+            var count= 6,speed=1000;
+            setTimeout(goIndexPage,speed);
+            function goIndexPage(){
+                count--;
+                box.innerHTML="<a href='http://www.baidu.com'>您访问的页面不存在，"+count+"秒后带您飞到首页去</a>";
+                if(count<=0){
+                    window.location.href="http://www.baidu.com"
+                }
+                else{
+                    setTimeout(arguments.callee,speed); //arguments.callee 返回的是正在执行的函数
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

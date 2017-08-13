@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>菜谱查询</title>
+	<!-- http://apis.juhe.cn/cook/query?key=3d052c29d7fbfdd61f4d852876bd9ed5&menu=西红柿&rn=10&pn=3 -->
+</head>
+<body>
+	<input type="text" id="txtSearch">
+	<input type="button" id="btn" value="查找">
+	<div class="menu" id="menu">
+		
+	</div>
+
+	<script src="jquery.js"></script>
+	<script>
+		$(function(){
+			$('#btn').click(function(){
+				var menu=$('#menu');
+				menu.text('正在加载')
+				var txt=$('#txtSearch').val();
+				console.log(txt);
+				txt=encodeURIComponent(txt);
+				console.log(txt);
+				var url='http://apis.juhe.cn/cook/query?key=3d052c29d7fbfdd61f4d852876bd9ed5&rn=5&pn=0&dtype=jsonp&menu='+txt;
+				$.ajax({
+					type:'get',
+					url:url,
+					dataType:'jsonp',
+					success:function(data){
+						menu.text('');
+						if(data.resultcode!=200){
+							menu.text('亲，没有查到对应菜谱');
+							return
+						}
+						for(var i=0;i<data.result.data.length;i++){
+							console.log(i);
+							var mydata=data.result.data[i];
+							var all=$('<div class="all"></div>');
+							menu.append(all);
+							var h2=$('<h3>'+mydata.title+'</h3>')
+							all.append(h2);
+							//简介
+							var p=$('<p>'+mydata.imtro+'</p>');
+							all.append(p);
+							//图片
+							for(var j=0;j<mydata.albums.length;j++){
+								var album=mydata.albums[j];
+								var img=$('<img src="'+album+'">');
+								all.append(img);
+							}
+							//主料
+							var zl=$('<p>主料：'+mydata.ingredients+'</p>');
+							all.append(zl);
+							var fl=$('<p>辅料：'+mydata.burden+'</p>');
+							all.append(fl);
+							//步骤
+							var steps=$('<div></div>');
+							all.append(steps);
+							for(var k=0;k<mydata.steps.length;k++){
+								var step=mydata.steps[k];
+/*								var xh=$('<em>'+(k+1)+'</em>')
+								steps.append(xh);*/
+								var c=$('<div></div>');
+								steps.append(c);
+								var p1=$('<p>'+step.step+'</p>');
+								c.append(p1);
+								var img2=$('<img src="'+step.img+'">');
+								c.append(img2);
+							}
+							menu.append('<hr>')
+						}
+
+
+					},
+					erroe:function(){
+						menu.text('错误');
+					}
+				})
+			});
+		})
+	</script>
+</body>
+</html>
