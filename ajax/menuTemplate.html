@@ -4,30 +4,33 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script id="tpl" type="text/html">
-        <% for(var i=0;i< data.length;i++){ %>
+        <% for (var i=0; i< data.length; i++) {  %>
             <div class="all">
-                <h3><%=data[i].title %></h3>
-                <p><%=data[i].imtro %></p>
-                <% for(var j=0;j< data[i].albums.length;j++){ %>
-                    <img src="<%=data[i].albums[j] %>" >
+                <h2><%= i+1 %>、<%= data[i].title %></h2>
+                <p class="intro"><%= data[i].imtro %></p>
+                <% for(var j=0; j< data[i].albums.length; j++)  { %>
+                    <img src=<%=data[i].albums[j]%>>
                 <% } %>
-                <p><%=data[i].ingredients %></p>
-                <p><%=data[i].burden %></p>
+                <p>主料：<%= data[i].ingredients %></p>
+                <p>辅料：<%= data[i].burden %></p>
                 <div>
-                    <% for(var k=0;j< data[i].steps.length;k++){ %>
-                        <p></p>
-                        <img src="">
+                    <% for(var k=0; k< data[i].steps.length; k++) { %>
+                    <div>
+                        <p><%= data[i].steps[k].step %></p>
+                        <p><img src=<%=data[i].steps[k].img%>></p>
+                    </div>
                     <% } %>
                 </div>
             </div>
+            <hr >
         <% } %>
     </script>
+
 </head>
 <body>
     <input type="text" id="txtSearch">
     <input type="button" id="btn" value="查找">
     <div class="menu" id="menu"></div>
-
 
 <script src="jquery.js"></script>
 <script src="template-native-debug.js"></script>
@@ -35,12 +38,10 @@
     $(function () {
         $('#btn').click(function () {
             var menu = $('#menu');
-            menu.text('正在加载')
+            menu.text('正在加载');
             var txt = $('#txtSearch').val();
-            console.log(txt);
             txt = encodeURIComponent(txt);
-            console.log(txt);
-            var url = 'http://apis.juhe.cn/cook/query?key=3d052c29d7fbfdd61f4d852876bd9ed5&rn=5&pn=0&dtype=jsonp&menu=' + txt;
+            var url = 'http://apis.juhe.cn/cook/query?key=3d052c29d7fbfdd61f4d852876bd9ed5&rn=10&pn=0&dtype=jsonp&menu=' + txt;
             $.ajax({
                 type: 'get',
                 url: url,
