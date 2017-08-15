@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$watch</title>
+    <style>
+        td{
+            height: 30px;
+        }
+        input{
+            height: 30px;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="WorldController">
+    <table width="400" border="1" style="border-collapse:collapse;text-align: center;margin: 100px auto;">
+        <tr>
+            <td>账号</td>
+            <td><input ng-model="user.username" type="text" placeholder="请输入用户名" style="width: 100%; border: none"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input ng-model="user.password" type="password" placeholder="请输入密码" style="width: 100%; border: none"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button ng-click="login()" style="width: 200px;" type="submit" value="登录">登录</button></td>
+        </tr>
+        <tr>
+            <td colspan="2">{{message}}</td>
+        </tr>
+    </table>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        var app=angular.module('myApp',[]);
+        app.controller('WorldController',['$scope', function ($scope) {
+            $scope.user={
+                username:'',
+                password:''
+            };
+            $scope.login= function () {
+                console.log($scope);
+            };
+            $scope.message='请输入账号';
+            $scope.$watch('user.username', function (now, old) {
+                console.log('now is'+now);
+                console.log('old is'+old);
+                if(now){
+                    if(now.length<7){
+                        $scope.message='输入的账号长度不够'
+                    }else{
+                        $scope.message=''
+                    }
+                }else{
+                    $scope.message='请输入用户名'
+                }
+            });
+        }])
+    </script>
+</body>
+</html>
