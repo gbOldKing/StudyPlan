@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-class</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .green{
+            color:green;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+<ul ng-controller="Listcontroller">
+    <!--class="{{$even?'red':'green'}}"-->
+    <li ng-repeat="item in xiaohei" data-id="{{item.id}}" ng-class="{'red':$even,'green':$odd}">
+        <strong>{{item.name}}</strong>&nbsp;&nbsp;<span>年龄：{{item.age}}</span>
+    </li>
+</ul>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    angular.module('myApp',[])
+            .controller('Listcontroller', function ($scope) {
+                $scope.xiaohei=[];
+                for(var i=0;i<10;i++){
+                    //此处$scope.xiaohei.lenght=i
+                    $scope.xiaohei[$scope.xiaohei.length]={
+                        id:i,
+                        name:'赵小黑'+i,
+                        age:20+i
+                    };
+                }
+            })
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-class</title>
+    <style>
+        .red{
+            background:red;
+        }
+        .green{
+            background:green;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            transition:background-color 1s ease;
+        }
+    </style>
+</head>
+<body ng-app>
+<label for="bcg"></label>
+<select ng-model="style" name="bcg" id="bcg">
+    <option value="">请选择</option>
+    <option value="red">红色</option>
+    <option value="green">绿色</option>
+</select>
+   <!-- <div id="box" ng-class="style"></div>-->
+    <div id="box" ng-class="{'red':style=='red','green':style=='green'}"></div>
+<script src="node_modules/angular/angular.js"></script>
+</body>
+</html>
