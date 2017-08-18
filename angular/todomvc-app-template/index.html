@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+		<!-- CSS overrides - remove if you don't need it -->
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+	<body ng-app="MyTodoMvc">
+		<section class="todoapp" ng-controller="MainController">
+			<header class="header">
+				<h1>todos</h1>
+				<form ng-submit="add()">
+					<input class="new-todo" ng-model="text" placeholder="你想做啥？" autofocus>
+				</form>
+			</header>
+			<section class="main">
+				<input id="toggle-all" class="toggle-all" type="checkbox" ng-click="toggleAll()">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul class="todo-list">
+					<li ng-repeat="item in todos" ng-class="{completed:item.completed,editing:item.id==currentEditingId}" data-id="{{item.id}}">
+						<div class="view">
+							<input class="toggle" type="checkbox" ng-model="item.completed" >
+							<label ng-dblclick="editing(item.id)">{{item.text}}</label>
+							<button class="destroy" ng-click="remove(item.id)"></button>
+						</div>
+						<form ng-submit="save()">
+							<input class="edit" ng-model="item.text">
+						</form>
+					</li>
+				</ul>
+			</section>
+			<footer class="footer">
+				<span class="todo-count"><strong>{{todos.length}}</strong> item left</span>
+				<ul class="filters">
+					<li>
+						<a class="selected" href="#/">All</a>
+					</li>
+					<li>
+						<a href="#/active">Active</a>
+					</li>
+					<li>
+						<a href="#/completed">Completed</a>
+					</li>
+				</ul>
+				<button class="clear-completed" ng-click="clear()" ng-show="existCompleted()">clear completed</button>
+			</footer>
+		</section>
+		<footer class="info">
+			<p>Double-click to edit a todo</p>
+			<!-- Remove the below line ↓ -->
+			<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+			<!-- Change this out with your name and url ↓ -->
+			<p>Created by <a href="http://todomvc.com">you</a></p>
+			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+		</footer>
+		<!-- Scripts here. Don't remove ↓ -->
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
