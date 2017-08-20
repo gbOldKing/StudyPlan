@@ -108,3 +108,57 @@ body {
 .list-group .media{
 	margin-top:0;
 }
+
+
+/*css 3 loading*/
+.mask{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 9999;
+	background: rgba(0,0,0,.5);
+}
+.loading{
+	width: 150px;
+	height: 4px;
+	border-radius: 2px;
+	margin: 200px auto;
+	position: relative;
+	background: lightgreen;
+	-webkit-animation: changeBgColor 1.04s ease-in infinite alternate;
+}
+.loading span{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: lightgreen;
+	position: absolute;
+	margin-top: -7px;
+	margin-left:-8px;
+	-webkit-animation: changePosition 1.04s ease-in infinite alternate;
+}
+@-webkit-keyframes changeBgColor{
+	0%{
+		background: lightgreen;
+	}
+	100%{
+		background: lightblue;
+	}
+}
+@-webkit-keyframes changePosition{
+	0%{
+		background: lightgreen;
+	}
+	100%{
+		margin-left: 142px;
+		background: lightblue;
+	}
+}
+
+/*go page*/
+.pagination a{
+	cursor:pointer;
+}

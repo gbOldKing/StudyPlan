@@ -1,0 +1,56 @@
+<h1 class="page-header">{{title}}</h1>
+<h2 ng-if="message">{{message}}</h2>
+<ul class="list-group">
+	<li ng-repeat="item in subjects" class="list-group-item">
+		<span class="badge">{{item.rating.average}}</span>
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<img class="media-object" ng-src={{item.images.medium}} alt={{item.title}}>
+				</a>
+			</div>
+			<div class="media-body">
+				<h3 class="media-heading">{{item.title}}</h3>
+				<p>导演：
+					<span ng-repeat="daoyan in item.directors">{{daoyan.name}}
+						<i ng-if="!$last">、</i>
+					</span>
+				</p>
+				<p>类型：<span>{{item.genres.join('、')}}</span></p>
+				<p>主演：
+					<span ng-repeat="zhuyao in item.casts">{{zhuyao.name}}
+						<i ng-if="!$last">、</i>
+					</span>
+				</p>
+				<p>上映年份：{{item.year}}</p>
+			</div>
+		</div>
+	</li>
+</ul>
+	<div ng-if="totalCount>0" class='clearfix' style="line-height:34px;">
+		<span class="pull-left hidden-xs">总共查找到：{{totalCount}}条记录</span>
+		<span class="pull-right ">第{{pageIndex+1}}/{{totalPages}}页</span>
+		<ul class="pagination pull-right" style="margin:0 10px">
+			<li ng-class="{disabled:pageIndex<=0}" class="">
+				<a ng-click="goPage(pageIndex-1)" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			<li ng-class="{active:pageIndex==0}" ng-click="goPage(0)"><a>1</a></li>
+			<li ng-class="{active:pageIndex==1}" ng-click="goPage(1)"><a>2</a></li>
+			<li ng-class="{active:pageIndex==2}" ng-click="goPage(2)"><a>3</a></li>
+			<li ng-class="{active:pageIndex==3}" ng-click="goPage(3)"><a>4</a></li>
+			<li ng-class="{active:pageIndex==4}" ng-click="goPage(4)"><a>5</a></li>
+			<li ng-class="{disabled:pageIndex>=totalPages-1}">
+				<a ng-click="goPage(pageIndex+1)" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+<div class="mask" ng-hide="totalCount>0">
+	<div class="loading">
+		<span></span>
+	</div>
+</div>
+

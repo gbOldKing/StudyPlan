@@ -39,10 +39,10 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-3 col-md-2 sidebar">
-			<ul class="nav nav-sidebar">
-				<li class="active"><a href="#/in_theaters">正在热映</a></li>
-				<li><a href="#/coming_soon">即将上映</a></li>
-				<li><a href="#/top250">TOP250</a></li>
+			<ul class="nav nav-sidebar" ng-controller="navController">
+				<li ng-class="{active:type=='in_theaters'}"><a href="#/in_theaters/0">正在热映</a></li>
+				<li ng-class="{active:type=='coming_soon'}"><a href="#/coming_soon/0">即将上映</a></li>
+				<li ng-class="{active:type=='top250'}"><a href="#/top250/0">TOP250</a></li>
 			</ul>
 		</div>
 		<div ng-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -53,8 +53,7 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <!--主模块-->
 <script src="app.js"></script>
-<script src="in_theaters/controller.js"></script>
-<script src="coming_soon/controller.js"></script>
-<script src="top250/controller.js"></script>
+<script src="components/http.js"></script>
+<script src="movie_list/controller.js"></script>
 </body>
 </html>
