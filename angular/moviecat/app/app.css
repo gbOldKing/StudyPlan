@@ -162,3 +162,7 @@ body {
 .pagination a{
 	cursor:pointer;
 }
+.container-fluid .poster{
+	margin-top: -20px;
+	padding: 20px
+}

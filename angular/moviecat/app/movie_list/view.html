@@ -5,7 +5,7 @@
 		<span class="badge">{{item.rating.average}}</span>
 		<div class="media">
 			<div class="media-left">
-				<a href="#">
+				<a href="#/detail/{{item.id}}">
 					<img class="media-object" ng-src={{item.images.medium}} alt={{item.title}}>
 				</a>
 			</div>
@@ -27,7 +27,7 @@
 		</div>
 	</li>
 </ul>
-	<div ng-if="totalCount>0" class='clearfix' style="line-height:34px;">
+	<div ng-show="!loading" class='clearfix' style="line-height:34px;">
 		<span class="pull-left hidden-xs">总共查找到：{{totalCount}}条记录</span>
 		<span class="pull-right ">第{{pageIndex+1}}/{{totalPages}}页</span>
 		<ul class="pagination pull-right" style="margin:0 10px">
@@ -48,7 +48,7 @@
 			</li>
 		</ul>
 	</div>
-<div class="mask" ng-hide="totalCount>0">
+<div class="mask" ng-show="loading">
 	<div class="loading">
 		<span></span>
 	</div>

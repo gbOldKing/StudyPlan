@@ -29,8 +29,8 @@
 				<li><a href="#">Profile</a></li>
 				<li><a href="#">Help</a></li>
 			</ul>
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search...">
+			<form ng-submit="search()" class="navbar-form navbar-right" ng-controller="SearchController">
+				<input type="text" class="form-control" placeholder="Search..." ng-model="input">
 			</form>
 		</div>
 	</div>
@@ -52,7 +52,9 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <!--主模块-->
+<script src="movie_detail/controller.js"></script>
 <script src="app.js"></script>
+
 <script src="components/http.js"></script>
 <script src="movie_list/controller.js"></script>
 </body>

@@ -3,10 +3,18 @@
 // Declare app level module which depends on views, and components
 angular.module('moviecat', [
 	'ngRoute',
+	'moviecat.movie_detail',
 	'moviecat.movie_list',
-]).config(['$routeProvider', function($routeProvider) {
+])
+.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.otherwise({ redirectTo: '/in_theaters/0' });
-}]).controller('navController',[
+}])
+.constant('APPConfig',{
+		pageSize:10,
+		listApiAddress:'http://api.douban.com/v2/movie/',
+		detaiApiAddress:'http://api.douban.com/v2/movie/subject/'
+	})
+.controller('navController',[
 	'$scope',
 	'$location',
 	function ($scope, $location) {
@@ -21,5 +29,14 @@ angular.module('moviecat', [
 			}
 		})
 	}
-]);
+])
+.controller('SearchController',[
+	'$scope',
+	'$route',
+	function ($scope,$route) {
+	$scope.input='';
+	$scope.search= function () {
+		$route.updateParams({category:'search',q:$scope.input});
+	}
+}]);
 

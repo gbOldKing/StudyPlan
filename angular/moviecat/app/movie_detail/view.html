@@ -1,0 +1,10 @@
+<div class="jumbotron poster">
+	<h2 style="margin: 0 0 10px;">{{movie.title}}</h2>
+	<img ng-src="{{movie.images.large}}" alt="{{movie.title}}">
+	<p>{{movie.summary}}</p>
+</div>
+<div class="mask" ng-show="loading">
+	<div class="loading">
+		<span></span>
+	</div>
+</div>

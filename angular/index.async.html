@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步加载库</title>
+    <script src="bower_components/script.js/dist/script.js"></script>
+    <script>
+        $script('./bower_components/jquery/dist/jquery.js',
+            function () {
+                console.log($)
+            }
+        )
+    </script>
+</head>
+<body>
+</body>
+</html>
