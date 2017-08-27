@@ -1,0 +1,8 @@
+.h5_component{
+    position: absolute;
+    background-size: 100%;
+    background-repeat:no-repeat;
+}
+.h5_component_base{
+    transition:all .5s linear;
+}

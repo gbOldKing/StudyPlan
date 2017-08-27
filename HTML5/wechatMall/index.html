@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-add-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>wechatMall</title>
+    <link rel="apple-touch-icon-precomposed" href="images/haoroomsicon.jpg">
+    <link rel="apple-touch-startup-image" href="images/haoroomsicon.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-slide img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <ul class="navList">
+            <li id="n_0"><a href="#"><span class="active"></span></a></li>
+            <li id="n_1"><a href="#"><span></span></a></li>
+            <li id="n_2"><a href="#"><span></span></a></li>
+            <li id="n_3"><a href="#"><span></span></a></li>
+        </ul>
+    </nav>
+    <section class="indexslider" style="position: relative; top: 50px;">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/sliderbanner/1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/sliderbanner/2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/sliderbanner/3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/sliderbanner/4.jpg" alt="">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <script src="script/plugs/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    </script>
+</body>
+</html>

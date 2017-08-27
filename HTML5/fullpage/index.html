@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>fullpage</title>
+    <link rel="stylesheet" href="lib/fullPage/jquery.fullpage.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .component{
+            width: 50%;
+            height: 50px;
+            margin-bottom:20px;
+            background: #eee;
+            display: none;
+        }
+    </style>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="lib/fullPage/jquery.fullpage.js"></script>
+
+    <script>
+        $(function () {
+            var pages=$('.page');
+            $('#h5').fullpage({
+                'sectionsColor':['blue','yellowgreen','#254587'],
+                onLeave:function(index,nextIndex,direction){
+                    $('#h5').find('.page').eq(index-1).trigger('onLeave')
+                },
+                afterLoad: function (anchorLink,index) {
+                    $('#h5').find('.page').eq(index-1).trigger('onLoad')
+                }
+            });
+            pages.on('onLeave', function () {
+                $(this).find('.component').trigger('onLeave');
+            });
+            pages.on('onLoad', function () {
+                $(this).find('.component').trigger('onLoad');
+            });
+            $('.component').on('onLoad', function () {
+                $(this).fadeIn();
+                return false; //防止事件循环传播 --造成死循环
+            })
+            $('.component').on('onLeave', function () {
+                $(this).fadeOut();
+                return false;
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="h5">
+    <div class="page section" id="page-1">
+        <div class="component log">LOGO</div>
+        <div class="component slogan">Slogan</div>
+    </div>
+    <div class="page section" id="page-2">
+        <div class="component">描述信息</div>
+    </div>
+    <div class="page section" id="page-3">
+        <div class="component">柱状图</div>
+    </div>
+</div>
+</body>
+</html>
