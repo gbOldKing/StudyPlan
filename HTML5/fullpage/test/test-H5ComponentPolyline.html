@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>H5ComponentBase</title>
     <link rel="stylesheet" href="../css/H5ComponentBase.css">
-    <link rel="stylesheet" href="../css/H5ComponentBar.css">
+    <link rel="stylesheet" href="../css/H5ComponentPolyline.css">
     <style>
         body {
             margin: 0;
@@ -28,19 +28,19 @@
     </style>
     <script src="../lib/jquery/jquery.js"></script>
     <script src="../js/H5ComponentBase.js"></script>
-    <script src="../js/H5ComponentBar.js"></script>
+    <script src="../js/H5ComponentPolyline.js"></script>
 </head>
 <body>
-<!--用于开发测试 H5ComponentBar对象（基本图文组件）-->
+<!--用于开发测试 H5ComponentPolyline对象（折线图组件）-->
 <div class="iphone">
 
 </div>
 
 <script>
     var cfg = {
-        type: 'bar',
-        width: 680,
-        height: 300,
+        type: 'polyline',
+        width: 600,
+        height: 400,
         data: [
             ['HTML', .6, '#ff7676'],
             ['CSS', .5],
@@ -49,21 +49,12 @@
             ['bootstrap', .1],
             ['angularjs', .05]
         ],
-        animateIn:{
-            opacity:1,
-            top:200
-        },
-        animateOut:{
-            opacity:0,
-            top:0
-        },
-        css: {
-            top:0,
-            opacity: 0
+        css:{
+            top:150
         },
         center: true
     };
-    var h5 = new H5ComponentBar('bar', cfg);
+    var h5 = new H5ComponentPolyline('polyline', cfg);
     $('.iphone').append(h5);
     var leave = true;
     $('body').click(function () {
