@@ -1,0 +1,8 @@
+/*散点图表样式*/
+.h5_component_point .point{
+    display: block;
+    background: #cccccc;
+    position: absolute;
+    border-radius:50%;
+    text-align: center;
+}

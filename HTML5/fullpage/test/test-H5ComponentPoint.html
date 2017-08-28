@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>H5ComponentBase</title>
     <link rel="stylesheet" href="../css/H5ComponentBase.css">
+    <link rel="stylesheet" href="../css/H5ComponentPoint.css">
     <style>
         body{
             margin: 0;
@@ -26,6 +27,7 @@
     </style>
     <script src="../lib/jquery/jquery.js"></script>
     <script src="../js/H5ComponentBase.js"></script>
+    <script src="../js/H5ComponentPoint.js"></script>
 </head>
 <body>
     <!--用于开发测试 H5ComponentBase对象（基本图文组件）-->
@@ -35,27 +37,29 @@
 
     <script>
         var cfg={
-            type:'base',
-            text:'测试',
-            bg:'./p1_people.png',
-            width:514,
-            height:306,
+            type:'point',
+            width:300,
+            height:300,
+            data:[
+               ['A项',.4,'green'],
+               ['B项',.2,'red',0,'-50%'],
+               ['C项',.2,'yellow',0,'100%']
+            ],
             css:{
-                left:50,
                 bottom:0,
                 opacity:0
             },
-            center:true,
             animateIn:{
-                bottom:80,
+                bottom:'40%',
                 opacity:1
             },
             animateOut:{
                 bottom:0,
                 opacity:0
-            }
+            },
+            center:true,
         };
-        var h5=new H5ComponentBase('oldking',cfg);
+        var h5=new H5ComponentPoint('oldking',cfg);
         $('.iphone').append(h5);
         var leave=true;
         $('body').click(function () {
