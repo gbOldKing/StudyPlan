@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>H5ComponentBase</title>
     <link rel="stylesheet" href="../css/H5ComponentBase.css">
-    <link rel="stylesheet" href="../css/H5ComponentPolyline.css">
+    <link rel="stylesheet" href="../css/H5ComponentRadar.css">
     <style>
         body {
             margin: 0;
@@ -28,18 +28,18 @@
     </style>
     <script src="../lib/jquery/jquery.js"></script>
     <script src="../js/H5ComponentBase.js"></script>
-    <script src="../js/H5ComponentPolyline.js"></script>
+    <script src="../js/H5ComponentRadar.js"></script>
 </head>
 <body>
-<!--用于开发测试 H5ComponentPolyline对象（折线图组件）-->
+<!--用于开发测试 H5ComponentRadar对象（雷达图图组件）-->
 <div class="iphone">
 
 </div>
 
 <script>
     var cfg = {
-        type: 'polyline',
-        width: 600,
+        type: 'radar',
+        width: 400,
         height: 400,
         data: [
             ['HTML', .4, '#ff7676'],
@@ -49,20 +49,20 @@
             ['bootstrap', .35],
         ],
         css:{
-            top:0,
-            opacity:0
+            top:150,
+
         },
-        animateIn:{
+       /* animateIn:{
             top:150,
             opacity:1
         },
         animateOut:{
             top:0,
             opacity:0
-        },
+        },*/
         center: true
     };
-    var h5 = new H5ComponentPolyline('polyline', cfg);
+    var h5 = new H5ComponentRadar('radar', cfg);
     $('.iphone').append(h5);
     var leave = true;
     $('body').click(function () {

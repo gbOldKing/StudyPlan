@@ -24,12 +24,12 @@ var H5ComponentBase = function (name,cfg) {
     }
     component.on('onLoad', function () {
         component.addClass(cls+'_load').removeClass(cls+'_leave');
-        cfg.animateIn && component.animate(cfg.animateIn);
+        cfg.animateIn && component.stop(true).animate(cfg.animateIn);
         return false; //防止事件循环传播 --造成死循环
     });
     component.on('onLeave', function () {
         component.addClass(cls+'_leave').removeClass(cls+'_load');
-        cfg.animateOut && component.animate(cfg.animateOut);
+        cfg.animateOut && component.stop(true).animate(cfg.animateOut);
         return false;
     });
     return component;
