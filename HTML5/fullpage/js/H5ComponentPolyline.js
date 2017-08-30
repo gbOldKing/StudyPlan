@@ -35,6 +35,7 @@ var H5ComponentPolyline = function (name, cfg) {
     var ctxData = canvasData.getContext('2d');
     canvasData.width = w;
     canvasData.height = h;
+    ctxData.font="20 px Arial";
     component.append(canvasData);
     function drawData(per) {
         ctxData.beginPath();
