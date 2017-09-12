@@ -25,6 +25,12 @@ var H5ComponentPolyline = function (name, cfg) {
     for (var j = 0; j <= cfg.data.length + 1; j++) {
         ctx.moveTo(x0 * j, 0);
         ctx.lineTo(x0 * j, h);
+        if(cfg.data[j]){
+            var text=$('<span class="text">');
+            text.text(cfg.data[j][0]);
+            text.css('width',x0).css('left',x0*j/2);
+            component.append(text);
+        }
     }
     ctx.stroke();
     component.append(canvas);
@@ -35,7 +41,7 @@ var H5ComponentPolyline = function (name, cfg) {
     var ctxData = canvasData.getContext('2d');
     canvasData.width = w;
     canvasData.height = h;
-    ctxData.font="20 px Arial";
+    ctxData.font="30px Arial";
     component.append(canvasData);
     function drawData(per) {
         ctxData.beginPath();
@@ -55,7 +61,7 @@ var H5ComponentPolyline = function (name, cfg) {
         ctxData.beginPath();
         var beginX = w / (cfg.data.length + 1);
         var beginY = h - ((cfg.data[0][1]) * h * per);
-        ctx.moveTo(beginX, beginY);
+        ctxData.moveTo(beginX, beginY);
         for (var j = 0; j < cfg.data.length; j++) {
             var data = cfg.data[j];
             x = w / (cfg.data.length + 1) * (j + 1);
@@ -64,7 +70,6 @@ var H5ComponentPolyline = function (name, cfg) {
             ctxData.fillText((data[1] * 100 >> 0) + '%', x - 10, y - 15);
             ctxData.lineTo(x, y);
         }
-        ctxData.lineWidth = 3;
         ctxData.strokeStyle = '#ff8878';
         ctxData.stroke();
         //绘制阴影

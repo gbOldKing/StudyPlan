@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>H5ComponentBase</title>
     <link rel="stylesheet" href="../css/H5ComponentBase.css">
-    <link rel="stylesheet" href="../css/H5ComponentPolyline.css">
+    <link rel="stylesheet" href="../css/H5ComponentPie.css">
     <style>
         body {
             margin: 0;
@@ -28,41 +28,43 @@
     </style>
     <script src="../lib/jquery/jquery.js"></script>
     <script src="../js/H5ComponentBase.js"></script>
-    <script src="../js/H5ComponentPolyline.js"></script>
+    <script src="../js/H5ComponentPie.js"></script>
 </head>
 <body>
-<!--用于开发测试 H5ComponentPolyline对象（折线图组件）-->
+<!--用于开发测试 H5ComponentPie对象（饼状图组件）-->
 <div class="iphone">
 
 </div>
 
 <script>
     var cfg = {
-        type: 'polyline',
-        width: 600,
+        type: 'pie',
+        width: 400,
         height: 400,
         data: [
-            ['HTML', .4, '#ff7676'],
-            ['CSS', .1],
-            ['PHP', .2],
-            ['java',.05],
-            ['.net', .35],
+            ['HTML', .2],
+            ['CSS', .2],
+            ['Javascript', .2],
+            ['jquery', .2],
+            ['bootstrap', .1],
+            ['angular',.1]
         ],
-        css:{
-            top:0,
-            opacity:0
+        css: {
+            top: 150,
+           /* opacity: 0*/
+
         },
-        animateIn:{
-            top:150,
-            opacity:1
+       /* animateIn: {
+            top: 150,
+            opacity: 1
         },
-        animateOut:{
-            top:0,
-            opacity:0
-        },
+        animateOut: {
+            top: 0,
+            opacity: 0
+        },*/
         center: true
     };
-    var h5 = new H5ComponentPolyline('polyline', cfg);
+    var h5 = new H5ComponentPie('pie', cfg);
     $('.iphone').append(h5);
     var leave = true;
     $('body').click(function () {

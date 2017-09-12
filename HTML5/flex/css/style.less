@@ -1,0 +1,157 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: #F6F6F6;
+}
+a{
+  text-decoration:none;
+}
+header{
+  width:100vw;
+  height:13vw;
+  color: #fff;
+  background: linear-gradient(30deg,#2e9afe,#c9010e,red,orange,red,#c9010e);
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding:0 3vw;
+  box-sizing:border-box;
+  .hd_logo{
+    width: 35vw;;
+  }
+  a{
+    color:#fff;
+    span{
+      width:6vw;
+    }
+  }
+}
+#ad{
+  width:100vw;
+  height: 8vw;
+  line-height:8vw;
+  background: linear-gradient(35deg,#2e9afe,#c9010e,blue,orange,gray,#c9010e);
+  color:#fff;
+  padding:0 10px;
+}
+
+nav{
+  width: 100vw;
+  height: 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  a{
+    flex-grow:1;
+    line-height: 10vw;
+    text-align: center;
+    color:#6e6e6e;
+    font-size:4.5vw;
+    i{
+      display: block;
+      font-weight:700;
+      transform:rotate(180deg);
+      color:#6e6e6e;
+    }
+  }
+  a:nth-child(1){
+    color:#ff3333;
+  }
+}
+
+#lunbo{
+  img{
+    width:100vw;
+  }
+}
+#tuzhan {
+  .tuzhan_title {
+    width: 100vw;
+    color: #404040;
+    font-size: 4.5vw;
+    line-height: 10vw;
+    padding-left: 2vw;
+  }
+  .tuzhan_content {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    a {
+      flex-basis: 32%;
+      img {
+        width: 100%;
+        height: 100%
+      }
+    }
+  }
+}
+.pub_time {
+  height: 10vw;
+  padding: 0 2vw;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3.5vw;
+  color: #888;
+  line-height: 10vw;
+  .time_left {
+    span {
+      padding: 0.8vw;
+      border: 1px solid #f33;
+      color: #f33;
+      border-radius: 5px;
+    }
+  }
+}
+
+.newslist{
+  width: 100vw;
+  padding-bottom: 2vw;
+  section{
+    width: 96vw;
+    margin: 0 auto;
+    border-top:1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding:0.8vw 0;
+    .list_left{
+      width: 25vw;
+      padding:0.2vw;
+      border:1px solid #ccc;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .list_right{
+      width: 70vw;
+      height: 20vw;
+      background: #ccc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2{
+        color:#404040;
+        font-size:4.5vw;
+        text-align: center;
+      }
+    }
+  }
+  section:last-child{
+    border-bottom: 1px solid #ccc;
+  }
+}
+footer{
+  width: 100vw;
+  height: 10vw;
+  text-align: center;
+  color:#999;
+  font-size:3vw;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

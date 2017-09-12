@@ -42,24 +42,26 @@
         width: 400,
         height: 400,
         data: [
-            ['HTML', .4, '#ff7676'],
-            ['CSS', .1],
-            ['Javascript', .2],
-            ['jquery',.05],
-            ['bootstrap', .35],
+            ['HTML', .8, '#ff7676'],
+            ['CSS', .8],
+            ['Javascript', .7],
+            ['jquery', .7],
+            ['bootstrap', .8],
+            ['angular',.9]
         ],
-        css:{
-            top:150,
+        css: {
+            top: 0,
+            opacity: 0
 
         },
-       /* animateIn:{
-            top:150,
-            opacity:1
+        animateIn: {
+            top: 150,
+            opacity: 1
         },
-        animateOut:{
-            top:0,
-            opacity:0
-        },*/
+        animateOut: {
+            top: 0,
+            opacity: 0
+        },
         center: true
     };
     var h5 = new H5ComponentRadar('radar', cfg);

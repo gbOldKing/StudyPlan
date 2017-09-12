@@ -19,15 +19,22 @@ var H5ComponentBase = function (name,cfg) {
         component.css({
             position: 'absolute',
             marginLeft:(cfg.width/4*-1)+'px',
-            left:'50%'
+            left:'50%',
         })
     }
+    if(typeof cfg.onclick=='function'){
+        component.on('click',cfg.onclick);
+    }
     component.on('onLoad', function () {
-        component.addClass(cls+'_load').removeClass(cls+'_leave');
-        cfg.animateIn && component.stop(true).animate(cfg.animateIn);
+        setTimeout(function () {
+            component.addClass(cls+'_load').removeClass(cls+'_leave');
+            cfg.animateIn && component.stop(true).animate(cfg.animateIn);
+        },cfg.delay || 0);
         return false; //防止事件循环传播 --造成死循环
+
     });
     component.on('onLeave', function () {
+
         component.addClass(cls+'_leave').removeClass(cls+'_load');
         cfg.animateOut && component.stop(true).animate(cfg.animateOut);
         return false;
