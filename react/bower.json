@@ -1,0 +1,17 @@
+{
+  "name": "react",
+  "homepage": "https://github.com/gbOldKing/StudyPlan",
+  "authors": [
+    "oldking <261812135@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

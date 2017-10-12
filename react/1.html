@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react</title>
+	<script src="bower_components/babel/browser.js"></script>
+	<script src="bower_components/react/react.development.js"></script>
+	<script src="bower_components/react/react-dom.development.js"></script>
+	<script type="text/babel">
+		class Comp extends React.Component{
+			constructor(...args){
+                super(...args);
+                this.state={value:''};
+            }
+            fn(ev){
+                this.setState({
+                    value:ev.target.value
+                })
+            }
+            render(){
+                return <div>
+                        <input type='text' onChange={this.fn.bind(this)} />
+                        <span>{this.state.value}</span>
+                        </div>;
+            }
+		}
+        window.onload= function () {
+            ReactDOM.render(
+                    <Comp/>,
+                    document.getElementById('div')
+            )
+        }
+	</script>
+</head>
+<body>
+	<div id="div"></div>
+</body>
+</html>

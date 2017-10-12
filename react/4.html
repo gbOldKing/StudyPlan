@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clock</title>
+    <script src="bower_components/babel/browser.js"></script>
+    <script src="bower_components/react/react.development.js"></script>
+    <script src="bower_components/react/react-dom.development.js"></script>
+    <script type="text/babel">
+        class Clock extends React.Component{
+           constructor(...args){
+               super(...args);
+               this.state={h:0,m:0,s:0};
+               var _this=this;
+               setInterval(function () {
+                   _this.tick();
+               },1000);
+           }
+            componentDidMount(){
+                this.tick();
+            };
+            componentWillUpdate(){
+                console.log('更新之前');
+            }
+            componentDidUpdate(){
+                console.log('更新之后');
+            }
+            tick(){
+                var oDate=new Date();
+                this.setState({
+                    h:oDate.getHours(),
+                    m:oDate.getMinutes(),
+                    s:oDate.getSeconds()
+                });
+            }
+           render(){
+               return <div>
+                       <span>{this.state.h}</span>:
+                       <span>{this.state.m}</span>:
+                       <span>{this.state.s}</span>
+                       </div>
+           }
+        }
+        window.onload= function () {
+            ReactDOM.render(
+                    <Clock/>,
+                    document.getElementById('div')
+            )
+        }
+    </script>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+</html>

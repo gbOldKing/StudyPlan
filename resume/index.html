@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>oldking</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mui.css">
+    <script src="js/mui.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <style type="text/css">
+        .swiper-slide {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .mui-backdrop {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: rgba(0,0,0,.5);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="mui-off-canvas-wrap mui-draggable">
+    <!-- 主页面容器 -->
+    <div class="mui-inner-wrap">
+        <!-- 侧边栏容器 -->
+        <aside class="mui-off-canvas-right" id="sidebar" style="background: #eee;">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll base-info" >
+                    <div class="myphoto">
+                        <img src="images/me.jpg" title="oldking" alt="相片">
+                    </div>
+                    <div class="myName">
+                        <h4>王贞兵</h4>
+                        <span>简历 | 个人资料</span>
+                    </div>
+                    <ul class="contact-way">
+                        <li>
+                            <a href="javascript:;" class="icon-phone">
+                                <span class="fa fa-phone"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="qq"  target="_paren" href="http://wpa.qq.com/msgrd?v=3&uin=261812135&site=qq&menu=yes">
+                                <span class="fa fa-qq"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="icon-weixin">
+                                <span class="fa fa-weixin"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="icon-weibo">
+                                <span class="fa fa-weibo"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="icon-github">
+                            <span class="fa fa-github"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="car">
+                        <div class="card-title-header">
+                            <span class="company">个人信息</span>
+                        </div>
+                        <div class="intention clearfix">
+                            <ul>
+                                <li>
+                                    <span class="fa fa-male">&nbsp;&nbsp;28岁</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-heart">&nbsp;&nbsp;已婚</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-car">&nbsp;&nbsp;C1证</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-flag">&nbsp;&nbsp;玉林</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="car">
+                        <div class="card-title-header">
+                            <span class="company">求职意向</span>
+                        </div>
+                        <div class="intention clearfix">
+                            <ul>
+                                <li>
+                                    <span class="fa fa-user">&nbsp;&nbsp;前端开发</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-archive">&nbsp;&nbsp;三年经验</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-clock-o">&nbsp;&nbsp;随时到岗</span>
+                                </li>
+                                <li>
+                                    <span class="fa fa-yen">&nbsp;&nbsp;5千 - 6千</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="car">
+                        <div class="card-title-header">
+                            <span class="company">教育背景</span>
+                        </div>
+                        <div class="intention education clearfix">
+                            <ul>
+                                <li>
+                                    <span class="fa fa-building"></span>&nbsp;&nbsp;广西交通职业技术学院
+                                </li>
+                                <li>
+                                    <span class="fa fa-comments"></span>&nbsp;&nbsp;计算机网络技术
+                                </li>
+                                <li>
+                                    <span class="fa fa-book"></span>&nbsp;&nbsp;大专</li>
+                                <li><span class="fa fa-trophy"></span>&nbsp;&nbsp;2011年毕业</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="call-me clearfix">
+                        <p>
+                            <b>Call me:</b>
+                            <a href="tel:15677180802">
+                                <span class="fa fa-phone"></span>&nbsp;15677180802
+                            </a>
+                        </p>
+                        <i class="fa fa-qrcode"></i>
+                    </div>
+                    <p>Copyright © 2017 oldking</p>
+                </div>
+            </div>
+        </aside>
+        <!-- 导航 -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><strong>oldKing'resume</strong></a>
+                </div>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="nav navbar-nav" style="margin-left: 50px;">
+                        <li class="nav-item active">
+                            <a href="#" data-index="0">
+                                <span class="glyphicon glyphicon-home" ></span>&nbsp;&nbsp;基本资料
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" data-index="1">
+                                <span class="glyphicon glyphicon-star" ></span>&nbsp;&nbsp;专业技能
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" data-index="2">
+                                <span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;工作经历
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" data-index="3">
+                                <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;项目经验
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" data-index="4">
+                                <span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;&nbsp;自我评价
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="nav navbar-nav navbar-right hidden-xs sidebar-switch" onclick="sidebar_toggle()">
+                        <hr>
+                        <hr>
+                        <hr>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- 主页面内容容器 -->
+        <div class="mui-backdrop"></div>
+        <div class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll" style="height:100%">
+                <div class="swiper-container swiper-container-v" id="swiper" style="height: 100%">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" id="index">
+                            <div class="sidebar-prompt" onclick="sidebar_toggle()">
+                                <span class="fa fa-angle-double-left"></span>
+                            </div>
+                            <div class="ani info" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s"
+                            swiper-animate-delay="0.3s">
+                                <div class="photo"></div>
+                                <p class="ani oldking" swiper-animate-effect="fadeInLeft"
+                                   swiper-animate-duration="1s" swiper-animate-delay="1s">王贞兵</p>
+                                <h1 class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="1s"
+                                    swiper-animate-delay="1s">简历 -
+                                    <span class="brand-heading">前端工程师</span>
+                                </h1>
+                                <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s"
+                                   swiper-animate-delay="2s">喜欢技术 · 热爱挑战</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="skill">
+                            <div class="slogan ani" swiper-animate-effect="flipInX" swiper-animate-duration="1s">专业技能</div>
+                            <div class="skill-title ani" swiper-animate-effect="bounceInDown" swiper-animate-duration=".5s"
+                                 swiper-animate-delay="0.3s">
+                                <h1>WHAT I CAN DO</h1>
+                                <h2>我能做什么</h2>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="skill-content col-sm-4 col-xs-4 col-md-2 ani" swiper-animate-effect="bounceInLeft"
+                                         swiper-animate-duration=".5s" swiper-animate-delay="0.8s">
+                                            <span class="fa fa-html5"></span>
+                                            <div class="skill-description">
+                                                <h4>web前端开发</h4>
+                                                <div class="description-content">
+                                                    <p>网站前端开发</p>
+                                                    <p>应用系统的页面制作</p>
+                                                    <p>实现良好的交互效果</p>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="skill-content col-sm-4 col-xs-4 col-md-2 ani" swiper-animate-effect="bounceInLeft"
+                                         swiper-animate-duration=".5s" swiper-animate-delay="1.1s">
+                                            <span class="fa fa-css3"></span>
+                                            <div class="skill-description">
+                                                <h4>移动前端开发</h4>
+                                                <div class="description-content">
+                                                    <p>移动前端开发</p>
+                                                    <p>手机/微信场景网站制作</p>
+                                                    <p>对hybrid app有一定了解</p>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="skill-content col-sm-4 col-xs-4 col-md-2 ani" swiper-animate-effect="bounceInLeft"
+                                         swiper-animate-duration=".5s" swiper-animate-delay="1.4s">
+                                            <span class="fa fa-sitemap"></span>
+                                            <div class="skill-description">
+                                                <h4>业务系统实施</h4>
+                                                <div class="description-content">
+                                                    <p>基于B/S架构的业务系统实施</p>
+                                                    <p>熟悉IIS，MSSQL等</p>
+                                                    <p>让业务办公轻松自如</p>
+                                                </div>
+                                            </div>
+
+                                    </div>
+                                    <div class="skill-content col-sm-4 col-xs-4 col-md-2 ani" swiper-animate-effect="bounceInLeft"
+                                         swiper-animate-duration=".5s" swiper-animate-delay="1.7s">
+                                            <span class="fa fa-dropbox"></span>
+                                            <div class="skill-description">
+                                                <h4>服务器运维</h4>
+                                                <div class="description-content">
+                                                    <p>熟悉win2003/2008服务器</p>
+                                                    <p>了解网络安全、病毒防护等</p>
+                                                    <p>熟悉TCP/IP协议，熟悉主流通用网络技术.</p>
+                                                </div>
+                                            </div>
+
+                                    </div>
+                                    <div class="skill-content col-sm-4 col-xs-4 col-md-2 ani" swiper-animate-effect="bounceInLeft"
+                                         swiper-animate-duration=".5s" swiper-animate-delay="2s">
+                                            <span class="fa fa-joomla"></span>
+                                            <div class="skill-description">
+                                                <h4>弱电系统实施</h4>
+                                                <div class="description-content">
+                                                    <p>弱电系统集成</p>
+                                                    <p>安防系统、综合布线等</p>
+                                                </div>
+                                            </div>
+
+                                    </div>
+                                    <div class="skill-content col-sm-4 col-xs-4 col-md-2 ani" swiper-animate-effect="bounceInLeft"
+                                         swiper-animate-duration=".5s" swiper-animate-delay="2.3s">
+                                        <span class="fa fa-shield"></span>
+                                        <div class="skill-description">
+                                            <h4>IT运维</h4>
+                                            <div class="description-content">
+                                                <p>熟悉网络部署</p>
+                                                <p>熟悉PC、办公设备维护</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-footnote ani" swiper-animate-effect="bounceInDown" swiper-animate-duration=".5s"
+                                 swiper-animate-delay="2.8s">One-stop Internet service
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="work-experience">
+                            <div class="slogan">工作经历</div>
+                            <div class="swiper-container swiper-container-h">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <div class="card-title">
+                                                <div class="card-title-header ani" swiper-animate-effect="fadeInLeft"
+                                                     swiper-animate-duration=".5s">
+                                                    <span class="company">广西晨星交通科技有限公司</span>
+                                                    <div class="myPosition" style="">
+                                                        <p><span class="glyphicon glyphicon-time"></span>&nbsp;2015年8月至今</p>
+                                                        <p><span class="glyphicon glyphicon-user"></span>&nbsp;前端开发工程师</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <ul>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        负责系统前端页面HTML5、CSS3、js的编写，解决web端和移动端适配问题等。
+                                                    </li>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        负责web服务器安装调试、系统运行环境搭建、系统上线及运行维护等工作。
+                                                    </li>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        负责管理和保证公司网络、服务器、台式机等基础设施的安全性、稳定性运行，规划、设计、记录、日常管理、服务监控、知识培训等工作
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <i class="info-card card-lt"></i>
+                                            <i class="info-card card-rt"></i>
+                                            <i class="info-card card-rb"></i>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <div class="card-title">
+                                                <div class="card-title-header ani" swiper-animate-effect="fadeInLeft"
+                                                     swiper-animate-duration=".5s">
+                                                    <span class="company">广西贝森科技有限公司</span>
+                                                    <div class="myPosition" style="">
+                                                        <p><span class="glyphicon glyphicon-time"></span>&nbsp;2014.3-2015-8</p>
+                                                        <p><span class="glyphicon glyphicon-user"></span>&nbsp;弱电工程师</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <ul>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        参与扶绥天网工程建设、监控中心机房建设及后期整改
+                                                    </li>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        负责企业网站建设、部署及后期维护更新
+                                                    </li>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        参与南宁烟草六县六城区安防系统建设，改造以及维保等工作
+                                                    </li>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        负责公司内部信息系统的维护管理
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <i class="info-card card-lt"></i>
+                                            <i class="info-card card-rt"></i>
+                                            <i class="info-card card-rb"></i>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <div class="card-title">
+                                                <div class="card-title-header ani" swiper-animate-effect="fadeInLeft"
+                                                     swiper-animate-duration=".5s">
+                                                    <span class="company">广西南宁蓝科商贸有限公司</span>
+                                                    <div class="myPosition" style="">
+                                                        <p><span class="glyphicon glyphicon-time"></span>&nbsp;2012.11月 - 2014.3</p>
+                                                        <p><span class="glyphicon glyphicon-user"></span>&nbsp;安防工程师</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <ul>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        支持销售人员完成各行业的售前技术服务工作，包括技术交流、需求分析、方案制作、投标等。
+                                                    </li>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        使用CAD绘制施工图纸
+                                                    </li>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        安防项目施工管理、进度把控、售后维护等工作
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <i class="info-card card-lt"></i>
+                                            <i class="info-card card-rt"></i>
+                                            <i class="info-card card-rb"></i>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card">
+                                            <div class="card-title">
+                                                <div class="card-title-header ani" swiper-animate-effect="fadeInLeft"
+                                                     swiper-animate-duration=".5s">
+                                                    <span class="company">南宁斯振电子有限公司</span>
+                                                    <div class="myPosition" style="">
+                                                        <p><span class="glyphicon glyphicon-time"></span>&nbsp;2011年6月 - 2012年10月</p>
+                                                        <p><span class="glyphicon glyphicon-user"></span>&nbsp;技术员</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <ul>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        负责青秀公安分局天网系统的维保
+                                                    </li>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        弱电系统网络部署与实施,安防监控系统实施维护
+                                                    </li>
+                                                    <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration=".5s"
+                                                        swiper-animate-delay=".5s">
+                                                        公司信息系统维护管理
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <i class="info-card card-lt"></i>
+                                            <i class="info-card card-rt"></i>
+                                            <i class="info-card card-rb"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                            <div class="p1">
+                                <div class="p1-container">
+                                    <ol>
+                                        <li class="active">
+                                            <span class="work-point"></span>
+                                            <span class="work-time">2015年8月</span>
+                                        </li>
+                                        <li>
+                                            <span class="work-point"></span>
+                                            <span class="work-time">2014年3月</span>
+                                        </li>
+                                        <li>
+                                            <span class="work-point"></span>
+                                            <span class="work-time">2012年11月</span>
+                                        </li>
+                                        <li>
+                                            <span class="work-point"></span>
+                                            <span class="work-time">2011年6月</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="cases">
+                            <div class="slogan ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5">项目经验</div>
+                            <div class="cases-title ani" swiper-animate-effect="bounceInDown" swiper-animate-duration=".5s"swiper-animate-delay="0.3s">
+                                <div class="swiper-cases-pagination"></div>
+                                <h1>CASES</h1>
+                                <h2>案例展示</h2>
+                            </div>
+                            <div class="swiper-container swiper-container-cases">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="cases-item">
+                                            <div class="item-img">
+                                                <div class="img-mask">
+                                                    <span class="fa fa-search"></span>
+                                                </div> 
+                                                <img src="images/case1.jpg" alt="">
+                                            </div>
+                                            <div class="item-description">
+                                                <h5>继续教育网站</h5>
+                                                <p>Html+Css+Jquery</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="cases-item">
+                                            <div class="item-img">
+                                                <div class="img-mask">
+                                                    <span class="fa fa-search"></span>
+                                                </div> 
+                                                <img src="images/case2.jpg" alt="">
+                                            </div>
+                                            <div class="item-description">
+                                                <h5>驾驶员理论学习系统</h5>
+                                                <p>技术:Html5+Css3+Jquery</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="cases-item">
+                                            <div class="item-img">
+                                                <div class="img-mask">
+                                                    <span class="fa fa-search"></span>
+                                                </div> 
+                                                <img src="images/case3.jpg" alt="">
+                                            </div>
+                                             <div class="item-description">
+                                                <h5>热映电影查询（豆瓣API）</h5>
+                                                <p>技术:Angular+Ajax+Jsonp</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="cases-item">
+                                            <div class="item-img">
+                                                <div class="img-mask">
+                                                    <span class="fa fa-search"></span>
+                                                </div> 
+                                                <img src="images/case4.jpg" alt="">
+                                            </div>
+                                            <div class="item-description">
+                                                <h5>某培训学员网站</h5>
+                                                <p>H技术:Html5+Wow.js+Bootstrap</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="cases-item">
+                                            <div class="item-img">
+                                                <div class="img-mask">
+                                                    <span class="fa fa-search"></span>
+                                                </div> 
+                                                <img src="images/case5.jpg" alt="">
+                                            </div>
+                                            <div class="item-description">
+                                                <h5>网站后台页面</h5>
+                                                <p>技术:Html5+Css3+Bootstrap</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="cases-item">
+                                            <div class="item-img">
+                                                <div class="img-mask">
+                                                    <span class="fa fa-search"></span>
+                                                </div>
+                                                <img src="images/case6.jpg" alt="">
+                                            </div>
+                                            <div class="item-description">
+                                                <h5>某企业官网</h5>
+                                                <p>技术:Html5+Css3+Bootstrap</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="case-more">
+                                <span>MORE</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="evaluation">
+                            <div class="slogan ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.5" swiper-animate-delay="1s">自我评价</div>
+                            <div class="ani evaluation-title " swiper-animate-effect="bounceInDown" swiper-animate-duration=".5s"swiper-animate-delay="0.3s">
+                                <h1>EVALUATION</h1>
+                                <h2>自我评价</h2>
+                            </div>
+                            <div class="swiper-container swiper-container-cases" style="width: 70%">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <p class="eva-icon">
+                                            <span class="fa fa-html5"></span>
+                                            <span class="fa fa-css3"></span>
+                                            <span class="fa fa-rs5"></span>
+                                        </p>
+                                       <div>
+                                            <p>精通DIV+CSS页面布局</p>
+                                            <p>熟练掌握HTML5+CSS3技术</p>
+                                            <p>熟练掌握javascript</p>
+                                       </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="eva-icon">
+                                            <span class="fa fa-mobile"></span>
+                                            <span class="fa fa-tablet"></span>
+                                            <span class="fa fa-desktop"></span>
+                                        </p>
+                                       <div>
+                                            <p>掌握基于HTML5的webApp开发以及各种移动端适配</p>
+                                            <p>熟悉响应式布局和弹性盒布局，百分比自适应布局</p>
+                                            <p>掌握HTML5新API如canvas等</p>
+                                            <p>熟悉Jquery、bootstrap zepto等框架</p>
+                                       </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="eva-icon">
+                                            <span class="fa fa-apple"></span>
+                                            <span class="fa fa-android"></span>
+                                            <span class="fa fa-windows"></span>
+                                        </p>
+                                       <div>
+                                            <p>了解Css类库Sass技术、Less技术、</p>
+                                            <p>掌握Gulp、Grunt等构建化工具</p>
+                                            <p>对Angular、React有一定了解</p>
+                                       </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="eva-icon">
+                                            <span class="fa fa-html5"></span>
+                                            <span class="fa fa-css3"></span>
+                                            <span class="fa fa-rs5"></span>
+                                        </p>
+                                       <div>
+                                            <p>对C#语言有一定了解</p>
+                                            <p>熟悉IIS、MSSQL的使用</p>
+                                            <p>熟悉npm包管理工具</p>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                        <div class="swiper-slide" id="contact">
+                            <div class="container">
+                                <form class="contact-form clearfix">
+                                    <fieldset class='alpha col-md-8 col-md-offset-2'>
+                                        <legend>contact me</legend>
+                                        <div class='frow input-group'>
+                                             <span class="input-group-addon">
+                                                 <i class="fa fa-user"></i>
+                                             </span>
+                                            <input class='form-control' placeholder='Username' type='text'>
+                                        </div>
+                                        <div class='frow input-group'>
+                                             <span class="input-group-addon">
+                                                 <i class="fa fa-envelope"></i>
+                                             </span>
+                                            <input class='form-control' placeholder='Email' type='text'>
+                                        </div>
+                                        <div class='frow input-group'>
+                                             <span class="input-group-addon">
+                                                 <i class="fa fa-lock"></i>
+                                             </span>
+                                            <input class=' form-control' placeholder='Password' type='text'>
+                                        </div>
+                                        <div class='frow'>
+                                            <button class='submit next-step'>Let's go!</button>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class='beta col-md-8 col-md-offset-2' >
+                                        <legend>123</legend>
+                                        <div class='frow input-group'>
+                                             <span class="input-group-addon">
+                                                 <i class="fa fa-qq"></i>
+                                             </span>
+                                            <input class='form-control' placeholder='Username' type='text'>
+                                        </div>
+                                        <div class='frow input-group'>
+                                             <span class="input-group-addon">
+                                                 <i class="fa fa-qq"></i>
+                                             </span>
+                                            <input class='form-control' placeholder='Email' type='text'>
+                                        </div>
+                                        <div class='frow input-group'>
+                                             <span class="input-group-addon">
+                                                 <i class="fa fa-qq"></i>
+                                             </span>
+                                            <input class=' form-control' placeholder='Password' type='text'>
+                                        </div>
+                                        <div class='frow'>
+                                            <button class='submit prev-step'>Go back!</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <div class="copyright">
+                                <p>Copyright © 2014-2017 oldking'resume,All Rights Reserved。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="next-page">
+    <p class="hidden-xs">scroll</p>
+    <span class="fa fa-angle-double-down"></span>
+</div>
+
+<script src="js/Jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

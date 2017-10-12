@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/babel/browser.js"></script>
+	<script src="bower_components/react/react.development.js"></script>
+	<script src="bower_components/react/react-dom.development.js"></script>
+	<script type="text/babel">
+		class Comp extends React.Component{
+			render(){
+				return <span>我的名字{this.props.name}</span>;
+			}
+		}
+		window.onload=function(){
+			var oDiv=document.getElementById('div');
+			ReactDOM.render(
+				<Comp name="oldking"/>,
+				oDiv
+				)
+		}
+	</script>
+</head>
+<body>
+	<div id="div"></div>
+</body>
+</html>

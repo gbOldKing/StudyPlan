@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>懒加载</title>
+    <script src="bower_components/babel/browser.js"></script>
+    <script src="bower_components/react/react.development.js"></script>
+    <script src="bower_components/react/react-dom.development.js"></script>
+    <style>
+		img{
+			width:101px;
+			height:101px;
+			margin:200px;
+			display:block;
+		}
+    </style>
+    <script type="text/babel">
+    	class LazyLoad extends React.Component{
+    		constructor(...args){
+    			super(...args)
+    			this.imgPath=this.props.imgs.split(',');
+			}
+			componentDidMount() {
+				const _this=this;
+				var imgs=_this.refs['div'].children;
+				var clientHeight=document.documentElement.clientHeight;
+				console.log(clientHeight)
+				for(var i=0;i<imgs.length;i++){
+					if(imgs[i].offsetTop<=clientHeight){
+						imgs[i].src=imgs[i].dataset.src;
+					}
+				}
+				window.onscroll=function(){
+					var st=document.documentElement.scrollTop || document.body.scrollTop;
+					for(var i=0;i<imgs.length;i++){
+						if(imgs[i].offsetTop<=(clientHeight+st-101)){
+							imgs[i].src=imgs[i].dataset.src;
+						}
+					}
+				}
+				
+			}
+    		render(){
+    			var arr=[];
+    			for(var i=0;i<this.imgPath.length;i++){
+    				arr.push(<img key={i} data-src={'images/'+this.imgPath[i] } alt="logo" />)
+    			}
+    			return <div ref='div'>{arr}</div>
+    		}
+    	}
+    	window.onload=function(){
+    		ReactDOM.render(
+				<LazyLoad imgs="1.png,2.png,3.png,4.png,5.png,6.png"/>,
+				document.getElementById('ok')
+    		)
+    	}
+    </script>
+</head>
+<body>
+	<ok-view id="ok"></ok-view>
+</body>
+</html>
