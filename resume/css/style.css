@@ -294,6 +294,32 @@ ul, ol, dl {
     font-size: 12px;
     color: #666;
 }
+.base-info .contact-way li{
+    position: relative;
+}
+.base-info .contact-way .tit{
+    position: absolute;
+    left: -30px;
+    bottom:-35px;
+    color: #333;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.base-info .contact-way li img{
+    position: absolute;
+    width: 100px;
+    left: 0;
+    bottom:-110px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.base-info .contact-way li:hover .tit{
+    opacity: 1
+}
+.base-info .contact-way li:hover img{
+    opacity: 1;
+}
 .base-info .card-title-header {
     height: 20px;
 }
@@ -1325,7 +1351,7 @@ form fieldset .frow:last-child {
     display: none;
   }
 }
-.in, .beta.in {
+.beta.in {
   z-index: 30;
   display: block;
   opacity: 0;
@@ -1385,7 +1411,7 @@ form fieldset .frow:last-child {
     opacity: 1;
   }
 }
-.alpha.in {
+ .alpha.in {
   z-index: 30;
   display: block;
   opacity: 0;
@@ -1394,8 +1420,8 @@ form fieldset .frow:last-child {
   -o-animation: in-prev 0.75s ease forwards 0.25s;
   animation: in-prev 0.75s ease forwards 0.25s;
 }
-
-@-webkit-keyframes in-prev {
+ 
+ @-webkit-keyframes in-prev {
   0% {
     -webkit-transform: translate3d(-150px, 0, 0);
     opacity: 0;
@@ -1414,17 +1440,6 @@ form fieldset .frow:last-child {
 
   100% {
     -moz-transform: translate3d(0px, 0, 0);
-    opacity: 1;
-  }
-}
-@-o-keyframes in-prev {
-  0% {
-    -o-transform: translate3d(-150px, 0, 0);
-    opacity: 0;
-  }
-
-  100% {
-    -o-transform: translate3d(0px, 0, 0);
     opacity: 1;
   }
 }
