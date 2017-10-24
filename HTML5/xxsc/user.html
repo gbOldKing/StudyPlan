@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>个人中心</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        .icon-set{
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            color: white;
+            padding: 0 .3rem;
+            font-size: .5rem;
+        }
+        .userInfo{
+            background: white;
+            overflow: hidden;
+            padding: 0 3%;
+            text-align: center;
+        }
+        .userInfo .userIcon{
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 1px #f4f4f4 solid;
+            border-radius: 50%;
+            display: block;
+            text-align: center;
+            margin: .25rem auto;
+            overflow: hidden;
+        }
+        .userInfo .userIcon img{
+            width: 100%;
+        }
+        .userList{
+            background: white;
+            overflow: hidden;
+            margin: .12rem 0;
+            text-align: center;
+        }
+        .userList li{
+            width: 33.33%;
+            float: left;
+            margin: .25rem 0;
+            box-sizing: border-box;
+            border-right: 1px #d2d2d2 dotted;
+        }
+        .userList li a:before{
+            display: block;
+            font-size: .5rem;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <a href="javascript:history.go(-1);" class="icon-back">&#60;</a>
+    <h1>个人中心</h1>
+    <a href="user_set.html" class="icon-set">*</a>
+</header>
+
+
+<nav class="nav">
+    <a href="index.html" class="icon-home">首页</a>
+    <a href="category.html" class="icon-category">分类</a>
+    <a href="cart.html" class="icon-cart">购物车</a>
+    <a href="user.html" class="icon-user">我的</a>
+</nav>
+<div style="height:1rem;"></div>
+
+<div class="userInfo">
+    <a class="userIcon">
+        <img src="images/user.jpg"/>
+    </a>
+    <h2>王小菜菜</h2>
+</div>
+<ul class="userList">
+    <li><a href="order_list.html" class="icon-order">我的订单</a></li>
+    <li><a href="favorite.html" class="icon-collection">常购清单</a></li>
+    <li><a href="profile.html" class="icon-profile">个人资料</a></li>
+</ul>
+</body>
+</html>

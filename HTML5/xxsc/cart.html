@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>新鲜蔬菜</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        .shopping-cart {
+            margin-top: 1rem;
+            background: #fff;
+        }
+        .shopping-cart .all{
+            border-bottom: 1px #d2d2d2 solid;
+            padding:.2rem .2rem;
+        }
+        .shopping-cart input[type='checkbox'] {
+            vertical-align: middle;
+        }
+        .shopping-cart-list li{
+            padding:.2rem .2rem;
+            border:1px #f1f1f1 dotted;
+        }
+        .shopping-cart-list .goods-pic{
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 2px;
+            margin:0 .2rem;
+            display: block;
+        }
+        .shopping-cart-list .goods-pic img{
+            width: 100%;
+        }
+        .goods-info{
+            margin-top:-.2rem;
+        }
+        .goods-info a{
+            display: block;
+            color: grey;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            line-height: .4rem;
+        }
+        .priceArea{
+            margin-top: .3rem;
+        }
+        .priceArea strong{
+            color: #6aab60;
+            font-size: .35rem;
+            margin-right: .15rem;
+        }
+        .btmNav{
+            width: 100%;
+            height: 1rem;
+            line-height: 1rem;
+            background: #f8f8f8;
+            border-top: 1px #f2f2f2 solid;
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+        }
+        .btmNav a{
+            float: left;
+            display: inline-block;
+            width: 50%;
+        }
+        .btmNav .order{
+            background: #64ab5b;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <a href="javascript:history.go(-1);" class="icon-back">&#60;</a>
+    <h1>购物车</h1>
+</header>
+
+<!--shopping-cart start-->
+<section class="shopping-cart">
+    <div class="all">
+        <label for="all">
+            <input id="all" type="checkbox">
+            全选
+        </label>
+        <a href="" class="float-r">编辑</a>
+    </div>
+    <ul class="shopping-cart-list">
+        <li class="clearfix">
+            <input type="checkbox" class="float-l">
+            <a href="product.html" class="goods-pic float-l">
+                <img src="images/goods008.jpg" alt="">
+            </a>
+            <div class="goods-info">
+                <h2>
+                    <a href="product.html">新鲜小黄鱼特惠装</a>
+                    <span class="float-r">X 1</span>
+                </h2>
+                <div class="priceArea">
+                    <strong>&yen; 12.98</strong>
+                    <del>&yen; 24.88</del>
+                </div>
+            </div>
+        </li>
+        <li class="clearfix">
+            <input type="checkbox" class="float-l">
+            <a href="product.html" class="goods-pic float-l">
+                <img src="images/goods009.jpg" alt="">
+            </a>
+            <div class="goods-info">
+                <h2>
+                    <a href="product.html">豆腐干2KG装</a>
+                    <span class="float-r">X 1</span>
+                </h2>
+                <div class="priceArea">
+                    <strong>&yen; 1.98</strong>
+                    <del>&yen; 3.88</del>
+                </div>
+            </div>
+        </li>
+        <li class="clearfix">
+            <input type="checkbox" class="float-l">
+            <a href="product.html" class="goods-pic float-l">
+                <img src="images/goods007.jpg" alt="">
+            </a>
+            <div class="goods-info">
+                <h2>
+                    <a href="product.html">优质特价牛肉（500g)</a>
+                    <span class="float-r">X 1</span>
+                </h2>
+                <div class="priceArea">
+                    <strong>&yen; 20.99</strong>
+                    <del>&yen; 28.88</del>
+                </div>
+            </div>
+        </li>
+        <li class="clearfix">
+            <input type="checkbox" class="float-l">
+            <a href="product.html" class="goods-pic float-l">
+                <img src="images/goods003.jpg" alt="">
+            </a>
+            <div class="goods-info">
+                <h2>
+                    <a href="product.html">新鲜小黄鱼特惠装</a>
+                    <span class="float-r">X 1</span>
+                </h2>
+                <div class="priceArea">
+                    <strong>&yen; 3.98</strong>
+                    <del>&yen; 5.88</del>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+<!--shopping-cart end-->
+
+
+<footer class="btmNav">
+    <a>合计：￥0.00</a>
+    <a class="order" href="confirm_order.html">立即下单</a>
+</footer>
+
+</body>
+</html>

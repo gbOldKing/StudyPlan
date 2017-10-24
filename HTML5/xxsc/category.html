@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>商品分类</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        .class_tree{
+            width: 2.2rem;
+            height: auto;
+            float: left;
+        }
+        .class_tree li{
+            height: 1rem;
+            line-height: 1rem;
+            border-bottom: 1px white solid;
+            padding: 0 .2rem;
+            background: #21d9a2;
+        }
+        .class_tree li.current_style{
+            background: white;
+            border-left: 2px #31bd80 solid;
+        }
+        .class_tree li.current_style span{
+            color:green;
+        }
+        .class_tree li a{
+            display: block;
+        }
+        .class_tree li img{
+            width: .5rem;
+            height: .5rem;
+            border-radius: 50%;
+        }
+        .class_tree a span{
+            color:#fff; 
+        }
+
+        .category_cont{
+            overflow: hidden;
+            margin-left: 2.2rem;
+            text-align: center;
+        }
+        .category_cont li{
+            float: left;
+            width: 44%;
+            margin: .2rem .12rem;
+        }
+        .category_cont li a{
+            display: block;
+            color:#666;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <a href="javascript:history.go(-1);" class="icon-back">&#60;</a>
+    <h1>商品分类</h1>
+</header>
+<div style="height:1rem;"></div>
+<section class="class_tree">
+    <ul>
+        <li class="current_style">
+            <a>
+                <img src="images/menu_bg_01.png"/>
+                <span>蔬菜水果</span>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="images/menu_bg_06.png"/>
+                <span>禽蛋肉类</span>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="images/menu_bg_10.png"/>
+                <span>水产火锅</span>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="images/menu_bg_14.png"/>
+                <span>熟食豆品</span>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="images/menu_bg_03.png"/>
+                <span>米面粮油</span>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="images/menu_bg_07.png"/>
+                <span>调料干货</span>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="images/menu_bg_11.png"/>
+                <span>餐厨用品</span>
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="images/menu_bg_15.png"/>
+                <span>常购品</span>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<!--category content start -->
+<ul class="category_cont">
+    <li>
+        <a href="product_list.html">全部</a>
+    </li>
+    <li>
+        <a href="product_list.html">肉质根类菜</a>
+    </li>
+    <li>
+        <a href="product_list.html">块根类菜</a>
+    </li>
+    <li>
+        <a href="product_list.html">地下茎类</a>
+    </li>
+    <li>
+        <a href="product_list.html">普通叶菜类</a>
+    </li>
+    <li>
+        <a href="product_list.html">结球叶莱类</a>
+    </li>
+    <li>
+        <a href="product_list.html">辛番叶菜类</a>
+    </li>
+    <li>
+        <a href="product_list.html">鳞茎菜类</a>
+    </li>
+    <li>
+        <a href="product_list.html">茄果类</a>
+    </li>
+</ul>
+<!--category content end -->
+
+<nav class="nav">
+    <a href="index.html" class="icon-home">首页</a>
+    <a href="category.html" class="icon-category">分类</a>
+    <a href="cart.html" class="icon-cart">购物车</a>
+    <a href="user.html" class="icon-user">我的</a>
+</nav>
+</body>
+</html>
