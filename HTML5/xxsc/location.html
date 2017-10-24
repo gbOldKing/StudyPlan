@@ -2,9 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>位置</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+		.location-auto{
+			background: white;
+			border: 1px #d2d2d2 solid;
+			border-radius: 2px;
+			height: 1rem;
+			line-height: 1rem;
+			padding: 0 3%;
+			color: #666;
+		}
+		.cityLi{
+			background: white;
+    		overflow: hidden;
+    		padding: 0 3%;
+    		margin-top:3%;
+		}
+		.cityLi dt{
+			height: .75rem;
+    		line-height: .75rem;
+    		color: #666;
+    		border-bottom: 1px #d2d2d2 solid;
+		}
+		.cityLi dd{
+			width: 25%;
+    		float: left;
+    		text-align: center;
+    		margin: 0;
+    		height: .7rem;
+    		line-height: .7rem;
+		}
+		.cityLi a{
+			color:#999;
+		}
+    </style>
 </head>
 <body>
+<header class="header">
+    <a href="javascript:history.go(-1);" class="icon-back">&#60;</a>
+    <h1>我的位置</h1>
+</header>
+<div style="height:1rem;"></div>
+<div class="location-auto">定位城市：<span>南宁</span></div>
 
+<dl class="cityLi">
+ <dt>热门城市</dt>
+ <dd><a>南宁</a></dd>
+ <dd><a>杭州</a></dd>
+ <dd><a>广州</a></dd>
+ <dd><a>北京</a></dd>
+ <dd><a>上海</a></dd>
+ <dd><a>南京</a></dd>
+ <dd><a>深圳</a></dd>
+ <dd><a>....</a></dd>
+</dl>
+<dl class="cityLi">
+ <dt>A</dt>
+ <dd><a>鞍山</a></dd>
+ <dd><a>安庆</a></dd>
+ <dd><a>安阳</a></dd>
+ <dd><a>安顺</a></dd>
+ <dd><a>安康</a></dd>
+ <dd><a>阿拉善盟</a></dd>
+ <dd><a>阿克苏</a></dd>
+ <dd><a>....</a></dd>
+</dl>
+<dl class="cityLi">
+ <dt>B</dt>
+ <dd><a>北京</a></dd>
+ <dd><a>保定</a></dd>
+ <dd><a>包头</a></dd>
+ <dd><a>蚌埠</a></dd>
+ <dd><a>滨州</a></dd>
+ <dd><a>宝鸡</a></dd>
+ <dd><a>巴彦淖尔</a></dd>
+ <dd><a>....</a></dd>
+</dl>
 </body>
 </html>

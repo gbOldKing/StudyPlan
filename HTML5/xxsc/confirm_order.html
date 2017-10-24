@@ -2,9 +2,131 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>确认订单</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+		.confirmAddr{
+		    background: #333;
+		    padding: .12rem 3%;
+		    position: relative;
+			color:#fff;
+		}
+		.confirmAddr p{
+			margin:.1rem 0;
+		}
+		.confirmAddr a{
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    height: 100%;
+		    line-height: 1.8rem;
+		    font-size: .5rem;
+		    color: #f4f4f4;
+		    background: rgba(255,255,255,.15);
+		    box-shadow: -2px 0 5px #666;
+		    width: 1rem;
+		    text-align: center;
+		    transform: scaleX(-1);
+		    -webkit-transform: scaleX(-1);
+		}
+		.payment{
+		    background: white;
+		    padding: 0 3%;
+		    margin: .12rem 0
+		}
+		.payment dt{
+		    height: .85rem;
+		    line-height: .85rem;
+		    color: #666;
+		    border-bottom: 1px #d2d2d2 solid;
+		}
+		.payment dd{
+			padding: .15rem 0;
+		    margin: 0;
+		    display: box;
+		    display: -webkit-box;
+		    display: -moz-box;
+		}
+		.payment dd label{
+		    display: block;
+		    box-flex: 1;
+		    -webkit-box-flex: 1;
+		    -moz-box-flex: 1;
+		    background: #f8f8f8;
+		    margin: 0 .15rem;
+		    text-align: center;
+		    height: .75rem;
+		    line-height: .75rem;
+		    border-radius: 2px;
+		    color: #999;
+		}
+		.payment dd label.istrue{
+			background-color: #6bc75f;
+			color:#fff;
+		}
+		.payment dd input[type='radio']{
+			display: none;
+		}
+		.order-msg{
+			background: #fff;
+    		padding: .15rem 3%;
+		}
+		.order-msg textarea{
+		    width: 94%;
+		    height: 2rem;
+		    background: #f8f8f8;
+		    border: none;
+		    margin: 0;
+		    resize: none;
+		    padding: 3%;
+		    outline: none;
+		}
+    </style>
 </head>
 <body>
+<header class="header">
+    <a href="javascript:history.go(-1);" class="icon-back">&#60;</a>
+    <h1>确认订单</h1>
+</header>
+<div style="height:1rem;"></div>
 
+<div class="confirmAddr">
+	<p>收货人：王小菜菜</p>
+	<p>电话：156****0802</p>
+	<p>南宁市民族大道888号8栋808号</p>
+	<a href="address.html" class="icon-font">&#60;</a>
+</div>
+<dl class="payment">
+	<dt>选择支付方式</dt>
+	<dd>
+		<label class="pay istrue"><input type="radio" name="zfb"/>支付宝支付</label>
+		<label class="pay"><input type="radio" name="wx"/>微信支付</label>
+	</dd>
+</dl>
+
+<section class="order-msg">
+	 <h2>我要留言</h2>
+	 <textarea placeholder="选填(亲可以在这里添加想说的话)"></textarea>
+</section>
+
+<div style="height:1rem;"></div>
+<aside class="btmNav">
+	 <a>合计 ：&yen;38.88元 </a>
+	 <a href="return_state.html" class="order">提交订单</a>
+</aside>
 </body>
+<script src="js/zepto.js"></script>
+<script>
+	$(function(){
+		$('.order').click(function(){
+			alert('点击提交订单后跳转支付接口，再返回支付状态！')
+		})
+		$('.pay').click(function(){
+			$(this).addClass('istrue').siblings().removeClass('istrue')
+		})
+	})
+</script>
 </html>

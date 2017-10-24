@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>确认订单</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+		.return-state{
+		    background: #fff;
+		    margin: 0;
+		    overflow: hidden;
+		    text-align: center;
+		}
+		.return-state h2{
+		    font-size: .35rem;
+		    text-align: center;
+		    color: #31bd80;
+		}
+		.return-state h2:before{
+			font-size: .5rem;
+		    margin-right: .15rem;
+		    position: relative;
+		    top: .04rem;
+		}
+		.return-state p{
+			margin: .2rem 0;
+		    padding: 0 3%;
+		    color: #666;
+		    background: #f8f8f8;
+		    height: .75rem;
+		    line-height: .75rem;
+		}
+		.return-state strong{
+			color: #31bd80;
+    		font-size: .35rem;
+		}
+    </style>
+</head>
+<body>
+<header class="header">
+	<a href="javascript:history.go(-1);" class="icon-back">&#60;</a>
+	<h1>确认订单</h1>
+</header>
+<div style="height:1rem;"></div>
+
+<section class="return-state">
+ 	<h2 class="icon-state-0">订单提交成功！</h2>
+	<p>订单编号：201512121140</p>
+	<p>订单金额：&yen; <strong>38.88</strong></p>
+	<p>支付时间：<time>2017-6-12 11:41:38</time></p>
+</section>
+
+<aside class="btmNav">
+	 <a href="order_list.html">查看订单</a>
+	 <a href="index.html" class="order">返回首页</a>
+</aside
+</body>
+</html>

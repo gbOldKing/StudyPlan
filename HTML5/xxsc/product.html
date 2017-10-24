@@ -2,9 +2,147 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>产品详情</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+		.icon-cart{
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		    display: block;
+		    height: 1rem;
+		    color: white;
+		    padding: 0 .3rem;
+		    font-size: .5rem;
+		}
+		.icon-cart span{
+		    position: absolute;
+		    top: .15rem;
+		    right: 12%;
+		    width: .36rem;
+		    height: .36rem;
+		    line-height: .36rem;
+		    text-align: center;
+		    font-size: .2rem;
+		    border-radius: 50%;
+		    background: #f00;
+		    font-family: "Yahei"
+		}
+		.pro-bigImg{
+			height: 5rem;
+			background: #fff;
+			padding: .23rem 0;
+			text-align: center;
+		}
+		.pro-bigImg img{
+			width: auto;
+		    max-width: 100%;
+		    height: 5rem;
+		}
+		.pro-baseInfor{
+		    background: #fff;
+		    padding: .23rem 3%;
+		    margin: .12rem 0;
+		}
+		.pro-baseInfor strong{
+			display: inline-block;
+			color: red;
+		    font-size: .5rem;
+		    margin:.2rem;
+		}
+		.pro-baseInfor strong:before{
+		    content: "￥";
+			font-size: .3rem
+		}
+		.pro-attr{
+			background: white;
+		    margin: .15rem 0;
+		    padding: 0 3%;
+		}
+		.pro-attr dt{
+		    height: .75rem;
+		    line-height: .75rem;
+		    border-bottom: 1px #d2d2d2 solid;
+		    color: #999;
+		}
+		.pro-attr dd{
+		    overflow: hidden;
+    		margin: .15rem 0;
+		}
+		.pro-attr dd li{
+		    float: left;
+		    width: 46%;
+		    margin: .15rem 2%;
+		}
+    </style>
 </head>
 <body>
+<header class="header">
+    <a href="javascript:history.go(-1);" class="icon-back">&#60;</a>
+    <h1>产品详情</h1>
+    <a href="cart.html" class="icon-cart"><span class="gwc">0</span></a>
+</header>
+<div style="height:1rem;"></div>
 
+<div class="pro-bigImg">
+	<img src="images/goods007.jpg"/>
+</div>
+
+<!--base information-->
+<section class="pro-baseInfor">
+	<h2>精选上等优质牛肉500</h2>
+	<p>
+		<strong>39.80</strong>
+		<del>&yen;：49.80</del>
+	</p>
+</section>
+
+<!--product attr-->
+<dl class="pro-attr">
+	<dt>产品信息</dt>
+	<dd>
+		<ul>
+			<li>
+				<span>上市时间 ：</span>
+				<span>2017年09月</span>
+			</li>
+			<li>
+				<span>产品规格 ：</span>
+				<span>1斤装</span>
+			</li>
+			<li>
+				<span>产品重量 ：</span>
+				<span>0.5kg</span>
+			</li>
+			<li>
+				<span>包装方式 ：</span>
+				<span>散装</span>
+			</li>
+			<li>
+				<span>保质期 ：</span>
+				<span>冷藏一个月</span>
+			</li>
+			<li>
+				<span>所属品牌 ：</span>
+				<span>好牛</span>
+			</li>
+		</ul>
+	</dd>
+</dl>
+<!--bottom nav-->
+<div style="height:1rem;"></div>
+<aside class="btmNav">
+	 <a class="order">加入购物车</a>
+	 <a >加入常购单</a>
+</aside>
 </body>
+<script>
+	document.querySelector('.order').onclick=function(){
+		var quantity=document.querySelector('.gwc').innerHTML;
+		document.querySelector('.gwc').innerHTML=parseInt(quantity)+1;
+	}
+</script>
 </html>
