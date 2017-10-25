@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>我的订单</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        .orderSift{
+            height: .85rem;
+            line-height: .85rem;
+            display: flex;
+            padding: 0 3%;
+            background:#fff;
+            text-align: center;
+        }
+        .orderSift a{
+            flex: 1;
+        }
+        .orderSift a.currStyle{
+            color: #0C0;
+            border-bottom: 1px #0c0 solid;
+        }
+        .orderList{
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .orderList li{
+            margin-bottom: 5px;
+            overflow: hidden;
+            background: white;
+            padding: 0 3%;
+        }
+        .orderList li dt{
+            height: .85rem;
+            line-height: .85rem;
+            border-bottom: 1px #d2d2d2 solid
+        }
+        .orderList dt span:last-child{
+            color: #0c0;
+            float: right;
+        }
+        .orderList li dd{
+            margin: 0;
+            padding: .25rem 0;
+            overflow: hidden;
+            border-bottom: 1px #f4f4f4 solid;
+        }
+        .orderList dd h2{
+            float: left;
+            width: 60%;
+            margin: 0;
+            color: #666;
+        }
+        .orderList dd strong{
+            float: right;
+            display: block;
+            text-align: right;
+            font-weight: normal;
+        }
+        .orderList dd strong em{
+            font-style: normal;
+            display: block;
+            color: #666;
+            margin-bottom:.1rem;
+        }
+        .orderList li dd:nth-last-child(2){
+            text-align: right;
+        }
+        .orderList li dd:nth-last-child(2) span{
+            margin-left: .15rem;
+            color: #999;
+        }
+        .orderList li dd:nth-last-child(2) span:last-child b{
+            color:#0c0;
+        }
+        .orderList li dd:last-child{
+            text-align: right;
+            padding: .35rem 0;
+        }
+        .orderList li dd:last-child a {
+            display: inline-block;
+            width: 2rem;
+            height: .75rem;
+            text-align: center;
+            line-height: .75rem;
+            margin-left: .15rem;
+            font-size: .32rem;
+            border-radius: 2px;
+        }
+        .orderList .order_delBtn {
+            background: white;
+            border: 1px #333 solid;
+            color: #333;
+        }
+        .orderList .order_payBtn{
+            background: #0c0;
+            border: 1px #0c0 solid;
+            color: #fff ;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <a href="javascript:history.go(-1);" class="icon-back">&#60;</a>
+    <h1>我的订单</h1>
+</header>
+<div style="height: 1rem"></div>
+
+<aside class="orderSift">
+	<a class="currStyle">待付款</a>
+	<a>待发货</a>
+	<a>已完成</a>
+</aside>
+
+<ul class="orderList">
+    <!--订单循环li-->
+    <li>
+        <dl>
+            <dt>
+                <span>订单：201706180108</span>
+                <span>待付款</span>
+            </dt>
+            <!--订单产品循环dd-->
+            <dd>
+                <h2>优质牛肉5kg散装</h2>
+                <strong>
+                    <em>&yen;245.00</em>
+                    <span>x1</span>
+                </strong>
+            </dd>
+            <dd>
+                <h2>新疆葡萄干散装</h2>
+                <strong>
+                    <em>15.00</em>
+                    <span>x1</span>
+                </strong>
+            </dd>
+            <dd>
+                <span>商品数量：<b>2</b></span>
+                <span>实付：<b>&yen;260.00</b></span>
+            </dd>
+            <dd>
+                <a class="order_delBtn">删除订单</a>
+                <a class="order_payBtn">付款</a>
+            </dd>
+        </dl>
+    </li>
+    <!--订单循环li-->
+    <li>
+        <dl>
+            <dt>
+                <span>订单：201706150108</span>
+                <span>待发货</span>
+            </dt>
+            <!--订单产品循环dd-->
+            <dd>
+                <h2>优质牛肉5kg散装</h2>
+                <strong>
+                    <em>0.00</em>
+                    <span>1</span>
+                </strong>
+            </dd>
+            <dd>
+                <span>商品数量：<b>1</b></span>
+                <span>实付：<b>&yen;260.00</b></span>
+            </dd>
+            <dd>
+                <a class="order_payBtn">待发货</a>
+            </dd>
+        </dl>
+    </li>
+    <!--订单循环li-->
+    <li>
+        <dl>
+            <dt>
+                <span>订单：201706130108</span>
+                <span>已完成</span>
+            </dt>
+            <!--订单产品循环dd-->
+            <dd>
+                <h2>优质牛肉5kg散装</h2>
+                <strong>
+                    <em>0.00</em>
+                    <span>1</span>
+                </strong>
+            </dd>
+            <dd>
+                <span>商品数量：<b>1</b></span>
+                <span>实付：<b>0.00</b></span>
+            </dd>
+            <dd>
+                <a class="order_delBtn">已完成</a>
+            </dd>
+        </dl>
+    </li>
+</ul>
+
+<div style="height: 1rem;"></div>
+<nav class="nav">
+    <a href="index.html" class="icon-home">首页</a>
+    <a href="category.html" class="icon-category">分类</a>
+    <a href="cart.html" class="icon-cart">购物车</a>
+    <a href="user.html" class="icon-user">我的</a>
+</nav>
+</body>
+</html>
