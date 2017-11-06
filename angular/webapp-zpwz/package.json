@@ -24,5 +24,8 @@
     "gulp-plumber": "^1.1.0",
     "gulp-uglify": "^2.0.0",
     "open": "0.0.5"
+  },
+  "dependencies": {
+    "ui-router": "^1.0.0-alpha.3"
   }
 }
