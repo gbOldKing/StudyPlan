@@ -1,0 +1,455 @@
+@charset "UTF-8";
+@import "reset.css";
+html{
+	font-size: 14px;
+}
+.park-introduce-logo{
+	margin-top:10vh;
+	text-align: center;
+	img{
+		width: 100%;
+		max-width: 1000px;
+	}
+}
+.introduce-nav{
+	height: 50vh;
+	margin-top: 5vh;
+	.nav-item{
+		height: 25vh;
+		background-size:cover;
+		background-position:center top;
+		background-repeat: no-repeat;
+		padding: 0;
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding:30px 8%;
+			padding-right:0;
+			font-size:1.8rem;
+			position: relative;
+			h2{
+				margin:5px 0;
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background:rgba(0,0,0,.1);
+				transform: scale(0);
+				transition:all .3s ease-out;
+				z-index: 1;
+			}
+			&:hover:before{
+				transform: scale(1);
+			}
+		}
+		&.zxqk{
+			a{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-content: center;
+			}
+		}
+	}
+}
+
+.navbar{
+	height: 60px;
+	padding-left:100px;
+	.navbar-brand{
+		color:#484e52;
+		font-size: 22px;
+		padding:12px;
+		h3{
+			width: 100%;
+		}
+		p{
+			font-size: 14px;
+		}
+	}
+	.navbar-nav{
+		a{
+			line-height:60px;
+			font-size: 16px;
+			padding:0 30px;
+			color:#333;
+			&.active{
+				background-color: #00b7ee;
+				color:#fff;
+			}
+		}
+	}
+	.navbar-right{
+		background-color: #8fc31f;
+		padding:0 20px;
+	}
+}
+
+/* parkprofile css start */
+.main-content{
+	margin-top: 60px;
+	background-color: #e0e9f0;
+}
+.parkprofile-body{
+	margin-top:60px;
+	background-image:url(/images/parkprofile-body-bg.jpg);
+	padding:60px 100px;
+	background-repeat: no-repeat;
+	background-position: left 60px;
+	background-size:cover;
+	background-attachment: fixed;
+	overflow: auto;
+	.situation{
+		height:23vh;
+		max-height:214px;
+		background-size:100% 100%;
+		a{
+			display: block;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		h3{
+			font-size: 2.4rem;
+			letter-spacing: 2px;
+		}
+	}
+}
+/* parkprofile css end */
+
+/* keyprojects css start */
+.keyprojects-body{
+	.main-content;
+	padding:5vh 100px;
+	.keyprojects-tab{
+		max-width: 375px;
+		height: 76vh;
+		overflow: hidden;
+		.about-pro{
+			height: 18vh;
+			max-height: 170px;
+			margin-bottom: 14px;
+			position: relative;
+			a{
+				display: flex;
+				height: 100%;
+				flex-wrap: wrap;
+				align-content: center;
+				text-align: center;
+			}
+			h2{
+				width: 100%;
+				font-size: 2rem;
+			}
+			p{
+				width: 100%;
+				font-size:1.5rem;
+			}
+			&:after{
+				content: '';
+				position: absolute;
+				width: 0;
+				height: 0;
+				border:16px solid transparent;
+				right: -32px;
+				border-left-color:#00b7ee;
+				top:50%;
+				margin-top:-16px;
+				display: none;
+			}
+			&:nth-child(2):after{
+				border-left-color:#8fc31f;
+			};
+			&:nth-child(3):after{
+				border-left-color:#f39800;
+			};
+			&:nth-child(4):after{
+				border-left-color:#ea68a2;
+			};
+			&.current:after{
+				display: block;
+			}
+		}
+	}
+	.keyprojects-tab-content{
+		height: 76vh;
+		.pro-item{
+			height: 38vh;
+			padding: 0;
+			background-color: #fff;
+			overflow: hidden;
+			.pro-img{
+				height: 30vh;
+				max-height: 283px;
+				img{
+					width: 100%;
+					height: 100%;
+					max-height: 283px;
+				}
+			}
+			a{
+				display: block;
+				height: 100%;
+				color:#333;
+			}
+			h3{
+				height: 100%;
+				border-right:1px solid #e5e5e5;
+				text-align: center;
+				padding:10px 0;
+			}
+			.pro-index{
+			    font-family: serif;
+			    color: #0999d5;
+			    font-size: 2rem;
+			    display: inline-block;
+			    vertical-align: middle;
+			    margin:5px;
+			}
+			.pro-name{
+				font-size: 1.2rem;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+/* keyprojects css end */
+
+/* subsidies css start */
+.subsidies-title{
+	font-size: 3rem;
+	color:#4f4f4f;
+	p{
+		font-size: 2rem;
+	}
+}
+.subsidies-body{
+	.main-content;
+	padding:8vh 0;
+	.subsidies-item{
+		height: 45vh;
+		max-height: 399px;
+		margin-top: 5vh;
+		display: flex;
+		align-items: center;
+		padding: 0;
+		a{
+			margin:0 auto;
+		}
+		.subsidies-index{
+			float:left;
+			span{
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				border-radius: 50%;
+				background: #fff;
+				color:red;
+				font-size: 2.5rem;
+				text-align: center;
+				font-family: "YaHei";
+				font-weight: bold;
+			}
+		}
+		.subsidies-desc{
+			margin-left:60px;
+			h2{
+				font-size: 2rem;
+				line-height: 1.2;
+			}
+			p{
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+/* subsidies css end */
+
+/* achievements css start */
+.achievements-body{
+	.main-content;
+	padding:8vh 0;
+	.achievements-title{
+		.subsidies-title;
+	}
+}
+.achievements-items{
+	max-width: 1400px;
+	margin-top: 5vh;
+	background-size: 100% 100%;
+	padding: 0;
+	.achievements-item{
+		height: 45vh;
+		max-height: 400px;
+		padding: 0;
+		position: relative;
+		z-index: 1;
+		padding:0 5vh;
+		&:after{
+			content: '';
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			right: 0;
+			background-color: #fff;
+			top: 0;
+		}
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.item-top{
+			height: 40%;
+		    font-size: 2rem;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+    		h2{
+    			width: 100%;
+    			line-height: 1.2;
+    		}
+    		p{
+    			width: 100%;
+    			font-size: 1.5rem;
+    		}
+		}
+		.item-bottom{
+			position: absolute;
+			left:0;
+			bottom:0;
+			width: 100%;
+			height: 60%;
+			background-color: #00b7ee;
+			text-align: center;
+			font-size: 2rem;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+			z-index: 3;
+			letter-spacing: 2px;
+			p{
+				width: 100%;
+			}
+			.iconfont{
+				font-size: 3.5rem;
+			}
+		}
+
+	}
+}
+/* achievements css end */
+
+/* implementation css start */
+.implementation-body{
+	.main-content;
+	padding:8vh 0;
+	.implementation-title{
+		.subsidies-title;
+	}
+	.implementation-item{
+		margin-top: 5vh;
+		height: 45vh;
+		max-height: 400px;
+		padding: 0;
+		.item-top{
+			height: 30%;
+			font-size: 2rem;
+			padding:2vh 5vh;
+			p{
+				font-size: 1.5rem;
+			}
+		}
+		.item-list{
+			a{
+				display: block;
+				text-align: right;
+				font-size: 2.2rem;
+				line-height: 1.8;
+				color:#4F4F4F;
+				font-weight: bold;
+				&:before{
+					content: '';
+					display:inline-block;
+					width: 10px;
+					height: 10px;
+					border:1px solid #4f4f4f;
+					border-radius: 50%;
+					vertical-align: middle;
+					margin-right:10px;
+				};
+			}
+		}
+		.item-bottom{
+			height: 70%;
+			font-size: 2.6rem;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+			text-align: center;
+			p,h2{
+				width: 100%;
+				margin-top:7vh;
+			}
+			span.iconfont{
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				border:2px solid #4f4f4f;
+				text-align: center;
+				font-size: 4rem;
+				line-height: 100px;
+			}
+		}
+		&:last-child{
+			color:#fff;
+			font-size: 2rem;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+			text-align: center;
+			background-size: 100% 100%;
+			h2{
+				width: 100%;
+				line-height: 1.3;
+				letter-spacing:2px;
+			}
+		};
+	}
+}
+
+/* implementation css end */
+
+@media (max-width:1600px) {
+	html{
+		font-size: 9px;
+	}
+	.park-introduce-logo{
+		img{
+			width: 60%;
+			max-width: 1000px;
+		}
+	}
+
+	.keyprojects-body{
+		.keyprojects-tab{
+			.about-pro{
+				margin-bottom: 9px;
+			}
+		}
+	}
+}
+
+@media (max-width:400px) {
+	.parkprofile-body{
+		padding: 0;
+	}
+}

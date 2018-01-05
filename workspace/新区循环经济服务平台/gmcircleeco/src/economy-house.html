@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>循环经济网上展示厅</title>
+<link rel="stylesheet" href="/economy-house/Viewer_files/photo-sphere-viewer.min.css">
+  <style>
+  	body{
+  		overflow: hidden;
+  		margin: 0;
+  		background: #000;
+  	}
+.video-box{
+	  border-radius: 20px;
+    border: 1px solid #32caf1;
+    padding: 20px;
+    overflow: hidden;
+    /*width: 470px;*/
+    -moz-box-shadow:  0px 0px 20px #41C2FA;
+    -webkit-box-shadow:  0px 0px 20px #41C2FA;
+    box-shadow:  0px 0px 20px #41C2FA;
+}
+.video-box video{
+	border-radius: 20px;
+	-moz-box-shadow: 0px 0px 20px #41C2FA;
+    -webkit-box-shadow: 0px 0px 20px #41C2FA;
+    box-shadow: 0px 0px 20px #41C2FA;
+	
+}
+.psv-marker{
+	max-width:none !important;
+}
+.video-show{
+	opacity: 0;
+	position: absolute;
+	left: 0px;
+	height: 0px;
+	width: 0;
+	height: 0;
+	z-index: 1000;
+	transition: all 2s;
+}
+.video-screen{
+	opacity: 1;
+	width: 100%;
+	height: 80%;
+}
+.video-screen video{
+	width: 100%;
+
+}
+  </style>
+</head>
+
+<body>
+	
+  <div id="video-show" class=" video-show"><video src="宣传视频合集3.mp4"  width="570" autoplay="autoplay" loop="loop"></video></div>
+  <div id="container" class="container">
+    <div class="row">
+      <div class="col-md-9" role="main">
+        <section class="bs-docs-section">
+				  <div id="photosphere" style="height:1080px;">
+				  </div>
+        </section>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<script src="libs/Viewer_files/jquery-1.11.2.min.js"></script>
+<script src="libs/Viewer_files/three.min.js"></script>
+<script src="libs/Viewer_files/D.min.js"></script>
+<script src="libs/Viewer_files/doT.min.js"></script>
+<script src="libs/Viewer_files/uevent.min.js"></script>
+<script src="libs/Viewer_files/photo-sphere-viewer.min.js"></script>
+<script src="libs/Viewer_files/markers-demo.js"></script>
+</body>
+</html>
