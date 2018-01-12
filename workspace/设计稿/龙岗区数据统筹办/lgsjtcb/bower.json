@@ -1,0 +1,24 @@
+{
+  "name": "gmcircleeco",
+  "description": "光明循环经济",
+  "main": "index.js",
+  "authors": [
+    "wangzhenbing"
+  ],
+  "license": "ISC",
+  "keywords": [
+    ""
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
