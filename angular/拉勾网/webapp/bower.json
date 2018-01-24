@@ -1,0 +1,25 @@
+{
+  "name": "lagouwang",
+  "homepage": "https://github.com/gbOldKing/StudyPlan",
+  "authors": [
+    "oldKing"
+  ],
+  "description": "lagouwang",
+  "main": "",
+  "keywords": [
+    "lagou"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "libs"
+  ],
+  "dependencies": {
+    "angular": "^1.6.8"
+  }
+}
