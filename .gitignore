@@ -4,3 +4,5 @@ bower_components/
 ionic/
 lib/
 libs/
+build/
+dist/
