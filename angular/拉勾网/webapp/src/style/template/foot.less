@@ -1,19 +1,26 @@
 .foot{
-  padding: 0;
-  margin: 0;
   position: fixed;
-  bottom:0;
   left: 0;
   right: 0;
+  bottom:0;
+  padding: 0;
+  margin: 0;
   height: 40px;
   font-size:0;
-  border-top:1px solid #eee;
+  border-top:1px solid @lineColor;
   line-height: 40px;
   li{
     .d-ib;
-    font-size:20px;
-    width: 33%;
+    font-size:18px;
+    width: calc(100%/3);
     text-align: center;
     color:@muteColor;
+    &.current{
+      background-color:@highlightBgColor;
+      color:@highlightColor;
+    }
+    .fa{
+      margin-right:5px;
+    }
   }
 }

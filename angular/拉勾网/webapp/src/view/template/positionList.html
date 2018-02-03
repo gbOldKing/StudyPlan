@@ -1,0 +1,14 @@
+<ul class="position-list">
+<!--    <li class="item bg-w">
+        <img class="logo f-l" src="/images/company-3.png" alt="">
+        <h3 class="title">前端开发工程师</h3>
+        <p class="text">千度（上海）互联网</p>
+        <p class="text">2018-02-02 15:11</p>
+    </li>-->
+    <li class="item bg-w clearfix" ng-repeat="item in data">
+        <img ng-src="{{item.imgSrc}}" alt="" class="logo f-l">
+        <h3 class="title" ng-bind="item.name"></h3>
+        <p class="text" ng-bind="item.companyName"></p>
+        <p class="text" ng-bind="item.time"></p>
+    </li>
+</ul>
