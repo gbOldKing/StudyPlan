@@ -1,6 +1,12 @@
 <div app-head-bar title="职位详情"></div>
 <div app-position-info></div>
-<div app-company></div>
-<h5></h5>
-<p></p>
-<button class="bottom-btn color-w fw-b">投个简历</button>
+<div app-company-info></div>
+<div class="bg-w position-desc mt-10">
+	<h5>职位描述</h5>
+	<pre class="mt-10">
+岗位职责：
+1.销售产品
+	</pre>
+</div>
+
+<button class="bottom-btn color-w fw-b" ng-bind="isLogin?'投个简历':'去登陆'"></button>

@@ -1,8 +1,13 @@
 <ul class="position-list">
     <li ui-sref="position({id:item.id})" class="item bg-w clearfix" ng-repeat="item in data">
-        <img ng-src="{{item.imgSrc}}" alt="" class="logo f-l">
-        <h3 class="title" ng-bind="item.name"></h3>
-        <p class="text" ng-bind="item.companyName"></p>
-        <p class="text" ng-bind="item.time"></p>
+        <img ng-src="{{item.imageUrl}}" alt="" class="logo f-l">
+        <h3 class="title" ng-bind="item.job"></h3>
+        <p class="text">
+        	<span>{{item.companyName}}</span>
+        	<span>|</span>
+        	<span>{{item.cityName}}</span>
+        	<span  class="f-r mr-10 fw-b" ng-bind=item.salaryName></span>
+        </p>
+        <p class="text" ng-bind="item.date"></p>
     </li>
 </ul>

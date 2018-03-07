@@ -7,9 +7,10 @@ angular.module('app').directive('appPositionInfo',[function(){
         restrict:'A',
         replace:true,
         templateUrl:'view/template/positionInfo.html',
-/*        scope:{
-            isActive: '@'
-        },*/
+        scope:{
+            isActive: '=',
+            isLogin:'='
+        },
         link:function($scope){
             $scope.isActive=false;
             $scope.shoucang=function(){
