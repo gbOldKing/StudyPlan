@@ -1,14 +1,14 @@
 <div class="bg-w position-info p-r">
     <p>
-        <span>销售</span>
-        <span class="color-r ml-10">5K-8K</span>
+        <span ng-bind="pos.name"></span>
+        <span class="color-r ml-10" ng-bind="pos.salaryName"></span>
     </p>
     <p>
-        <span>上海</span>
-        <span class="ml-10">1-3年</span>
-        <span class="ml-10">专科</span>
+        <span ng-bind="pos.cityName"></span>
+        <span class="ml-10" ng-bind="pos.experience"></span>
+        <span class="ml-10" ng-bind="pos.education"></span>
     </p>
-    <p>成长空间大</p>
+    <p ng-bind="pos.benefit"></p>
     <span ng-show='isLogin' ng-click="shoucang()" class="fa p-a" ng-class="{true: 'fa-star', false: 'fa-star-o'}[isActive]"></span>
 </div>
 
