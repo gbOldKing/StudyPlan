@@ -6,6 +6,13 @@ angular.module('app').directive('appCompanyInfo',[function(){
         scope:{
             com:'='
         },
-        templateUrl:'view/template/companyInfo.html'
+        templateUrl:'view/template/companyInfo.html',
+        link:function($scope){
+        	$scope.showPositionList=function(index){
+        		$scope.positionList=$scope.com.positionClass[index].positionList;
+        		console.log(index)
+        		$scope.isActive=index;
+        	}
+        }
     }
 }]);

@@ -6,6 +6,17 @@ angular.module('app').directive('appPositionClass',[function(){
    return{
        restrict:'A',
        replace:true,
-       templateUrl:'view/template/positionClass.html'
+       scope:{
+     		com:'='  	
+       },
+       templateUrl:'view/template/positionClass.html',
+       link:function($scope){
+        	$scope.showPositionList=function(index){
+        		/*$scope.positionList=$scope.com.positionClass[index].positionList;*/
+        		$scope.isActive=index;
+        	}
+        	$scope.showPositionList(0);
+        }
+
    }
 }]);
