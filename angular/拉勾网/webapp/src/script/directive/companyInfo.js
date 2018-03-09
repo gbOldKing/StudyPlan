@@ -10,7 +10,6 @@ angular.module('app').directive('appCompanyInfo',[function(){
         link:function($scope){
         	$scope.showPositionList=function(index){
         		$scope.positionList=$scope.com.positionClass[index].positionList;
-        		console.log(index)
         		$scope.isActive=index;
         	}
         }

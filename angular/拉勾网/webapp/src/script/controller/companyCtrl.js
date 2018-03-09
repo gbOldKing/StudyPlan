@@ -5,5 +5,7 @@
 angular.module('app').controller('companyCtrl',['$scope','$state','$http',function($scope,$state,$http){
 	$http.get('/data/company.json?id='+$state.params.id).then(function(response){
 		$scope.company=response.data;
+		/*$scope.$broadcast('abc',{id:1})*/  /*向下广播*/
 	})
+
 }]);

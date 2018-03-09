@@ -14,6 +14,10 @@ angular.module('app').directive('appHeadBar',[function(){
             $scope.back=function(){
                 window.history.back();
             }
+            /*接收广播*/
+            /*$scope.$on('abc',function(event,data){
+                console.log(event,data)
+            })*/
         }
     }
 }]);

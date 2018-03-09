@@ -6,7 +6,11 @@ angular.module('app').controller('positionCtrl',['$scope','$http','$state','$q',
     $scope.isLogin=false;
     function getPosition(){
         var def=$q.defer();
-        $http.get('/data/position.json?id='+$state.params.id).then(function(response){
+        $http.get('/data/position.json',{
+           params:{
+            id:$state.params.id
+           } 
+        }).then(function(response){
             $scope.position=response.data;
             def.resolve(response);
         },function(err){
