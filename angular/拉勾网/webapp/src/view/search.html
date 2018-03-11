@@ -1,0 +1,12 @@
+<div class="search-bar ta-c">
+	<span ng-click="name='';search();">取消</span>
+	<input ng-model="name" class="search-input ml-10" type="text" placeholder="搜索职位/公司/城市">
+	<span class="ml-10" ng-click="search();">
+		<i class="fa fa-search"></i>
+		搜索
+	</span>
+</div>
+<div app-tab list="tabList" tab-click="tClick(id,name)"></div>
+<div app-position-list filter-obj="filterObj" data='positionList' class="search-result"></div>
+<div app-foot></div>
+<div app-sheet select="sClick(id,name)" list="sheet.list" visible="sheet.visible" select="sClick(id,name)"></div>

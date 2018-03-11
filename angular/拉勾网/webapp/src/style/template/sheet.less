@@ -1,0 +1,37 @@
+.sheet{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background-color: rgba(0,0,0,.3);
+	.wrap{
+		position: fixed;
+		padding:8px;
+		left: 0;
+		right: 0;
+		bottom:0;
+		z-index: 100;
+		
+		ul{
+			padding: 0;
+			margin: 0 0 8px 0;
+			background-color: #f1f2f3;
+			border-radius: 5px;
+			max-height: 500px;
+			overflow: hidden;
+			li{
+				border-bottom:1px solid @lineColor;
+			}
+		}
+	}
+	li,button{
+		width:100%;
+		.h(50);
+		.lh(50);
+		list-style:none;
+		border-radius: 5px;
+		.fs(16);
+		color:#1065e5;
+	}
+}
