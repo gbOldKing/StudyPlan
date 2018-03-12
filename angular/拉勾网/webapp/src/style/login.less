@@ -1,0 +1,90 @@
+.login{
+  background: url(../images/background.png)no-repeat center center/100% 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  form{
+    .mt(200);
+    color:@defaultColor;
+    .form-line{
+      .w(300);
+      .h(40);
+      .lh(40);
+      margin:0 auto;
+
+
+      &:first-child{
+        border-bottom:1px solid #fff;
+      }
+      .fa{
+        display: inline-block;
+        .w(50);
+        .h(40);
+        .lh(40);
+        float: left;
+        .fs(24);
+        background-color: rgba(0,0,0,.4);
+      }
+    }
+    input{
+      display: block;
+      height: 100%;
+      border: none;
+      background-color: rgba(0,0,0,.2);
+      .ml(50);
+      .w(250);
+      box-sizing: border-box;
+      &::-webkit-input-placeholder{
+        color:@defaultColor;
+      }
+
+    }
+    button{
+      .w(300);
+      .h(35);
+      .fs(18);
+      letter-spacing: 5px;
+      &.login-btn{
+        background-color: @headBgColor;
+        color:@defaultColor;
+      }
+      &.register-btn{
+        background-color: @btnBgColor;
+        color:@headBgColor;
+        border:1px solid @headBgColor;
+      }
+    }
+  }
+}
+.register{
+  form{
+    .mt(50);
+  }
+  .message-box{
+    .w(300);
+    .h(35);
+    .lh(35);
+    margin:10px auto;
+    text-align:left;
+    .message{
+      .ml(0);
+      .w(190);
+      display: inline-block;
+      background-color: rgba(0,0,0,.2);
+      vertical-align: top;
+      border:1px solid #fff;
+    }
+    .message-btn{
+      display: inline-block;
+      .w(100);
+      .fs(14);
+      background-color: @btnBgColor;
+      color:@headBgColor;
+      border:1px solid @headBgColor;
+
+
+    }
+  }
+}

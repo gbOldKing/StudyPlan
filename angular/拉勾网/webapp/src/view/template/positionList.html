@@ -1,13 +1,19 @@
 <ul class="position-list">
-    <li ui-sref="position({id:item.id})" class="item bg-w clearfix" ng-repeat="item in data">
+    <li ui-sref="position({id:item.id})" class="item bg-w clearfix" ng-repeat="item in data|filterByObj:filterObj">
         <img ng-src="{{item.imageUrl}}" alt="" class="logo f-l">
-        <h3 class="title" ng-bind="item.job"></h3>
+        <h3 class="title">
+            <span ng-bind="item.job"></span>
+            <span  class="f-r mr-10 salary"  ng-bind=item.salaryName></span>
+        </h3>
         <p class="text">
         	<span>{{item.companyName}}</span>
         	<span>|</span>
         	<span>{{item.cityName}}</span>
-        	<span  class="f-r mr-10 fw-b" ng-bind=item.salaryName></span>
+            <span>|</span>
+            <span>{{item.scaleName}}</span>
         </p>
-        <p class="text" ng-bind="item.date"></p>
+        <p class="text" ng-bind="item.date">
+            <span ng-bind="item.date"></span>
+        </p>
     </li>
 </ul>

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('app').controller('searchCtrl',['$scope','$http','$state','$q','dict',function($scope,$http,$state,$q,dict){
 	$scope.name='';
