@@ -13,8 +13,6 @@
       .h(40);
       .lh(40);
       margin:0 auto;
-
-
       &:first-child{
         border-bottom:1px solid #fff;
       }
@@ -39,6 +37,16 @@
       color:@defaultColor;
       &::-webkit-input-placeholder{
         color:@defaultColor;
+      }
+      &+span{
+        position: absolute;
+        font-size: 12px;
+        right: 0;
+        top: 0;
+        color:@deangeColor;
+        p{
+          margin: 0;
+        }
       }
 
     }
@@ -76,6 +84,10 @@
       background-color: rgba(0,0,0,.2);
       vertical-align: top;
       border:1px solid #fff;
+      &+span{
+        left: 0;
+        top: 28px;
+      }
     }
     .message-btn{
       display: inline-block;
@@ -84,8 +96,10 @@
       background-color: @btnBgColor;
       color:@headBgColor;
       border:1px solid @headBgColor;
-
-
+      &.disable{
+        color:@lineColor;
+        border-color: @lineColor;
+      }
     }
   }
 }

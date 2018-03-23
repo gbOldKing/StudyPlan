@@ -1,18 +1,19 @@
+
 <div class="login register ta-c">
-    <form class="d-b">
-        <div class="form-line">
+<div app-head-bar title="账号注册"></div>
+    <form class="d-b" name="form">
+        <div class="form-line p-r">
             <span class="fa fa-user"></span>
-            <input class="d-ib pl-10" type="text" placeholder="输入手机号">
+            <input ng-model="user.phone" validator="phone" class="d-ib pl-10" type="text" placeholder="输入手机号">
         </div>
-        <div class="form-line">
+        <div class="form-line p-r">
             <span class="fa fa-lock"></span>
-            <input class="d-ib pl-10" type="password" placeholder="输入密码">
+            <input ng-model="user.password" validator="password"  class="d-ib pl-10" type="password" placeholder="输入密码">
         </div>
-        <div class="message-box">
-            <input class="message pl-10" type="text" placeholder="短信验证码">
-            <button class="message-btn f-r">发送短信</button>
+        <div class="message-box p-r">
+            <input validator="required" ng-model="user.code" class="message pl-10" type="text" placeholder="短信验证码">
+            <button ng-disabled="time" ng-click="send()" class="message-btn f-r {{time?'disable':''}}" ng-bind="time?time:'发送短信'">发送短信</button>
         </div>
-        <button class="login-btn mb-10 mt-10 fw-b">登陆</button>
-        <button class="register-btn fw-b">注册</button>
+        <button validation-submit="form" ng-click="submit()" class="register-btn fw-b">注册</button>
     </form>
 </div>

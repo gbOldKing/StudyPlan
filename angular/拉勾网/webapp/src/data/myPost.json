@@ -1,6 +1,6 @@
 [{
   "id": "p1",
-  "imageUrl": "/image/company-1.png",
+  "imageUrl": "/images/company-1.png",
   "job": "WEB前端",
   "companyId": "c1",
   "companyName": "慕课网",
@@ -20,7 +20,7 @@
   "state": "1"
 }, {
   "id": "p3",
-  "imageUrl": "/image/company-3.png",
+  "imageUrl": "/images/company-3.png",
   "job": "销售",
   "companyId": "c3",
   "companyName": "千度",
@@ -38,4 +38,24 @@
   "description": "岗位职责：\n1.销售产品；...",
   "date": "2016-06-01 11:05",
   "state": "-1"
+},{
+  "id": "p4",
+  "imageUrl": "/images/company-3.png",
+  "job": "JAVA高级程序员",
+  "companyId": "c3",
+  "companyName": "千度",
+  "cityId": "c2",
+  "cityName": "上海",
+  "scaleId": "s4",
+  "scaleName": "500人以上",
+  "industryId": "i1",
+  "industryName": "互联网",
+  "salaryId": "s2",
+  "salaryName": "8k-10k",
+  "experience": "3-5年",
+  "education": "本科",
+  "benefit": "成长空间大",
+  "description": "岗位职责：\n1.前端开发；...",
+  "date": "2016-06-01 11:05",
+  "state": "1"
 }]
