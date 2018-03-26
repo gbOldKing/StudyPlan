@@ -9,6 +9,6 @@
         <span class="ml-10" ng-bind="pos.education"></span>
     </p>
     <p ng-bind="pos.benefit"></p>
-    <span ng-show='isLogin' ng-click="shoucang()" class="fa p-a" ng-class="{true: 'fa-star', false: 'fa-star-o'}[isActive]"></span>
+    <span ng-if="isLogin" ng-click="shoucang()" class="fa p-a" ng-class="{true: 'fa-star', false: 'fa-star-o'}[isActive]"></span>
 </div>
 

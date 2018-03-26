@@ -11,7 +11,7 @@
         	<span>{{item.cityName}}</span>
             <span>|</span>
             <span>{{item.scaleName}}</span>
-            <span ng-if="name" class="fa f-r" ng-class="{true: 'fa-star', false: 'fa-star-o'}[item.select]"></span>
+            <span ng-if="isFavorite" class="fa f-r" ng-click="$event.stopPropagation();selected(item)" ng-class="{true: 'fa-star', false: 'fa-star-o'}[item.select]"></span>
         </p>
         <p class="text" ng-bind="item.date">
             <span ng-bind="item.date"></span>
