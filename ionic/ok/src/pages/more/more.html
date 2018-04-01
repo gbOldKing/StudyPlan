@@ -14,12 +14,18 @@
 
 
 <ion-content>
-  <ion-card text-center>
-    <ion-card-header>
-      登陆 iMoocQA,体验更多功能
-    </ion-card-header>
-    <ion-card-content>
-      <button ion-button outline small>登陆/注册</button>
-    </ion-card-content>
-  </ion-card>
+  <div *ngIf="!isLogin">
+    <ion-card text-center>
+      <ion-card-header>
+        登陆 iMoocQA,体验更多功能
+      </ion-card-header>
+      <ion-card-content>
+        <button ion-button outline small (click)="showModal()">登陆/注册</button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+ 
+  <div *ngIf="isLogin">
+    <h1>登录成功</h1>
+  </div>
 </ion-content>
