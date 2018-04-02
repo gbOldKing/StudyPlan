@@ -18,14 +18,14 @@ export abstract class BaseUI{
      * @returns 
      * @memberof BaseUI
      */
-    protected showLoading(loadingCtrl:LoadingController,message:string){
+    protected  showLoading(loadingCtrl:LoadingController,message:string){
         let loader = loadingCtrl.create({
             content:message,
             dismissOnPageChange:true,
         });
         loader.present();
         return loader;
-    }
+    };
     /**
      * 通用展示toast组件
      * 

@@ -67,8 +67,16 @@ export class RestProvider {
     console.error(errMsg);
     return Observable.throw(errMsg);
   };
-
   login(mobile,password):Observable<string[]>{
     return this.getUrlReturn(this.apiUrlLogin+"?mobile="+mobile+"&password="+password);
+  };
+  register(mobile,nickname,password):Observable<string[]>{
+    return this.getUrlReturn(this.apiUrlRegister+"?mobile="+mobile+"&nickname="+nickname+"&password="+password);
+  };
+  getUserInfo(userId):Observable<string[]>{
+    return this.getUrlReturn(this.apiUrlUserInfo +"?Userid="+userId);
+  }
+  updateNickName(userId,nickname):Observable<string[]>{
+    return this.getUrlReturn(this.apiUrlUpdateNickName+"?Userid="+userId+"&nickname="+nickname);
   }
 }

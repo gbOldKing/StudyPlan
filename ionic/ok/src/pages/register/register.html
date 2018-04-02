@@ -22,7 +22,7 @@
 
     <ion-item>
       <ion-label stacked>用户昵称</ion-label>
-      <ion-input type="text" [(ngModel)]='mobile'></ion-input>
+      <ion-input type="text" [(ngModel)]='nickname'></ion-input>
     </ion-item>
 
     <ion-item>
@@ -32,13 +32,13 @@
 
     <ion-item>
       <ion-label stacked>确认密码</ion-label>
-      <ion-input type="password" [(ngModel)]='password'></ion-input>
+      <ion-input type="password" [(ngModel)]='confirmPassword'></ion-input>
     </ion-item>
   </ion-list>
   <div padding>
-    <button ion-button color="primary" block >注 册</button>
+    <button ion-button color="primary" block (click)="doRegister()">注 册</button>
   </div>
   <div text-center>
-    <button ion-button color="primary" outline>已有账号?登录</button>
+    <button ion-button color="primary" outline (click)="gotoLogin()">已有账号?登录</button>
   </div>
 </ion-content>

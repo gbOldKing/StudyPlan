@@ -26,6 +26,14 @@
   </div>
  
   <div *ngIf="isLogin">
-    <h1>登录成功</h1>
+    <ion-list class="user-info">
+      <button ion-item (click)="gotoUserPage()">
+        <ion-avatar item-start>
+          <img src="{{headface}}" alt="">
+        </ion-avatar>
+        <h2>{{userinfo.UserNickName}}</h2>
+        <p>查看个人主页或编辑简介</p>
+      </button>
+    </ion-list>
   </div>
 </ion-content>
