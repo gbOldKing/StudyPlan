@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,LoadingController,ToastController,V
 import { Storage } from '@ionic/storage'
 import { BaseUI } from '../../common/baseui';
 import { RestProvider } from '../../providers/rest/rest'
+import { HeadfacePage } from '../headface/headface';
 
 @Component({
   selector: 'page-user',
@@ -65,5 +66,8 @@ export class UserPage extends BaseUI {
   logout(){
     this.storage.remove('UserId');
     this.viewCtrl.dismiss();
+  }
+  gotoHeadface(){
+    this.navCtrl.push(HeadfacePage);
   }
 }
