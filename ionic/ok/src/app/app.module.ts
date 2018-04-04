@@ -19,6 +19,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestProvider } from '../providers/rest/rest';
 import {IonicStorageModule} from '@ionic/storage';
 
+import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
+import { FilePath } from '@ionic-native/file-path';
+import { Transfer, TransferObject } from '@ionic-native/transfer';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -59,7 +64,12 @@ import {IonicStorageModule} from '@ionic/storage';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    RestProvider,
+    File,
+    Transfer,
+    FilePath,
+    Camera
+
   ]
 })
 export class AppModule {}
