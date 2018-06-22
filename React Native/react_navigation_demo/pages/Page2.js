@@ -23,6 +23,20 @@ export default class Page2 extends Component<Props> {
                     title="go back" onPress={()=>{
                     navigation.goBack();
                 }}/>
+                <Button
+                    title="go Page1" onPress={()=>{
+                    navigation.navigate('Page1');
+                }}/>
+                <Button
+                    title="改变主题(蓝色)"
+                    onPress={()=>{
+                        navigation.setParams({
+                            theme:{
+                                tintColor:'blue',
+                                updateTime:new Date().getTime()
+                            }
+                        })
+                    }}/>
             </View>
         );
     }

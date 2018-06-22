@@ -4,36 +4,34 @@ import {
     StyleSheet,
     Text,
     View,
-    Button
+    Button,
+    TextInput
 } from 'react-native';
 
 type Props = {};
-export default class Page1 extends Component<Props> {
+export default class Page4 extends Component<Props> {
     render() {
-        const {navigation}=this.props;
+        const {navigation} = this.props;
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    Page1
+                    Page4
                 </Text>
                 <Button
-                    title="go back" onPress={()=>{
-                    navigation.goBack();
-                }}/>
-                <Button
-                    title="go Page2" onPress={()=>{
-                    navigation.navigate('Page2');
-                }}/>
-                <Button
-                    title="改变主题（橙色）"
+                    title="打开侧边栏"
                     onPress={()=>{
-                    navigation.setParams({
-                        theme:{
-                            tintColor:'orange',
-                            updateTime:new Date().getTime()
-                        }
-                    })
+                        navigation.openDrawer();
                 }}/>
+                <Button
+                    title="Toggle"
+                    onPress={()=>{
+                        navigation.toggleDrawer();
+                    }}/>
+                <Button
+                    title="Go to Page5"
+                    onPress={()=>{
+                        navigation.navigate('Page5');
+                    }}/>
             </View>
         );
     }
@@ -44,7 +42,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#eee',
     },
     welcome: {
         fontSize: 20,

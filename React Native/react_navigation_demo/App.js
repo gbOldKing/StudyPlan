@@ -1,2 +1,2 @@
-import {APPStackNavigator,APPTabNavigator} from "./navigators/AppNavigators";
-export default APPTabNavigator;
+import {APPStackNavigator} from "./navigators/AppNavigators";
+export default APPStackNavigator;

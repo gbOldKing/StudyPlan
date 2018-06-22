@@ -14,7 +14,7 @@ export default class Page3 extends Component<Props> {
         const {navigation}=this.props;
         const {state,setParams}=navigation;
         const {params}=state;
-        const showText=params.mode==='edit'?'正在编辑':'编辑完成';
+/*        const showText=params.mode==='edit'?'正在编辑':'编辑完成';*/
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
@@ -31,9 +31,9 @@ export default class Page3 extends Component<Props> {
                     onPress={()=>{
                     navigation.goBack();
                 }}/>
-                <Text>
+{/*                <Text>
                     {showText}
-                </Text>
+                </Text>*/}
             </View>
         );
     }

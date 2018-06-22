@@ -37,6 +37,18 @@ export default class HomePage extends Component<Props> {
                         navigation.navigate('Page3',{title:'动态改变的标题'})
                     }}
                 />
+                <Button
+                    title='TabNav'
+                    onPress={()=>{
+                        navigation.navigate('TabNav',{title:'This is TabNav'})
+                    }}
+                />
+                <Button
+                    title='DrawerNavigator'
+                    onPress={()=>{
+                        navigation.navigate('DrawerNav',{title:'This is DrawerNav'})
+                    }}
+                />
             </View>
         );
     }
