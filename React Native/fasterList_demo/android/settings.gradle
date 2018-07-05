@@ -1,0 +1,3 @@
+rootProject.name = 'fasterList_demo'
+
+include ':app'
