@@ -1,0 +1,31 @@
+.icon {
+	display: inline-block;
+	width: 30px;
+	height:50px;
+	fill: #fff;
+}
+.icon-arrow-left {
+	/*fill: #1dcac0;*/
+	fill: #fff;
+}
+.icon-list {
+	fill: #fff;
+}
+.icon-lists {
+	fill: #41b9f8;
+}
+.icon-layout {
+	fill: #000000;
+}
+.icon-cart {
+	fill: #000000;
+}
+.icon-gift {
+	fill: #000000;
+}
+.icon-users {
+	fill: #000000;
+}
+.icon-office {
+	fill: #000000;
+}

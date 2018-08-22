@@ -1,0 +1,56 @@
+/* CSS reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+fieldset, img {
+	border: 0;
+}
+address, caption, cite, code, dfn, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+ol, ul {
+	list-style: none;
+}
+caption, th {
+	text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+q:before, q:after {
+	content: '';
+}
+abbr, acronym {
+	border: 0;
+}
+section, header {
+	display: block;
+}
+
+.top{ width:50%;background-color:rgba(0, 0, 0, 0.0);position:fixed;z-index:20;top:2%;left:25%;}
+.top img{width:100%;margin:0 auto;display:block;}
+
+.top1{ width:25%;background-color:rgba(0, 0, 0, 0.0);margin:0 0 0 0;position:fixed;z-index:20;top:18%;right:0;}
+.top1 img{width:100%;margin:0 auto;}
+
+.menuu{ position:fixed; z-index:99; bottom:0; width:70%;}
+.menuu ul{}
+.menuu ul li{ width:100%; background:/*rgba(217,169,100,0.6)*/rgba(225,225,225,0.6); margin-bottom:6%; height:28px;padding-left:3%; border-radius:0 2px 2px 0;line-height:28px;}
+.menuu ul li a{color:#000; text-decoration:none; font-family:"微软雅黑"; display:block}
+.menuu ul li:first-child{width:80%;}
+.menuu ul li:nth-child(2){ width:60%;}
+.menuu ul li:nth-child(3){ width:75%;}
+.menuu ul li:nth-child(4){ width:96%;}
+.menuu ul li:nth-child(5){ width:75%;}
+.menuu ul li span{ font-size:12px; padding-left:0%; color:#000;}

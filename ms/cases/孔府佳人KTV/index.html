@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>孔府佳人</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta http-equiv="cache-control" content="no-transform"/>
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.min.1.7.js"></script>
+
+</head>
+
+<body>
+<div class="bg"></div>
+<div class="video_exist play_yinfu" id="audio_btn" style="display: block;">
+    <div id="yinfu" class="rotate"></div>
+    <audio preload="" autoplay="" id="media" src="music.mp3" loop></audio>
+</div>
+<script type="text/javascript">
+    
+    $('#audio_btn').click(function(){
+        var audioEle = $("#media")[0];
+        if($(this).attr('class').indexOf('off') > 0){
+            $(this).removeClass('off').addClass('play_yinfu');
+            $('#yinfu').addClass('rotate');
+            audioEle.play();
+        }else{
+            $(this).removeClass('play_yinfu').addClass('off');
+            $('#yinfu').removeClass('rotate');
+            audioEle.pause();
+        }
+    });
+	
+	$(document).ready(function(){
+/*	 $(".ydzx").click(function(){ 
+		$('.ydzx').addClass("a-flipoutY");
+		$('#mcover1').addClass("a-fadeout page2_6");
+	 }); */
+	 
+	 $("#closebook").click(function(){ 
+		$('#mcover').addClass("a-fadein");
+		$('.ydxz1').addClass("a-flipinY");
+		$('.ydxz1_pages1').addClass("a-flipinY");
+		$('.ydxz1_pages2').addClass("a-flipinY");
+		$('.ydxz1_pages3').addClass("a-flipinY");
+		$('.ydxz1_pages4').addClass("a-flipinY");
+		$('.ydxz2').addClass("a-fadeins page2_10");
+	 }); 
+ }); 
+</script>
+
+<div class="logo"><img src="img/logo.png"></div>
+    <div class="cz"><img src="img/cz.png"></div>
+    <div class="text1"><img src="img/text.png"></div>
+    <div class="menu">
+    	<ul>
+        	<li><a href="qywh.html"><img src="img/menu1.png"></a></li>
+        	<li><a href="hj.html"><img src="img/menu3.png"></a></li>
+        	<li><a href="bxyd.html"><img src="img/menu4.png"></a></li>
+        	<li><a href="wxgw.html"><img src="img/menu5.png"></a></li>
+        	<li><a href="hyxt.html"><img src="img/menu6.png"></a></li>
+            <div class="height">　　</div>
+        </ul>
+    </div>
+</body>
+</html>

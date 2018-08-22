@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排序</title>
+	<script>
+		/*冒泡排序*/
+		function mysort (arr){
+			for(var i=0;i<arr.length-1;i++){
+				for(var j=i+1;j<arr.length;j++){
+					if(arr[i]>arr[j]){
+						var temp=arr[i];
+						arr[i]=arr[j];
+						arr[j]=temp;
+					}
+				}
+			}
+			return arr;
+		}
+		var arr=[22,3,1,8,44,667,4]
+		console.log(mysort(arr));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

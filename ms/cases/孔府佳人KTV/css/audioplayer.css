@@ -1,0 +1,92 @@
+#wrapper {
+	width: 35px;
+	padding: 0px;
+	margin: 0;
+	position:absolute;
+	bottom:10px;
+	right:3px;
+	z-index:100;
+}
+
+.audioplayer
+{
+	width:35px;
+	height:35px; /* 40 */
+	color: #fff;
+	position: relative;
+	z-index: 1;
+}
+.audioplayer-mini
+{
+	width: 35px; /* 40 */
+	margin: 0 auto;
+}
+
+.audioplayer > div
+{
+	position: absolute;
+}
+
+.audioplayer-playpause
+{
+	width: 35px; /* 40 */
+	height: 100%;
+	text-align: left;
+	text-indent: -9999px;
+	cursor: pointer;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	
+}
+
+.audioplayer-mini .audioplayer-playpause
+{
+	width: 100%;
+}
+
+.audioplayer-playpause:hover,
+.audioplayer-playpause:focus
+{
+}
+
+.audioplayer-playpause a
+{
+	display: block;
+}
+
+.audioplayer:not(.audioplayer-playing) .audioplayer-playpause a
+{
+    width: 35px;
+	height: 35px;
+	position: absolute;
+	background:url(../audio/m1.png);
+	background-size:35px 35px;
+}
+
+.audioplayer-playing .audioplayer-playpause a
+{
+    width: 35px;
+	height: 35px;
+	position: absolute;
+	background:url(../audio/music.png);
+	background-size:35px 35px;
+}
+
+.audioplayer-playing .audioplayer-playpause a:before,
+.audioplayer-playing .audioplayer-playpause a:after
+{
+		width: 40%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+}
+.audioplayer-playing .audioplayer-playpause a:before
+{
+	   left: 0;
+}
+.audioplayer-playing .audioplayer-playpause a:after
+
+{
+		right: 0;
+}

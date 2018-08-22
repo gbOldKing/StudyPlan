@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>孔府佳人</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta http-equiv="cache-control" content="no-transform"/>
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/sprites.css" type="text/css" rel="stylesheet" />
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/hy.css" rel="stylesheet" type="text/css"/>
+<!-- 导航开始-->
+<script src="js/jquery.min.js"></script>
+<!-- 导航结束-->
+<script>
+
+function displayit(n){
+
+	for(i=0;i<4;i++){
+
+		if(i==n){
+
+			var id='menu_list'+n;
+
+			if(document.getElementById(id).style.display=='none'){
+
+				document.getElementById(id).style.display='';
+
+				document.getElementById("plug-wrap").style.display='';
+
+			}else{
+
+				document.getElementById(id).style.display='none';
+
+				document.getElementById("plug-wrap").style.display='none';
+
+			}
+
+		}else{
+
+			if($('#menu_list'+i)){
+
+				$('#menu_list'+i).css('display','none');
+
+			}
+
+		}
+
+	}
+
+}
+
+function closeall(){
+
+	var count = document.getElementById("top_menu").getElementsByTagName("ul").length;
+
+	for(i=0;i<count;i++){
+
+		document.getElementById("top_menu").getElementsByTagName("ul").item(i).style.display='none';
+
+	}
+
+	document.getElementById("plug-wrap").style.display='none';
+
+}
+
+
+
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+	WeixinJSBridge.call('hideToolbar');
+
+});
+
+</script> 
+<script>
+$(document).ready(function(){
+	$ ('.jfgz').toggle (function ()
+        {
+            $(".jfgz_con").slideDown();
+			$(this).children('span.fa').attr('className','fa fa-angle-up fa-fw'); 
+        }, function ()
+        {
+            $(".jfgz_con").slideUp();
+			$(this).children('span.fa').attr('className','fa fa-angle-down fa-fw'); 
+        });
+	$ ('.hyqy').toggle (function ()
+        {
+            $(".hyqy_con").slideDown();
+			$(".hyqy_con").css('border-bottom','1px solid rgba(255,255,255,0.2)');
+			$(this).children('span.fa').attr('className','fa fa-angle-up fa-fw'); 
+        }, function ()
+        {
+            $(".hyqy_con").slideUp();
+			$(".hyqy_con").css('border-bottom','1px solid rgba(255,255,255,0.2)');
+			$(this).children('span.fa').attr('className','fa fa-angle-down fa-fw'); 
+        });
+});
+</script>
+<style>
+.hy{width:100%;margin:0 auto;}
+.hy .hy_info{width:100%;position:relative;}
+.hy .hy_info img.hy_tu{width:100%;position:relative;}
+.hy .hy_info .hy_per{width:100%;position:absolute;top:20%;left:0;}
+.hy .hy_info .hy_per .per_dd{width:100%;margin:0 auto 7%;overflow:hidden;}
+.hy .hy_info .hy_per .per_dd a{width:18%;float:right;margin-right:3%;text-align:center;font-family:"微软雅黑";color:#fff;font-size:12px;line-height:22px;border:1px solid #fff;border-radius:4px;}
+.hy .hy_info span{position:absolute;top:3%;left:3%;font-family:"微软雅黑";color:#F6CD99;font-size:14px;}
+.hy .hy_info .hy_per img{width:18%;margin:0 auto;border-radius:50%;border:3px solid rgba(255,255,255,0.7)}
+.hy .hy_info .hy_per h2{width:100%;margin:3% auto 0;text-align:center;font-family:"微软雅黑";color:#fff;font-size:18px;font-weight:800;line-height:30px;}
+.hy .hy_info .hy_per p{width:100%;text-align:center;font-family:"微软雅黑";color:#fff;font-size:14px;line-height:20px;}
+.hy .hy_info .hy_per i{margin-right:5px;}
+
+.hy_jf{width:100%;margin:0 auto 1%;padding:1.5% 0;background:#000;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.2);}
+.hy_jf ul{width:100%;margin:0 auto;display: -webkit-box;-webkit-box-orient: horizontal;}
+.hy_jf li{-webkit-box-align: center;display:block;-webkit-box-flex: 1;border-right:1px solid rgba(255,255,255,0.2);text-align:center;font-family:"微软雅黑";color:#fff;font-size:14px;}
+.hy_jf li a{display:block;width:100%;margin:0 auto;text-align:center;font-family:"微软雅黑";color:#fff;font-size:14px;}
+.hy_jf li i{color:#FFD598;}
+
+.hy_con{width:100%;margin:0 auto;}
+.hy_con li{width:100%;float:left;border-bottom:1px solid rgba(255,255,255,0.2);padding:4% 0;background:#000;margin-bottom:1%;}
+.hy_con li a{width:96%;margin:0 auto;display:block;font-family:"微软雅黑";color:#fff;font-size:14px;line-height:20px;}
+.hy_con li a span{width:10%;float:right;display:block;line-height:20px;}
+.hy_con li a i{color:#FFD598;font-size:12px;margin-left:5%;}
+
+.jfgz_con,.hyqy_con{width:100%;margin:0 auto;padding:3% 0;overflow:hidden;display:none;}
+.jfgz_con p,.hyqy_con p{width:96%;margin:0 auto;font-family:"微软雅黑";color:#FFD598;font-size:14px;line-height:23px;}
+
+</style>
+</head>
+
+<body>
+
+<div class="hy">
+	<div class="hy_info">
+    	<img src="img/hy_tu.jpg" class="hy_tu"/>
+        <span>NO. 88888888</span>
+        <div class="hy_per">
+        	<!--<div class="per_dd"><a href="w5.html">我的订单</a></div>-->
+            <img src="img/hy_tx.jpg"/>
+            <h2>孔府佳人</h2>
+            <p><i class="fa fa-group fa-fw"></i>微会员</p>
+        </div>
+    </div>
+    <div style="height:3px;"></div>
+    <div class="hy_jf">
+    	<ul>
+        	<li><a href="jl.html">积分 <i>0</i></a></li>
+            <li><a href="ye.html">余额 <i>0</i></a></li>
+            <!--<li>充值<br/><i>0</i></li>
+            <li>余额<br/><i>0</i></li>-->
+        </ul>
+    </div>
+    <div class="hy_con">
+    	<ul>
+            <li><a class="hyqy">会员权益<span class="fa fa-angle-down fa-fw"></span></a></li>
+            <div class="hyqy_con"><p>1、每消费10元换取10积分</p><p>2、每消费10元换取10积分</p></div>
+            <li><a href="dh.html">积分兑换<span class="fa fa-angle-right fa-fw"></span></a></li>
+            <li><a href="kq_bd.html">优惠券<span class="fa fa-angle-right fa-fw"></span></a></li>
+            <li><a href="gg.html">系统消息<span class="fa fa-angle-right fa-fw"></span></a></li>
+            <li><a href="ws.html">完善个人信息<span class="fa fa-angle-right fa-fw"></span></a></li>
+        	<li><a href="">地址：孔府佳人 <span class="fa fa-location-arrow fa-fw"></span></a></li>
+            <li><a href="tel:075500006666">电话：0755-1111 2222<span class="fa fa-phone fa-fw"></span></a></li>
+        </ul>
+    </div>
+</div>
+
+<div style="height:60px;clear:both;"></div>
+<div class="top_bar" style="-webkit-transform:translate3d(0,0,0)">
+    <nav>
+        <ul id="top_menu" class="top_menu">
+            <li class="home"><a href="index.html"></a></li>
+            <!--<li> <a href="ts.html"><img src="images/plugmenu1.png"><label>在线投诉</label></a></li>-->
+            <li> <a href="dd_listb.html"><img src="images/plugmenu1.png"><label>包厢订单</label></a></li>
+            <li> <a href="dd_listy.html"><img src="images/plugmenu2.png"><label>优惠券订单</label></a></li>
+            <li> <a href="dd_list.html"><img src="images/plugmenu3.png"><label>商城订单</label></a></li>
+<!--            <li> <a onclick="javascript:displayit(3)"><img src="images/plugmenu3.png"><label>购物订单</label></a>
+                <ul id="menu_list3" class="menu_font" style=" display:none">
+                    <li> <a href="ct_dd.html"><label>餐券订单</label><span class="fa fa-angle-right fa-fw"></a></li>
+                    <li> <a href="ct_dd.html"><label>礼品订单</label><span class="fa fa-angle-right fa-fw"></a></li>
+                    <li> <a href="ct_dd.html"><label>食品订单</label><span class="fa fa-angle-right fa-fw"></a></li> 
+                    <li> <a href="ct_dd.html"><label>其他</label><span class="fa fa-angle-right fa-fw"></a></li>            
+                </ul>
+            </li> -->
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

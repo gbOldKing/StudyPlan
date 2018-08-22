@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>孔府佳人</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta http-equiv="cache-control" content="no-transform"/>
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/sprites.css" type="text/css" rel="stylesheet" />
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<script src="js/swipe.js"></script>
+<script src="js/jquery.min.js"></script>
+<!--<script type="text/javascript">
+$(function()
+		   {
+		   $(".more").toggle(function( ){$(".menu").removeClass("none")},function(){$(".menu").addClass("none");})
+		   })
+</script>-->
+
+<script>
+$(document).ready(function(){
+	
+$(".mdco_xz1").click(function(){
+ $(".gw_nav").slideToggle("300");
+ $(".gw_nav").css("border-top",'none');
+});
+
+$(".mdco_xz2").click(function(){
+	 $("#fdxzs").css("display",'block');
+	});	  
+	
+});
+</script>
+<!--门店选择-->
+<link href="css/label.css" rel="stylesheet" type="text/css">
+<script>
+    function setupLabel(){
+        if($('.label_radio1 input').length) {
+            $('.label_radio1').each(function(){
+                $(this).removeClass('r_on1');
+            });
+            $('.label_radio1 input:checked').each(function(){
+                $(this).parent('label').addClass('r_on1');
+            });
+        };
+    }
+    
+    $(function(){
+        $('body').addClass('has-js');
+        $('.label_radio1').click(function(){
+            setupLabel();
+        });
+        setupLabel();
+    });
+</script> 
+</head>
+
+<body>
+<svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="32" viewBox="0 0 320 32">
+<defs>
+<g id="icon-arrow-left">
+	<path class="path1" d="M23.038 27.869c0.429 0.434 0.429 1.133 0 1.566s-1.122 0.434-1.55 0l-12.528-12.651c-0.429-0.434-0.429-1.134 0-1.566l12.528-12.653c0.429-0.434 1.122-0.434 1.55 0s0.429 1.133 0 1.566l-11.424 11.869 11.424 11.869z" />
+</g><g id="icon-list">
+	<path class="path1" d="M25.6 14.4h-19.2c-0.883 0-1.6 0.717-1.6 1.6s0.717 1.6 1.6 1.6h19.2c0.885 0 1.6-0.717 1.6-1.6s-0.715-1.6-1.6-1.6zM6.4 11.2h19.2c0.885 0 1.6-0.717 1.6-1.6s-0.715-1.6-1.6-1.6h-19.2c-0.883 0-1.6 0.717-1.6 1.6s0.717 1.6 1.6 1.6zM25.6 20.8h-19.2c-0.883 0-1.6 0.715-1.6 1.6s0.717 1.6 1.6 1.6h19.2c0.885 0 1.6-0.715 1.6-1.6s-0.715-1.6-1.6-1.6z" />
+</g></svg>
+<div class="top">
+  <div class="top_nr">
+    <div class="back"><a href="javascript:history.back(-1);"><svg viewBox="0 0 32 32" class="icon icon-arrow-left"><use xlink:href="#icon-arrow-left"/></svg></a></div>
+    <div class="top_tit"><h2>微信购物</h2></div>
+        <div class="moress"><a href="index.html"><i class="fa fa-home fa-2x"></i></a></div>
+
+    <!--<div class="yu"><a href="eng/v1.html">English</a></div>-->
+    <div class="menu none">
+      <ul class="dht2">
+      	<li><a href="index.html"><div class="t1">首页</div></a></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<div style="height:50px"></div>
+<div class="wg99">
+	<ul>
+    	<li><a href="bxxz.html">
+        	<img src="img/l_wg1.jpg"/>
+            <div class="wg1">
+            	<h2>椒盐鸭脖</h2>
+                <p>椒盐鸭脖椒盐鸭脖椒盐鸭脖</p>
+                <span><i>￥</i>618.00</span>
+            </div>
+            </a>
+        </li>
+    	<li><a href="bxxz.html">
+        	<img src="img/l_wg2.jpg"/>
+            <div class="wg1">
+            	<h2>酒鬼花生</h2>
+                <p>欢唱7小时简介欢唱7小时简介</p>
+                <span><i>￥</i>618.00</span>
+            </div>
+            </a>
+            <div class="wg2">
+            	
+                <a href="wg_cq.html">购买</a>
+            </div>
+        </li>
+    	<li><a href="bxxz.html">
+        	<img src="img/l_wg3.jpg"/>
+            <div class="wg1">
+            	<h2>XO洋酒</h2>
+                <p>欢唱7小时简介欢唱7小时简介</p>
+                <span><i>￥</i>618.00</span>
+            </div>
+            </a>
+            <div class="wg2">
+            	
+                <a href="wg_cq.html">购买</a>
+            </div>
+        </li>
+    	<li><a href="bxxz.html">
+        	<img src="img/l_wg4.jpg"/>
+            <div class="wg1">
+            	<h2>解渴果汁</h2>
+                <p>欢唱7小时简介欢唱7小时简介</p>
+                <span><i>￥</i>618.00</span>
+            </div>
+            </a>
+            <div class="wg2">
+            	
+                <a href="wg_cq.html">购买</a>
+            </div>
+        </li>
+    	<li><a href="bxxz.html">
+        	<img src="img/l_wg5.jpg"/>
+            <div class="wg1">
+            	<h2>爆米花</h2>
+                <p>欢唱7小时简介欢唱7小时简介</p>
+                <span><i>￥</i>618.00</span>
+            </div>
+            </a>
+            <div class="wg2">
+            	
+                <a href="wg_cq.html">购买</a>
+            </div>
+        </li>
+        
+     </ul>
+</div>
+<div style="height:5px;clear:both"></div>
+
+<script type="text/javascript">
+//动态列表tab
+var bullets = document.getElementById('banner').getElementsByTagName('li');
+window.mySwipe2 = new Swipe(document.getElementById('banner_list'), {
+  startSlide: 0,
+  speed: 400,
+  auto: 3000,
+ callback: function(pos) {
+    var i = bullets.length;
+      while (i--) {
+        bullets[i].className ="";
+      }
+      bullets[pos].className = "on";
+
+    }
+	
+});
+</script>
+</body>
+</html>

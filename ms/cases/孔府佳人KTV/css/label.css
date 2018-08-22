@@ -1,0 +1,51 @@
+/*form style*/
+			fieldset { 
+				border: 0; 
+				padding-top: 10px;
+				left:8px;
+				position:absolute;
+			}
+			.radios1{width:60px;}
+			.radios1 label { 
+				display: block; 
+				cursor: pointer; 
+				height: 20px;
+				width:20px;
+				margin-top:20px;
+				margin-bottom:15px;
+			}
+			.has-js .label_radio1{ 
+				background:url(../images/checkbox-radio-bg.png) no-repeat; 
+			}
+			.has-js .label_radio1 { 
+				background-position:-12px -8px; 
+			}
+			.has-js label.r_on1 { 
+				background-position:-12px -28px; 
+			}
+			.has-js .label_radio1 input { 
+				position: absolute; 
+				left: -9999px; 
+			} 
+			
+			.radios2 label { 
+				display: block; 
+				cursor: pointer; 
+				height: 20px;
+				width:20px;
+				margin-left:5px;
+				margin-top:-6px;
+			}
+			.has-js .label_radio2{ 
+				background: url(../images/checkbox-radio-bg.png) no-repeat; 
+			}
+			.has-js .label_radio2 { 
+				background-position:-12px -8px; 
+			}
+			.has-js label.r_on2 { 
+				background-position:-12px -28px; 
+			}
+			.has-js .label_radio2 input { 
+				position: absolute; 
+				left: -9999px; 
+			}   

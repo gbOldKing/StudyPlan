@@ -1,0 +1,87 @@
+﻿@charset "utf-8";
+/* reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {margin: 0;padding: 0;}
+.clearBoth {clear: both;font-size: 1px;height: 1px;line-height: 1px;}
+.clearfix:after {clear: both;content: ".";display: block;height: 0;visibility: hidden;}
+.clearfix {display: inline-block;}
+.clearfix {display: block;}
+.l{float:left;}
+.r{float:right;}
+.m{text-align:center;line-height:45px;cursor:pointer;}
+body {background: none repeat scroll 0 0 #F4F4F4;color: #737173;font: 14px/1.5 u9ED1u4F53,Microsoft YaHei,宋体,Arial,Verdana;}
+ul {list-style: none outside none;}
+li:hover, li:active, li {outline: 0 none;}
+
+.bg{
+background: url(../images/bg.png) no-repeat center center;
+background-attachment:fixed;
+-webkit-background-size: 100%; 
+-moz-background-size: 100%;
+-o-background-size: 100%;
+background-size: 100%;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover; 
+background-size: cover;
+height:100%; width:100%;
+}
+.bg{ background:#000 url(../images/bgs.jpg) no-repeat center center; height:100%; width:100%; position:fixed; z-index:-1; background-size:cover}
+
+header, #menu, #footer, #playwrap {position:fixed; width:100%; left:0; overflow:hidden;}
+header {height:45px; top:0;z-index:1000;background:none repeat scroll 0 0 #F4F4F4;}
+
+/*-top导航-**************************************/
+.top{ background: rgba(0,0,0,0.7)/*rgba(155,103,52,0.8) url(../images/top_bg.png)*/; height:50px; color:#fff; position:fixed; z-index:150; width:100%}
+.top_nr{ height:40px; position:relative;}
+.back{ position:absolute; left:0; top:0; height:40px; width:45px;}
+.top_tit,.top_tit h2{ text-align:center; font-size:1.2em; line-height:35px;font-family:"微软雅黑";}
+.top_tit{ padding-top:8px;}
+.more{position:absolute; right:0; top:0; height:40px; width:35px;cursor:pointer}
+.mores{position:absolute; right:10px; top:12px; height:20px;line-height:20px; cursor:pointer;font-size:14px;color:#fff;border:1px solid rgba(255,255,255,0.3);padding:3px 6px;border-radius:0px;font-family:"微软雅黑";text-align:center;}
+.mores a{font-size:12px;color:#fff;font-family:"微软雅黑";}
+.moress{position:absolute; right:0px; top:10px;line-height:25px; width:30px;cursor:pointer;font-size:14px;color:#eee;padding:3px 6px;border-radius:4px;font-family:"微软雅黑";text-align:center;}
+.moress a{color:#fff;}
+
+.yu{position:absolute; right:45px; top:0;line-height:50px;text-align:center;}
+.yus{position:absolute; right:13px; top:0;line-height:50px;text-align:center;}
+.yu a,.yus a{font-family:"微软雅黑";color:#aa7937;font-size:12px;}
+
+#menu {height:45px;top:0px;z-index:1000;background: rgba(0,0,0,0.9);border-bottom:1px solid rgba(255,255,255,0.2);}
+.menu_tagList {color:#fff;line-height:35px;font-size:16px;display: -webkit-box;-webkit-box-orient: horizontal;}
+.menu_tagList li {text-align:center;-webkit-box-align: center;display:block;-webkit-box-flex: 1;height:45px;border-right:1px solid rgba(255,255,255,0.1);cursor:pointer;line-height:45px;font-family:"微软雅黑";}
+.menu_tagList li:last-child{border-right:none;}
+.menu_hover {background:rgba(2,54,102,0.5);background-size:100%;}
+.h_logo {color:#69A3D3;float:left;font-size:20px;width:250px;margin:5px 0 0 10px;font-weight:400;}
+
+#content {padding: 51px 0 70px;width:100%;}
+#content li {border-bottom: 1px solid rgba(255,255,255,0.1);cursor: pointer;font-size: 16px;height: 45px;overflow: hidden;padding: 2% 0 7% 10px;}
+/*#content li:last-child{border-bottom:none}*/
+.picStyle {height:60px;width:60px;margin:0px 8px 0px 3px;display:block;border-radius:4px;}
+.textBox {font-size:14px;color:#eee;margin-top:2px;}
+.textBox p {color:#999;font-size:12px;white-space:nowrap;}
+.frmPlay {float: right;height: 45px;width: 56px;background:url(../images/fmplay.png) center center no-repeat;background-size:44%;margin-top:8px;}
+.frmPause{background-image:url(../images/fmpause.png);}
+
+/*control*/
+#playwrap {background:rgba(0,0,0,0.5);color:#fff;bottom: 0;font-family: Microsoft YaHei;height: 70px;text-align: center;z-index: 1000;border-top:1px solid rgba(255,255,255,0.1);}
+#playContent{ height: 70px;margin: 0 auto;width: 320px;}
+#progressWrap {background: none repeat scroll 0 0 #999;height: 3px;margin: 3px 0 0 10px;width: 298px;cursor:pointer;}
+#progress {background: none repeat scroll 0 0 #FFFFFF;height: 3px;width: 0;}
+.img {box-shadow: 0 0 5px #333333;float: left;height: 47px;margin: 8px 0 0 15px;width: 47px;}
+.img img {border: 1px solid #ccc;cursor: pointer;height: 45px;width: 45px;}
+.info {float: left;width: 240px;}
+.control {margin: 2px 0 0;text-align: left;}
+.audioControl a.last {background: url("../images/bg3.png") no-repeat scroll -5px -108px transparent;}
+.audioControl a {display: inline-block;height: 30px;margin: 0 0 0 8px;width: 30px;}
+.audioControl a.pause {background: url("../images/bg3.png") no-repeat scroll -4px -75px transparent;}
+.audioControl a.play {background: url("../images/bg3.png") no-repeat scroll -4px -144px transparent;}
+.audioControl a.next {background: url("../images/bg3.png") no-repeat scroll -7px -183px transparent;}
+#modeButton{background-image: url("../images/bg3.png");background-repeat:no-repeat;margin-left: 16px;width: 35px;}
+.audioControl a.mode-default {background-position:-6px -328px;}
+.audioControl a.mode-random {background-position:-6px -224px;}
+.audioControl a.mode-single {background-position:-6px -292px;}
+#songname {color: #FFFFFF;float: left;background:red;font-size: 14px;margin: 4px 0 0 12px;overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap;width: 220px;}
+#timeshow {color: #FFFFFF;float: right;font-size: 14px;}
+#musicTitle{float:left;margin:3px 0 0 15px;width:135px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;text-align:left;}
+#oWindow{position:fixed;z-index:2000;top:50%;left:50%;background: -moz-linear-gradient(left center , #69A3D4 0%, #4888BE 100%) repeat scroll 0 0 transparent;background: -webkit-linear-gradient(left, #69A3D4 0%, #4888BE 100%);background:#4888BE;color:#fff;padding:13px 20px;font-size:16px;}
+/*www.jq22.com*/

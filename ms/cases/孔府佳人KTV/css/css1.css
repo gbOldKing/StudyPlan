@@ -1,0 +1,22 @@
+/*----样式初始化----------------------*/
+html { height: 100%; }
+body { font-family:"微软雅黑"; background: #eee; -webkit-text-size-adjust: 100%;/*解决Iphone下橱窗字体变大问题*/ }
+* { padding: 0; margin: 0; border: 0; font-style: normal; font-weight: normal; -webkit-tap-highlight-color: rgba(0,0,0,0);	/*禁止链接高亮*/ -webkit-touch-callout: none;/*禁止链接长按弹出选项菜单*/ }
+nav, footer, section, header, article { display: block; }
+ul { list-style: none; }
+a:link { -webkit-tap-highlight-color: rgba(0,0,0,0);/*禁止链接高亮*/ -webkit-touch-callout: none;	/*禁止链接长按弹出选项菜单*/ }
+a:link, a:visited, a:hover, a:active { color: #000; text-decoration:none; }
+input, textarea { -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px; box-shadow: none;}
+
+img { display: block;border:none; }
+
+textarea {-webkit-appearance:none; /*去除input默认样式*/}
+input {-webkit-appearance:none; /*去除input默认样式*/}
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input{-webkit-appearance:none;}
+
+
+
+

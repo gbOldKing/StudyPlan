@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>孔府佳人</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta http-equiv="cache-control" content="no-transform"/>
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<link href="css/main.css" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/sprites.css" type="text/css" rel="stylesheet" />
+<script src="js/swipe.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/payfor.js"></script>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js1/mobiscroll_002.js" type="text/javascript"></script>
+<script src="js1/mobiscroll_004.js" type="text/javascript"></script>
+<link href="css1/mobiscroll_002.css" rel="stylesheet" type="text/css">
+<script src="js1/mobiscroll.js" type="text/javascript"></script>
+<script src="js1/mobiscroll_003.js" type="text/javascript"></script>
+<script src="js1/mobiscroll_005.js" type="text/javascript"></script>
+<link href="css1/mobiscroll_003.css" rel="stylesheet" type="text/css">
+
+<!-- 弹窗-->
+<script src="js/AlertMessage-1.3.js"></script>
+<script type="text/javascript">
+function showMessage(){
+	$(function(){
+	   Message.showConfirm("确定预订？","确定","取消",function(){
+		 //第一个回调
+		window.location.href="gw_jg1.html";
+		
+		 },function(){
+		 //第二个回调
+	   });
+	 })
+};
+</script>
+</head>
+
+<body>
+<svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="32" viewBox="0 0 320 32">
+<defs>
+<g id="icon-arrow-left">
+  <path class="path1" d="M23.038 27.869c0.429 0.434 0.429 1.133 0 1.566s-1.122 0.434-1.55 0l-12.528-12.651c-0.429-0.434-0.429-1.134 0-1.566l12.528-12.653c0.429-0.434 1.122-0.434 1.55 0s0.429 1.133 0 1.566l-11.424 11.869 11.424 11.869z" />
+</g>
+<g id="icon-list">
+  <path class="path1" d="M25.6 14.4h-19.2c-0.883 0-1.6 0.717-1.6 1.6s0.717 1.6 1.6 1.6h19.2c0.885 0 1.6-0.717 1.6-1.6s-0.715-1.6-1.6-1.6zM6.4 11.2h19.2c0.885 0 1.6-0.717 1.6-1.6s-0.715-1.6-1.6-1.6h-19.2c-0.883 0-1.6 0.717-1.6 1.6s0.717 1.6 1.6 1.6zM25.6 20.8h-19.2c-0.883 0-1.6 0.715-1.6 1.6s0.717 1.6 1.6 1.6h19.2c0.885 0 1.6-0.715 1.6-1.6s-0.715-1.6-1.6-1.6z" />
+</g>
+</svg>
+<div class="top">
+  <div class="top_nr">
+    <div class="back"><a href="javascript:history.back(-1);"><svg viewBox="0 0 32 32" class="icon icon-arrow-left">
+      <use xlink:href="#icon-arrow-left"/>
+      </svg></a></div>
+    <div class="top_tit">
+      <h2>包厢预订</h2>
+    </div>
+    <div class="moress"><a href="index.html"><i class="fa fa-home fa-2x"></i></a></div>
+  </div>
+</div>
+<div style="height:50px"></div>
+<div id="ad" class="clr">
+  <div>
+    <ul  id="banner">
+      <li class="on"></li>
+      <li></li>
+    </ul>
+    <div class="banner_listBox">
+      <div id="banner_list">
+        <ul>
+          <li><img src="img/r3.jpg" width="100%" /></li>
+          <li><img src="img/r4.jpg" width="100%" /></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="gw_dd">
+  <div class="ps" style="border-top:none;border-bottom:none;">
+    <h2>豪华大厢</h2>
+  </div>
+  <div class="sp_list">
+    <ul>
+      <li>
+        <div class="ps1">联&nbsp;&nbsp;系&nbsp;&nbsp;人
+          <input type="text" id="name" placeholder="您的姓名">
+        </div>
+      </li>
+      <li>
+        <div class="ps1">手机号码
+          <input type="tel" id="name" placeholder="您的手机">
+        </div>
+      </li>
+      <li>
+        <div class="ps1">到店日期
+          <input id="appDate" placeholder="请选择" name="appDate" style=" background:none; float:right; text-align:right; margin-right:0%; font-size:14px; font-family:'微软雅黑'; color:#FFD598" />
+        </div>
+      </li>
+      <li>
+        <div class="ps1">到店时间
+          <input id="appTime" placeholder="请选择" name="appTime" style=" background:none; float:right; text-align:right; margin-right:0%; font-size:14px; font-family:'微软雅黑'; color:#FFD598" />
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="ps">备注信息<span id="name" class="bei" style="color:#fff">请填写备注信息</span></div>
+  <div class="beizhu">
+    <textarea style="" id="beizhu" placeholder="请输入您的备注信息..."></textarea>
+    <div class="btn" style=" width:96%; margin:0 auto; margin-left:2.5%; text-align:center; margin-top:2%;" ><a onClick="javascript:showMessage();" style=" width:100%; margin:0 auto; text-align:center;display:block">立即预订</a></div>
+  </div>
+</div>
+<div style="height:10px"></div>
+<!--分类导航结束--> 
+<script type="text/javascript">
+//动态列表tab
+var bullets = document.getElementById('banner').getElementsByTagName('li');
+window.mySwipe2 = new Swipe(document.getElementById('banner_list'), {
+  startSlide: 0,
+  speed: 400,
+  auto: 3000,
+ callback: function(pos) {
+    var i = bullets.length;
+      while (i--) {
+        bullets[i].className ="";
+      }
+      bullets[pos].className = "on";
+
+    }
+	
+});
+</script>
+<script type="text/javascript">
+	$(function () {
+		var currYear = (new Date()).getFullYear();	
+		var opt={};
+		opt.date = {preset : 'date'};
+		opt.datetime = {preset : 'datetime'};
+		opt.time = {preset : 'time'};
+		opt.default = {
+			theme: 'android-ics light', //皮肤样式
+			display: 'modal', //显示方式 
+			mode: 'scroller', //日期选择模式
+			dateFormat: 'yyyy-mm-dd',
+			lang: 'zh',
+			showNow: true,
+			nowText: "今天",
+			startYear: currYear - 10, //开始年份
+			endYear: currYear + 10 //结束年份
+		};
+
+		$("#appDate").mobiscroll($.extend(opt['date'], opt['default']));
+		$("#appDate1").mobiscroll($.extend(opt['date'], opt['default']));
+		var optDateTime = $.extend(opt['datetime'], opt['default']);
+		var optTime = $.extend(opt['time'], opt['default']);
+		$("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);
+		$("#appTime").mobiscroll(optTime).time(optTime);
+	});
+</script>
+</body>
+</html>

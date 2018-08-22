@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去重</title>
+</head>
+<script>
+	/*方法一*/
+	var arr = ['abc','abcd','sss','2','2','d','t','2','ss','f','22','d',2];
+	var s = [];
+	for(var i = 0;i<arr.length;i++){
+		s.indexOf(arr[i]) == -1 && s.push(arr[i]);
+	}
+	console.log(s);
+	/*方法二*/
+/*	var arr = [1,2,3,4,5,6,8,7,8,8,4,5,21,5,4,1,12,5,4,1,2,5];
+	var obj = {}
+	for(var i  in arr){
+	   obj[arr[i]] = true;
+	}
+	console.dir(obj);*/
+	/*方法三*/
+	Array.prototype.distinct = function(){
+		var arr = this,
+		result = [],
+		i,
+		j,
+		len = arr.length;
+		for(i = 0; i < len; i++){
+			for(j = i + 1; j < len; j++){
+				if(arr[i] === arr[j]){
+					j = ++i;
+				}
+			}
+		result.push(arr[i]);
+		}
+		return result;
+	}
+	var arra = [1,1,5,4,4,1,1,2,1,1,1];
+	console.log(arra.distinct()); 
+</script>
+<body>
+	
+</body>
+</html>

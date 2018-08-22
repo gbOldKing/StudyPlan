@@ -1,0 +1,24 @@
+#ad {
+	position: fixed;
+	margin: 0px;
+	padding: 0px;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+}
+#banner_list img {border:0px;width:100%;}
+#banner  {position:absolute;list-style-type:none;filter: Alpha(Opacity=80);opacity:0.8;z-index:1002; margin:0; padding:0; bottom:2%; right:10%; z-index:10}
+#banner  li { padding:0px 4px;float:left; background:url(../images/icon2.png) no-repeat; width:11px; height:15px;background-size:40%;}
+#banner  li.on { background:url(../images/icon1.png) no-repeat;background-size:40%;}
+.dh h2{ margin:0; padding:16px 0 14px 0}
+.banner_listBox{
+	text-align:center;
+	position: relative;
+	margin:0px auto 0 auto;
+	overflow: hidden;
+}
+#banner_list{ text-align:center;overflow: hidden;visibility: hidden;position: relative;z-index:7;}
+#banner_list ul{overflow: hidden; position: relative; z-index:8;margin:0px;}
+#banner_list ul li {margin:0px; float:left; width:auto;position: relative;z-index:9; }
+#banner_list ul li img{ max-width:100%; margin:0px; padding:0px;margin:0px}
