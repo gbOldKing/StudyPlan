@@ -82,10 +82,6 @@ export default class FlatListDemo extends Component<Props> {
             data={this.state.dataArray}
             keyExtractor = {FlatListDemo._extraUniqueKey}
             renderItem={(data)=> FlatListDemo._renderItem(data)}
-            /*refreshing={this.state.isLoading}
-            onRefresh={()=>{
-                this.loadData();
-            }}*/
             refreshControl={
                 <RefreshControl
                     title={'Loading'} //IOS
