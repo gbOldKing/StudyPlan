@@ -11,6 +11,7 @@ import {
 import DateRepository from '../expand/DAO/DateRepository'
 import ScrollableTabView, {ScrollableTabBar, DefaultTabBar} from 'react-native-scrollable-tab-view';
 import RepositoryCell from '../component/RepositoryCell'
+import NavigationBar from '../component/NavigationBar'
 const URL='https://api.github.com/search/repositories?q=';
 const QUERY_STR='&sort=stars';
 export default class PopularPage extends Component {
@@ -24,6 +25,12 @@ export default class PopularPage extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <NavigationBar
+                    title={'最热'}
+                    statusBar={{
+                        backgroundColor:'#B8E6C1'
+                    }}
+                />
                 <ScrollableTabView
                     renderTabBar={()=><ScrollableTabBar/>}
                 >
