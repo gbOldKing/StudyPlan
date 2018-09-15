@@ -6,7 +6,8 @@ import {
     View,
     Image,
     TextInput,
-    FlatList
+    FlatList,
+    RefreshControl
 } from 'react-native';
 import DateRepository from '../expand/DAO/DateRepository'
 import ScrollableTabView, {ScrollableTabBar, DefaultTabBar} from 'react-native-scrollable-tab-view';
@@ -14,6 +15,7 @@ import RepositoryCell from '../component/RepositoryCell'
 import NavigationBar from '../component/NavigationBar'
 const URL='https://api.github.com/search/repositories?q=';
 const QUERY_STR='&sort=stars';
+
 export default class PopularPage extends Component {
     constructor(props){
         super(props);
@@ -28,10 +30,14 @@ export default class PopularPage extends Component {
                 <NavigationBar
                     title={'最热'}
                     statusBar={{
-                        backgroundColor:'#B8E6C1'
+                        backgroundColor:'#2196f3'
                     }}
                 />
                 <ScrollableTabView
+                    tabBarBackgroundColor='#2196f3'
+                    tabBarInactiveTextColor='#ddd'
+                    tabBarActiveTextColor='#fff'
+                    tabBarUnderlineStyle={{backgroundColor:'#e7e7e7',height:2}}
                     renderTabBar={()=><ScrollableTabBar/>}
                 >
                     <PopularTab tabLabel="ios">ios</PopularTab>
@@ -49,6 +55,7 @@ class PopularTab extends Component{
         this.DateRepository=new DateRepository();
         this.state={
             result:'',
+            isLoading:false
         }
     }
 
@@ -60,11 +67,15 @@ class PopularTab extends Component{
         this.loadData();
     }
     loadData(){
+        this.setState({
+            isLoading:true
+        });
         let url = URL+this.props.tabLabel+QUERY_STR;
         this.DateRepository.fetchNetRepository(url)
             .then(result=>{
                 this.setState({
-                    dataSource:result.items
+                    dataSource:result.items,
+                    isLoading:false
                 })
             })
             .catch(error=>{
@@ -84,6 +95,17 @@ class PopularTab extends Component{
                     data={this.state.dataSource}
                     keyExtractor = {this._extraUniqueKey}
                     renderItem={(item) => this._renderItem(item.item)}
+                    refreshControl={
+                        <RefreshControl
+                            title={'Loading'} //IOS
+                            colors={['orange', 'green']} //android
+                            tintColor={['orange']} //IOS
+                            refreshing={this.state.isLoading}
+                            onRefresh={() => {
+                                this.loadData()
+                            }}
+                        />
+                    }
                 />
             </View>
         )

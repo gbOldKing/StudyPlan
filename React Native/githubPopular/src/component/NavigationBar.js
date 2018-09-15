@@ -29,7 +29,7 @@ export default class NavigationBar extends Component {
     }
     render() {
         /*IOS平台需要自定义状态栏样式 */
-        let statusBar = <View style={[styles.statusBar, this.props.statusBar]}>
+        let statusBar = <View style={[styles.statusBar, Platform.OS === 'ios' ?this.props.statusBar:'']}>
             {/*android状态栏样式*/}
             <StatusBar {...this.props.statusBar}/>
         </View>;
@@ -57,7 +57,7 @@ export default class NavigationBar extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#B8E6C1'
+        backgroundColor: '#2196f3'
     },
     navBar: {
         flexDirection: 'row',
