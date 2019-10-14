@@ -1,0 +1,16 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "bundle":"webpack"
+  },
+  "author": "oldking",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  }
+}
