@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es6</title>
+	<script>
+
+	</script>
+</head>
+<body>
+	<button id="btn" onclick="te()">按钮</button>
+	<script>
+		var te =()=>{
+			const dog ={
+				name:'ok',
+				age:23
+			}
+			console.log(this) 
+		}
+		var btn = document.getElementById('btn');
+		btn.onclick=te;
+		/******************字符串的新增方法**********************/
+		/*	includes()：返回布尔值，表示是否找到了参数字符串。
+		startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。
+		endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。*/
+		let s = 'Hello world!';
+		console.log(s.startsWith('Hello')) // true
+		console.log(s.endsWith('!')) // true
+		console.log(s.includes('o')) // true
+
+		/*repeat方法返回一个新字符串，表示将原字符串重复n次。*/
+
+		console.log('ok'.repeat(3))
+
+		/*es2019新增字符串实例方法trimStart()去掉字符串头部空格*/
+		/*trimEnd()去掉尾部空格，返回新的字符串*/
+
+		const s1 = '  abc  ';
+		s1.trim() // "abc"
+		s1.trimStart() // "abc  "
+		s1.trimEnd() // "  abc"
+
+
+
+		/******************数值的扩展**********************/
+		/*Number.isInteger()用来判断一个数值是否为整数。*/
+		Number.isInteger(25) // true
+		Number.isInteger(25.1) // false
+
+
+		/*Number.isFinite(), Number.isNaN()判断是否NaN */
+		Number.isFinite(0.8); // true
+		Number.isFinite(NaN); // false
+		Number.isFinite('dda'); // false
+		Number.isNaN(NaN) // true
+		Number.isNaN("NaN") // false
+		/*它们与传统的全局方法isFinite()和isNaN()的区别在于，传统方法先调用Number()将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，Number.isFinite()对于非数值一律返回false, Number.isNaN()只有对于NaN才返回true，非NaN一律返回false。*/
+
+
+
+		/******************Math 对象的扩展***********************/
+		/*Math.trunc方法用于去除一个数的小数部分，返回整数部分。*/
+			Math.trunc(4.1) // 4
+			Math.trunc(4.9) // 4
+			Math.trunc(-4.1) // -4
+			Math.trunc(-4.9) // -4
+			Math.trunc(-0.1234) // -0
+
+		/*对象不构成单独的作用域，导致jumps箭头函数定义时的作用域就是全局作用域*/
+		const cat = {
+		  lives: 9,
+		  jumps: () => this,
+		  run:function(){return this}
+		}
+
+
+
+		console.log(cat.jumps())  //window;
+		console.log(cat.run())  // cat
+
+		
+
+	</script>
+</body>
+</html>
