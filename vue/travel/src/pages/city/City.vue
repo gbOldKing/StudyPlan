@@ -8,7 +8,7 @@
             :letter="letter"
         >
         </city-list>
-        <city-alphabet @change="handleLetterChange" :cities="cities"></city-alphabet>
+        <city-alphabet ref="aph" @change="handleLetterChange" :cities="cities"></city-alphabet>
     </div>
 
 </template>
